@@ -5,12 +5,23 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+puts "destroying PartyRecipes..."
+PartyRecipe.destroy_all
+puts "destroying UserRecipes..."
+UserRecipe.destroy_all
+puts "destroying recipes..."
+Party.destroy_all
+puts "destroying users..."
+Recipe.destroy_all
+puts "destroying parties..."
+User.destroy_all
+
 
 puts "Creating Users..."
 
-u1 = User.create(email:'filipe@gmail.com', password:'password')
+u1 = User.create!(email:'filipe@gmail.com', password:'password')
 u2 = User.create(email:'marie@gmail.com', password:'password')
-u3 = User.create(email:'filipe@gmail.com', password:'password')
+u3 = User.create(email:'maria@gmail.com', password:'password')
 u4 = User.create(email:'diandra@gmail.com', password:'password')
 u5 = User.create(email:'billy@gmail.com', password:'password')
 
@@ -31,39 +42,39 @@ puts "Created #{Recipe.count} Recipes"
 
 puts "Creating UserRecipes..."
 
-ur1 = UserRecipe.create(user_id: u2, recipe_id: r1)
-ur2 = UserRecipe.create(user_id: u1, recipe_id: r2)
-ur3 = UserRecipe.create(user_id: u1, recipe_id: r3)
-ur4 = UserRecipe.create(user_id: u3, recipe_id: r4)
-ur5 = UserRecipe.create(user_id: u2, recipe_id: r5)
-ur6 = UserRecipe.create(user_id: u2, recipe_id: r6)
-ur7 = UserRecipe.create(user_id: u4, recipe_id: r7)
-ur8 = UserRecipe.create(user_id: u4, recipe_id: r8)
+ur1 = UserRecipe.create(user_id: u2.id, recipe_id: r1.id)
+ur2 = UserRecipe.create(user_id: u1.id, recipe_id: r2.id)
+ur3 = UserRecipe.create(user_id: u1.id, recipe_id: r3.id)
+ur4 = UserRecipe.create(user_id: u3.id, recipe_id: r4.id)
+ur5 = UserRecipe.create(user_id: u2.id, recipe_id: r5.id)
+ur6 = UserRecipe.create(user_id: u2.id, recipe_id: r6.id)
+ur7 = UserRecipe.create(user_id: u4.id, recipe_id: r7.id)
+ur8 = UserRecipe.create(user_id: u4.id, recipe_id: r8.id)
 
 puts "Created #{UserRecipe.count} UserRecipes"
 
 puts "Creating Parties..."
 
-p1 = Party.create(title:'Mexican Fiesta', address: "Cancún", user_id:3)
-p2 = Party.create(title:'Japanese Dinner', address: "Tokyo", user_id:1)
-p3 = Party.create(title:'Cena Italiana', address: "Napoli", user_id:1)
-p4 = Party.create(title:'Greek Feast', address: "Athens", user_id:3)
-p5 = Party.create(title:'Romantic Dinner', address: "Paris", user_id:2)
-p6 = Party.create(title:'French Finess', address: "Paris", user_id:2)
-p7 = Party.create(title:'Brit Tea Party', address: "London", user_id:4)
-p8 = Party.create(title:'Halloween Bagel Party', address: "London", user_id:4)
+p1 = Party.create!(title:'Mexican Fiesta', address: "Cancún", user_id: u3.id, recipe_id: r1.id)
+p2 = Party.create(title:'Japanese Dinner', address: "Tokyo", user_id:u1.id, recipe_id: r2.id)
+p3 = Party.create(title:'Cena Italiana', address: "Napoli", user_id:u1.id, recipe_id: r3.id)
+p4 = Party.create(title:'Greek Feast', address: "Athens", user_id:u3.id, recipe_id: r4.id)
+p5 = Party.create(title:'Romantic Dinner', address: "Paris", user_id:u2.id, recipe_id: r5.id)
+p6 = Party.create(title:'French Finess', address: "Paris", user_id:u2.id, recipe_id: r6.id)
+p7 = Party.create(title:'Brit Tea Party', address: "London", user_id:u4.id, recipe_id: r7.id)
+p8 = Party.create(title:'Halloween Bagel Party', address: "London", user_id:u4.id, recipe_id: r8.id)
 
 puts "Created #{Party.count} Parties"
 
 puts "Creating PartyRecipes..."
 
-pr1 = PartyRecipe.create(recipe_id: r1, party_id: p1)
-pr2 = PartyRecipe.create(recipe_id: r2, party_id: p2)
-pr3 = PartyRecipe.create(recipe_id: r3, party_id: p3)
-pr4 = PartyRecipe.create(recipe_id: r4, party_id: p4)
-pr5 = PartyRecipe.create(recipe_id: r5, party_id: p5)
-pr6 = PartyRecipe.create(recipe_id: r6, party_id: p6)
-pr7 = PartyRecipe.create(recipe_id: r7, party_id: p7)
-pr8 = PartyRecipe.create(recipe_id: r8, party_id: p8)
+pr1 = PartyRecipe.create!(recipe_id: r1.id, party_id: p1.id)
+pr2 = PartyRecipe.create(recipe_id: r2.id, party_id: p2.id)
+pr3 = PartyRecipe.create(recipe_id: r3.id, party_id: p3.id)
+pr4 = PartyRecipe.create(recipe_id: r4.id, party_id: p4.id)
+pr5 = PartyRecipe.create(recipe_id: r5.id, party_id: p5.id)
+pr6 = PartyRecipe.create(recipe_id: r6.id, party_id: p6.id)
+pr7 = PartyRecipe.create(recipe_id: r7.id, party_id: p7.id)
+pr8 = PartyRecipe.create(recipe_id: r8.id, party_id: p8.id)
 
-puts "Created #{PartyRecipes.count} PartyRecipes"
+puts "Created #{PartyRecipe.count} PartyRecipes"
