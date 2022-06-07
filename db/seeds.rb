@@ -8,11 +8,11 @@
 
 puts "Creating Users..."
 
-u1 = User.create(name:'Filipe', email:'filipe@gmail.com', password:'password', dietary_requirements:'Lactose intolerant')
-u2 = User.create(name:'Marie', email:'marie@gmail.com', password:'password', dietary_requirements:'Gluten free')
-u3 = User.create(name:'Maria', email:'filipe@gmail.com', password:'password', dietary_requirements:'Vegetarian')
-u4 = User.create(name:'Diandra', email:'diandra@gmail.com', password:'password', dietary_requirements:'No Pork')
-u5 = User.create(name:'Billy', email:'billy@gmail.com', password:'password', dietary_requirements:'Nuts allergy')
+u1 = User.create(email:'filipe@gmail.com', password:'password')
+u2 = User.create(email:'marie@gmail.com', password:'password')
+u3 = User.create(email:'filipe@gmail.com', password:'password')
+u4 = User.create(email:'diandra@gmail.com', password:'password')
+u5 = User.create(email:'billy@gmail.com', password:'password')
 
 puts "Created #{User.count} Users"
 
@@ -31,14 +31,14 @@ puts "Created #{Recipe.count} Recipes"
 
 puts "Creating UserRecipes..."
 
-ur1 = UserRecipe.create(user: u2, recipe: r1)
-ur2 = UserRecipe.create(user: u1, recipe: r2)
-ur3 = UserRecipe.create(user: u1, recipe: r3)
-ur4 = UserRecipe.create(user: u3, recipe: r4)
-ur5 = UserRecipe.create(user: u2, recipe: r5)
-ur6 = UserRecipe.create(user: u2, recipe: r6)
-ur7 = UserRecipe.create(user: u4, recipe: r7)
-ur8 = UserRecipe.create(user: u4, recipe: r8)
+ur1 = UserRecipe.create(user_id: u2, recipe_id: r1)
+ur2 = UserRecipe.create(user_id: u1, recipe_id: r2)
+ur3 = UserRecipe.create(user_id: u1, recipe_id: r3)
+ur4 = UserRecipe.create(user_id: u3, recipe_id: r4)
+ur5 = UserRecipe.create(user_id: u2, recipe_id: r5)
+ur6 = UserRecipe.create(user_id: u2, recipe_id: r6)
+ur7 = UserRecipe.create(user_id: u4, recipe_id: r7)
+ur8 = UserRecipe.create(user_id: u4, recipe_id: r8)
 
 puts "Created #{UserRecipe.count} UserRecipes"
 
@@ -57,13 +57,13 @@ puts "Created #{Party.count} Parties"
 
 puts "Creating PartyRecipes..."
 
-pr1 = PartyRecipe.create(recipe: r1, party: p1)
-pr2 = PartyRecipe.create(recipe: r2, party: p2)
-pr3 = PartyRecipe.create(recipe: r3, party: p3)
-pr4 = PartyRecipe.create(recipe: r4, party: p4)
-pr5 = PartyRecipe.create(recipe: r5, party: p5)
-pr6 = PartyRecipe.create(recipe: r6, party: p6)
-pr7 = PartyRecipe.create(recipe: r7, party: p7)
-pr8 = PartyRecipe.create(recipe: r8, party: p8)
+pr1 = PartyRecipe.create(recipe_id: r1, party_id: p1)
+pr2 = PartyRecipe.create(recipe_id: r2, party_id: p2)
+pr3 = PartyRecipe.create(recipe_id: r3, party_id: p3)
+pr4 = PartyRecipe.create(recipe_id: r4, party_id: p4)
+pr5 = PartyRecipe.create(recipe_id: r5, party_id: p5)
+pr6 = PartyRecipe.create(recipe_id: r6, party_id: p6)
+pr7 = PartyRecipe.create(recipe_id: r7, party_id: p7)
+pr8 = PartyRecipe.create(recipe_id: r8, party_id: p8)
 
 puts "Created #{PartyRecipes.count} PartyRecipes"
