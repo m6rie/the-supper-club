@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_143211) do
   end
 
   create_table "party_dates", force: :cascade do |t|
-    t.date "date"
+    t.integer "date"
     t.string "votes"
     t.bigint "parties_id", null: false
     t.datetime "created_at", null: false
