@@ -16,7 +16,6 @@ Recipe.destroy_all
 puts "destroying parties..."
 User.destroy_all
 
-
 puts "Creating Users..."
 
 u1 = User.create!(name: 'Filipe', email:'filipe@gmail.com', password:'password', diet: 'Lactose Free')
