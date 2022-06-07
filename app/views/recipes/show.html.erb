@@ -1,2 +1,9 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<div class="container">
+<ul>
+  <h1><%= @recipe.title %></h1>
+  <h3><%= @recipe.description %></h3>
+  <li>Preparation time : <%= @recipe.prep_time %>min</li>
+  <li>Ingredients: <%= @recipe.ingredients %></li>
+  <li>Instructions: <%= @recipe.instructions %></li>
+</ul>
+</div>
