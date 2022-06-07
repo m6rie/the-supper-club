@@ -2,30 +2,40 @@
 
 <h1>Create a new party!</h1>
   <br>
-  <ul class="nav">
-    <li class="nav-item">
-      <div>
-        <a class="nav-link active" href="page1">Choose a name and a date</a>
-        <%= simple_form_for @party do |f| %>
-          <%= f.input :title, placeholder: "Name your dinner party" %>
-          <%= f.input :address, placeholder: "Where is your dinner party" %>
-          <%= "Choose a date" %>
-          <%= f.input :party_date_id, html: true %>
-          <%= "Add a date" %>
-          <% button_to "plus" %>
-            <%= f.input :party_date_id, html: true %>
-            <%= f.input :party_date_id, html: true %>
-          <span id="page2" class="btn btn-primary">Next page</span>
-      </div>
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="pills-name-tab" data-bs-toggle="pill" data-bs-target="#pills-name" type="button" role="tab" aria-controls="pills-name" aria-selected="true">Choose a name and a date</button>
     </li>
-    <li class="nav-item">
-      <div>
-        <a class="nav-link active" href="page2">Choose your theme</a>
-      </div>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-theme-tab" data-bs-toggle="pill" data-bs-target="#pills-theme" type="button" role="tab" aria-controls="pills-theme" aria-selected="false">Choose a theme</button>
     </li>
-    <%= f.submit id:"page2" %>
+  </ul>
+      <div class="tab-content" id="pills-tabContent">
+
+        <div class="tab-pane fade show active" id="pills-name" role="tabpanel" aria-labelledby="pills-name-tab" tabindex="0">
+          <h2>Choose a theme</h2>
+          <%= simple_form_for @party do |f| %>
+            <%= f.input :title, placeholder: "Name your dinner party" %>
+            <%= f.input :address, placeholder: "Where is your dinner party" %>
+            <%= "Choose a date" %>
+            <%= f.input :party_dates.date, html: true %>
+            <%= "Add a date" %>
+            <%# if statement: if "plus" add a line for the date %>
+            <% button_to "plus" %>
+              <%# <%= f.input :party_date_id, html: true %> %>
+              <%# <%= f.input :party_date_id, html: true %> %>
+            <span id="pills-theme" class="btn btn-primary">Next page</span>
+        </div>
+
+        <div class="tab-pane fade" id="pills-theme" role="tabpanel" aria-labelledby="pills-theme-tab" tabindex="0">
+          <h2>Choose a theme</h2>
+        </div>
+
+      </div>
+
+    <%= f.submit class: "btn submit-btn" %>
   <% end %>
   <br>
-  </ul>
+
 
 </div>
