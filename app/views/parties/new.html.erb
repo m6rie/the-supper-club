@@ -1,2 +1,31 @@
-<h1>Parties#new</h1>
-<p>Find me in app/views/parties/new.html.erb</p>
+<div class="container">
+
+<h1>Create a new party!</h1>
+  <br>
+  <ul class="nav">
+    <li class="nav-item">
+      <div>
+        <a class="nav-link active" href="page1">Choose a name and a date</a>
+        <%= simple_form_for @party do |f| %>
+          <%= f.input :title, placeholder: "Name your dinner party" %>
+          <%= f.input :address, placeholder: "Where is your dinner party" %>
+          <%= "Choose a date" %>
+          <%= f.input :party_date_id, html: true %>
+          <%= "Add a date" %>
+          <% button_to "plus" %>
+            <%= f.input :party_date_id, html: true %>
+            <%= f.input :party_date_id, html: true %>
+          <span id="page2" class="btn btn-primary">Next page</span>
+      </div>
+    </li>
+    <li class="nav-item">
+      <div>
+        <a class="nav-link active" href="page2">Choose your theme</a>
+      </div>
+    </li>
+    <%= f.submit id:"page2" %>
+  <% end %>
+  <br>
+  </ul>
+
+</div>
