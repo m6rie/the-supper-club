@@ -1,2 +1,19 @@
-<h1>Parties#edit</h1>
-<p>Find me in app/views/parties/edit.html.erb</p>
+<div class="container">
+
+<h1>Edit your party</h1>
+  <br>
+  <h3 id="page1">Name and date</h3>
+  <%= simple_form_for @party do |f| %>
+    <%= f.input :title, placeholder: "Name your dinner party" %>
+    <%= "Choose a date" %>
+    <%= f.input :party_date_id, html: true %>
+    <%= "Add a date" %>
+    <% if button_to "plus" %>
+        <%= f.input :party_date_id, html: true %>
+    <% else %>
+        <%= f.input :party_date_id, html: true %>
+    <% end %>
+    <span id="page2"><%= f.submit id:"btn submit-btn" %></span>
+  <% end %>
+  <br>
+</div>
