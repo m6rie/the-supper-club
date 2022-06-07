@@ -1,3 +1,3 @@
 class PartyDate < ApplicationRecord
-  has_many :parties
+  belongs_to :party
 end

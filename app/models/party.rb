@@ -4,5 +4,5 @@ class Party < ApplicationRecord
   belongs_to :user
   has_many :party_themes
   has_many :themes, through: :party_themes
-  belongs_to :party_date
+  has_many :party_date
 end
