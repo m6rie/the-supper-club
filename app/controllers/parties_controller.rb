@@ -15,6 +15,7 @@ class PartiesController < ApplicationController
   def create
     @party = Party.new(party_params)
     @party.user_id = current_user.id
+    @party_date = PartyDate.new
     if @party.save
       redirect_to party_path(@party)
     else
