@@ -1,0 +1,8 @@
+class Party < ApplicationRecord
+  has_many :party_recipes
+  has_many :recipes, through: :party_recipe
+  belongs_to :user
+  has_many :party_themes
+  has_many :themes, through: :party_themes
+  has_many :party_dates
+end
