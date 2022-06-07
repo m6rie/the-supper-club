@@ -18,15 +18,14 @@
             <%= f.input :title, placeholder: "Name your dinner party" %>
             <%= f.input :address, placeholder: "Where is your dinner party" %>
             <%= "Choose a date" %>
-            <%= f.input :party_dates.date, html: true %>
+            <%# <%= f.input :party.party_dates.date, html: true %> %>
             <%= "Add a date" %>
             <%# if statement: if "plus" add a line for the date %>
-            <% button_to "plus" %>
+            <%# <% button_to "plus" %> %>
               <%# <%= f.input :party_date_id, html: true %> %>
               <%# <%= f.input :party_date_id, html: true %> %>
             <span id="pills-theme" class="btn btn-primary">Next page</span>
         </div>
-
         <div class="tab-pane fade" id="pills-theme" role="tabpanel" aria-labelledby="pills-theme-tab" tabindex="0">
           <h2>Choose a theme</h2>
         </div>
