@@ -19,11 +19,11 @@ User.destroy_all
 
 puts "Creating Users..."
 
-u1 = User.create!(email:'filipe@gmail.com', password:'password')
-u2 = User.create(email:'marie@gmail.com', password:'password')
-u3 = User.create(email:'maria@gmail.com', password:'password')
-u4 = User.create(email:'diandra@gmail.com', password:'password')
-u5 = User.create(email:'billy@gmail.com', password:'password')
+u1 = User.create!(name: 'Filipe', email:'filipe@gmail.com', password:'password', diet: 'Lactose Free')
+u2 = User.create(name: 'Marie', email:'marie@gmail.com', password:'password', diet: 'Gluten Free')
+u3 = User.create(name: 'Maria', email:'maria@gmail.com', password:'password', diet: 'Vegetarian')
+u4 = User.create(name: 'Diandra', email:'diandra@gmail.com', password:'password', diet: 'No Pork')
+u5 = User.create(name: 'Billy', email:'billy@gmail.com', password:'password', diet: 'Nuts Allergy')
 
 puts "Created #{User.count} Users"
 
@@ -32,7 +32,7 @@ puts "Creating Recipes..."
 r1 = Recipe.create(title:'Burritos Locos', description:'Easy to make and very spicy!', prep_time:15, ingredients:"Coriander, Tortillas, Chilli, Sweetcorn and Spicy Mayo", instructions: 'Just put everything inside the Tortillas and Roll!')
 r2 = Recipe.create(title:'Sushi Rolls', description:'The best homemade Sushi', prep_time:50, ingredients:"Sushi Rice, Mayo, Soy Sauce, Smoked Salmon and Wasabi ", instructions: 'Cook Rice, and roll the sushi!')
 r3 = Recipe.create(title:'Pizza Napolitana', description:'Authentic Neapolitan Pizza', prep_time:45, ingredients:"Flour, Tomato, Mozzarela, Parmesan, Olive Oil and Basil ", instructions: 'Lay the dough and then throw it in the air!')
-r4 = Recipe.create(title:'Sushi Rolls', description:'Make your own traditional Greek pork souvlaki with gyros', prep_time:25, ingredients:"Pork, Garlic, Onion, Pita Bread, Tomato and Potatoes ", instructions: 'Put everything inside the pita bread!')
+r4 = Recipe.create(title:'Souvlaki Gyros', description:'Make your own traditional Greek pork souvlaki with gyros', prep_time:25, ingredients:"Pork, Garlic, Onion, Pita Bread, Tomato and Potatoes ", instructions: 'Put everything inside the pita bread!')
 r5 = Recipe.create(title:'Marry Me Chicken', description:'She/He will marry you after eating this!', prep_time:45, ingredients:"Chicken Breast, Olive Oil, Garlic, Cheese, Heavy Cream and Fresh Basil ", instructions: 'Make it with Love for your Love one!')
 r6 = Recipe.create(title:'Tarte Tatin', description:'Sweet and Sticky Caramel with Apples on top of Pastry', prep_time:20, ingredients:"Flour, Apples, Sugar, Butter and Creme Fraice", instructions: 'Cook a day or two ahead and oven it before serving')
 r7 = Recipe.create(title:'Fancy Cupcakes', description:'Queen worthy Cupcakes', prep_time:60, ingredients:"Flour, Butter, Sugar, Vanilla Extract, Milk and Pink Fondant ", instructions: 'Just have to look fancy while doing it')
