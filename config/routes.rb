@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   resources :parties
 
   resources :recipes, only: [:index, :show]
+  
   get "/my_recipes", to: "recipes#my_recipes"
+
+  resources :party_dates, only: [:index, :create]
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
