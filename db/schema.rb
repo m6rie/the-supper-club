@@ -19,10 +19,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_124254) do
     t.string "address"
     t.bigint "user_id", null: false
     t.bigint "recipe_id", null: false
-    t.bigint "party_date_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["party_date_id"], name: "index_parties_on_party_date_id"
     t.index ["recipe_id"], name: "index_parties_on_recipe_id"
     t.index ["user_id"], name: "index_parties_on_user_id"
   end
@@ -30,8 +28,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_124254) do
   create_table "party_dates", force: :cascade do |t|
     t.integer "date"
     t.string "votes"
+    t.bigint "parties_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["parties_id"], name: "index_party_dates_on_parties_id"
   end
 
   create_table "party_recipes", force: :cascade do |t|
@@ -89,9 +89,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_124254) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "parties", "party_dates"
   add_foreign_key "parties", "recipes"
   add_foreign_key "parties", "users"
+  add_foreign_key "party_dates", "parties", column: "parties_id"
   add_foreign_key "party_recipes", "parties"
   add_foreign_key "party_recipes", "recipes"
   add_foreign_key "party_themes", "parties"
