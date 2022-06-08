@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_07_143211) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_08_113522) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,17 +21,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_143211) do
     t.bigint "recipe_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "theme"
+    t.date "date"
     t.index ["recipe_id"], name: "index_parties_on_recipe_id"
     t.index ["user_id"], name: "index_parties_on_user_id"
-  end
-
-  create_table "party_dates", force: :cascade do |t|
-    t.date "date"
-    t.string "votes"
-    t.bigint "parties_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["parties_id"], name: "index_party_dates_on_parties_id"
   end
 
   create_table "party_recipes", force: :cascade do |t|
@@ -41,15 +34,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_143211) do
     t.datetime "updated_at", null: false
     t.index ["party_id"], name: "index_party_recipes_on_party_id"
     t.index ["recipe_id"], name: "index_party_recipes_on_recipe_id"
-  end
-
-  create_table "party_themes", force: :cascade do |t|
-    t.bigint "theme_id", null: false
-    t.bigint "party_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["party_id"], name: "index_party_themes_on_party_id"
-    t.index ["theme_id"], name: "index_party_themes_on_theme_id"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -93,11 +77,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_143211) do
 
   add_foreign_key "parties", "recipes"
   add_foreign_key "parties", "users"
-  add_foreign_key "party_dates", "parties", column: "parties_id"
   add_foreign_key "party_recipes", "parties"
   add_foreign_key "party_recipes", "recipes"
-  add_foreign_key "party_themes", "parties"
-  add_foreign_key "party_themes", "themes"
   add_foreign_key "user_recipes", "recipes"
   add_foreign_key "user_recipes", "users"
 end
