@@ -10,13 +10,13 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Recipes", "#" , class: "nav-link" %>
+            <%= link_to "Recipes", recipes_path , class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Create a Party", "#", class: "nav-link" %>
+            <%= link_to "Create a Party", new_party_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "costume.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "costume.png", class: "avatar-square dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My Profile", "#", class: "dropdown-item" %>
               <%= link_to "Settings", "#", class: "dropdown-item" %>

@@ -17,6 +17,16 @@ class RecipesController < ApplicationController
   def show
   end
 
+  # def add_favorites
+  #   @recipes = Recipe.find(params)
+  #   UserRecipe.create(user_id: current_user.id, recipe_id: @recipe.id )
+  # end
+
+  # link_to add_favorite_path, params(@recipe.id) do
+  #   <i class="fa-thin fa-heart"></i>
+  # end
+  # end
+
   private
 
   def set_recipe
