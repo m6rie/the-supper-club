@@ -1,2 +1,6 @@
 <h1>Parties#show</h1>
-<p>Find me in app/views/parties/show.html.erb</p>
+<div class = "show-container">
+  <% @parties.each do |party| %>
+    <%= @party.name %>
+  <% end %>
+</div>
