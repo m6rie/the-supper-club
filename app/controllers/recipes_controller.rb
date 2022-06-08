@@ -11,8 +11,7 @@ class RecipesController < ApplicationController
   end
 
   def my_recipes
-    @recipes = current_user.recipes
-    # @recipes = Recipe.where(user_id: current_user.id)
+    @my_recipes = UserRecipe.where(user_id: current_user.id)
   end
 
   def show

@@ -1,2 +1,68 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!doctype html>
+  <html>
+  <head>
+    <title>The Supper Club</title>
+    <meta name="description" content="Our first page">
+  </head>
+  <body>
+    <% if user_signed_in? %>
+     <section class = "sign-in-home-container">
+        <h2> Welcome <%= current_user.name %>! </h2>
+        <br>
+        <div class="row">
+        <div class="col-sm-6 recent-container">
+          <h3>Your recent supper clubs</h3>
+          <br>
+          <div class="card-recent-container">
+            <% @my_party.each do |party| %>
+              <div class="card-party card center">
+                <%= link_to party_path(party) do %>
+                <p> <%= party.title %> </p>
+              </div>
+              <% end %>
+            <% end %>
+            </div>
+            <br>
+            <button>View all</button>
+          </div>
+
+          <div class="col-sm-6 new-party-container center">
+          <%= link_to new_party_path do %>
+          <%= image_tag "Dinner_party_1.png", class: "create-img" %>
+          <h3>Create a new supper club!</h3>
+          <i class="fa-solid fa-arrow-right-long"></i>
+          <% end %>
+          <br>
+          </div>
+      </div>
+
+    </section>
+     <section class = "my-parties-container">
+      <hr>
+      <h2> My supper clubs </h2>
+      <div class="card-recent-container">
+      <% @my_party.each do |party| %>
+              <div class="card-party card center">
+                <%= link_to party_path(party) do %>
+                <p> <%= party.title %> </p>
+              </div>
+              <% end %>
+            <% end %>
+            </div>
+     </section>
+
+
+
+    <% else %>
+    <section class = "home-top">
+      <h1>Logo placeholder</h1>
+      <img src = "" alt="">
+      <button class = "start-btn"> <%=  link_to "Let's start planning your supper club!", user_session_path %>
+      </button>
+    </section>
+    <section class = "home-info">
+      <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </h2>
+    </section>
+    <% end %>
+  </body>
+</html>
