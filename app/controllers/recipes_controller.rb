@@ -10,6 +10,10 @@ class RecipesController < ApplicationController
     end
   end
 
+  def my_recipes
+    @my_recipes = UserRecipe.where(user_id: current_user.id)
+  end
+
   def show
   end
 
