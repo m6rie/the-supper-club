@@ -9,6 +9,10 @@ class PartiesController < ApplicationController
   end
 
   def new
+    # @party_date = PartyDate.new
+    # @party_theme = PartyTheme.new
+    # @theme = Theme.new
+    # @party_theme = @theme
     @party = Party.new
   end
 
