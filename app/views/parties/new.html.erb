@@ -1,61 +1,53 @@
 <div class="container">
 
-<h1>Create a new party!</h1>
-  <br>
-  <ul class="nav">
-    <li class="nav-item">
-      <div>
-        <a class="nav-link active" href="page1">Choose a name and a date</a>
-        <%= simple_form_for @party do |f| %>
-          <%= f.input :title, placeholder: "Name your dinner party" %>
-          <%= f.input :address, placeholder: "Where is your dinner party" %>
-          <%= "Choose a date" %>
-          <%# <%= f.input :party_date_id, html: true %> %>
-          <%= "Add a date" %>
-          <% button_to "plus" %>
+  <h1>Create a new party!</h1>
+    <br>
+    <ul class="nav">
+      <li class="nav-item">
+        <div>
+          <a class="nav-link active" href="page1">Choose a name and a date</a>
+          <%= simple_form_for @party do |f| %>
+            <%= f.input :title, placeholder: "Name your dinner party" %>
+            <%= f.input :address, placeholder: "Where is your dinner party" %>
+            <%= "Choose a date" %>
             <%# <%= f.input :party_date_id, html: true %> %>
-            <%# <%= f.input :party_date_id, html: true %> %>
-          <span id="page2" class="btn btn-primary">Next page</span>
-      </div>
-    </li>
-    <li class="nav-item">
-      <div>
-        <a class="nav-link active" href="page2">Choose your theme</a>
-      </div>
-    </li>
-    <%= f.submit id:"page2" %>
-  <% end %>
+            <%= "Add a date" %>
+            <% button_to "plus" %>
+              <%# <%= f.input :party_date_id, html: true %> %>
+              <%# <%= f.input :party_date_id, html: true %> %>
+            <span id="page2" class="btn btn-primary">Next page</span>
+        </div>
+      </li>
+      <li class="nav-item">
+        <div>
+          <a class="nav-link active" href="page2">Choose your theme</a>
+        </div>
+      </li>
+      <%= f.submit id:"page2" %>
+    <% end %>
+    <br>
+    </ul>
   <br>
-  </ul>
+  <br>
+  <br>
+  <div data-controller="search-recipes">
 
-<div data-controller="search-recipes">
+    <div>
+      <%= simple_form_for new_party_path, method: :get, html: { data: { search_recipes_target: "form", action: "submit->search-recipes#search"}} do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "search recipes",
+        data: {search_recipes_target: "input"}  %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    <br>
+    <br>
 
-  <div>
-    <%= simple_form_for new_party_path, method: :get, html: { data: { search_recipes_target: "form", action: "submit->search-recipes#search"}} do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "search recipes",
-      data: {search_recipes_target: "input"}  %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-  </div>
-
+  <br>
+  <br>
   <div class="row" data-search-recipes-target="content">
-    <div class="row">
-      <div class="col-4" data-search-recipes-target="image"></div>
-      <div class="col-8" data-search-recipes-target="health"></div>
-    </div>
-    <div class="row">
-    <div class="col-4">calories</div>
-    <div class="col-8">
-      <div class="row">
-        <div class="col-4">fat</div>
-        <div class="col-4">carbs</div>
-        <div class="col-4">protein</div>
-      </div>
-    </div>
-    </div>
   </div>
 
 </div>
