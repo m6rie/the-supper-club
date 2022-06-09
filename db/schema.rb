@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_08_144035) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_09_133548) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_08_144035) do
     t.integer "appetizers"
     t.integer "mains"
     t.integer "desserts"
+    t.string "status", default: "pending"
+    t.index ["recipe_id"], name: "index_parties_on_recipe_id"
     t.index ["user_id"], name: "index_parties_on_user_id"
   end
 
