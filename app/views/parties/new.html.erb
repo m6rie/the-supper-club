@@ -1,33 +1,70 @@
-<div class="container">
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="pills-name-tab" data-bs-toggle="pill" data-bs-target="#pills-name" type="button" role="tab" aria-controls="pills-name" aria-selected="true">Name and details</button>
+    </li>
+    <%# <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-theme-tab" data-bs-toggle="pill" data-bs-target="#pills-theme" type="button" role="tab" aria-controls="pills-theme" aria-selected="false">Attendancy</button>
+    </li> %>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-theme-tab" data-bs-toggle="pill" data-bs-target="#pills-theme" type="button" role="tab" aria-controls="pills-theme" aria-selected="false">Theme</button>
+    </li>
+    <%# <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-budget-tab" data-bs-toggle="pill" data-bs-target="#pills-budget" type="button" role="tab" aria-controls="pills-budget" aria-selected="false">Budget</button>
+    </li> %>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Attendancy</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-food-tab" data-bs-toggle="pill" data-bs-target="#pills-food" type="button" role="tab" aria-controls="pills-food" aria-selected="false">Dishes</button>
+    </li>
+    <%# <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-date-tab" data-bs-toggle="pill" data-bs-target="#pills-date" type="button" role="tab" aria-controls="pills-date" aria-selected="false">Theme</button>
+    </li> %>
+  </ul>
+      <div class="tab-content" id="pills-tabContent">
 
-  <h1>Create a new party!</h1>
-    <br>
-    <ul class="nav">
-      <li class="nav-item">
-        <div>
-          <a class="nav-link active" href="page1">Choose a name and a date</a>
+        <div class="tab-pane fade show active" id="pills-name" role="tabpanel" aria-labelledby="pills-name-tab" tabindex="0">
+          <h2>Name and details</h2>
           <%= simple_form_for @party do |f| %>
             <%= f.input :title, placeholder: "Name your dinner party" %>
             <%= f.input :address, placeholder: "Where is your dinner party" %>
-            <%= "Choose a date" %>
-            <%# <%= f.input :party_date_id, html: true %> %>
-            <%= "Add a date" %>
-            <% button_to "plus" %>
-              <%# <%= f.input :party_date_id, html: true %> %>
-              <%# <%= f.input :party_date_id, html: true %> %>
-            <span id="page2" class="btn btn-primary">Next page</span>
+            <%= f.input :date, html5: true %>
+            <%# <span id="pills-type" class="btn btn-primary">Next page</span> %>
+          <% end %>
         </div>
-      </li>
-      <li class="nav-item">
-        <div>
-          <a class="nav-link active" href="page2">Choose your theme</a>
+
+        <div class="tab-pane fade" id="pills-theme" role="tabpanel" aria-labelledby="pills-theme-tab" tabindex="0">
+          <h2>Choose your theme</h2>
+          <%= simple_form_for @party do |f| %>
+            <%= f.input :theme, collection: Theme::CATEGORY %>
+          <% end %>
         </div>
-      </li>
-      <%= f.submit id:"page2" %>
-    <% end %>
-    <br>
-    </ul>
+
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+          <h2>How many people are coming?</h2>
+          <%= simple_form_for @party do |f| %>
+            <%= f.input :attendancy, placeholder: "Number of people coming" %>
+          <% end %>
+        </div>
+
+        <div class="tab-pane fade container" id="pills-food" role="tabpanel" aria-labelledby="pills-food-tab" tabindex="0">
+          <div class="row align-items-start">
+            <h2>How many dishes do you like to make?</h2>
+            <%# recipe_id %>
+            <%= simple_form_for @party do |f| %>
+              <div class="col-3" ><%= f.input :appetizers, placeholder: "appetizers"  %></div>
+              <div class="col-3" ><%= f.input :mains, placeholder: "mains" %></div>
+              <div class="col-3" ><%= f.input :desserts, placeholder: "dessert" %></div>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+    <%= simple_form_for @party do |f| %>
+    <%= f.submit class: "btn submit-btn" %>
+  <% end %>
   <br>
+
   <br>
   <br>
   <div data-controller="search-recipes">
@@ -49,5 +86,3 @@
   <br>
   <div class="row" data-search-recipes-target="content">
   </div>
-
-</div>

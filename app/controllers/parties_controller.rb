@@ -9,12 +9,17 @@ class PartiesController < ApplicationController
   end
 
   def new
+    # @party_date = PartyDate.new
+    # @party_theme = PartyTheme.new
+    # @theme = Theme.new
+    # @party_theme = @theme
     @party = Party.new
   end
 
   def create
     @party = Party.new(party_params)
     @party.user_id = current_user.id
+    # @party_date = PartyDate.new
     if @party.save
       redirect_to party_path(@party)
     else
@@ -39,7 +44,7 @@ class PartiesController < ApplicationController
   private
 
   def party_params
-    @party.require(:party).permit(:title, :address)
+    params.require(:party).permit(:title, :address, :date, :theme, :attendancy, :appetizers, :mains, :desserts)
   end
 
   def set_party

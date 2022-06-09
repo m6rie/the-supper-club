@@ -7,3 +7,7 @@
   <li>Instructions: <%= @recipe.instructions %></li>
 </ul>
 </div>
+
+<div>
+  <%= button_to "Add to favourites", my_recipes_path, :method => "get" %>
+</div>
