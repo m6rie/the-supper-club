@@ -1,6 +1,53 @@
-<h1>Parties#show</h1>
+
 <div class = "show-container">
-  <% @parties.each do |party| %>
-    <%= @party.name %>
-  <% end %>
+  <div class="row">
+
+    <%= render 'shared/party_info' %>
+
+    <div class="party-desc-container col-9">
+    <div class="top-party-desc-container">
+     <div class="recipe-head">
+      <h2>On the menu<h2>
+      <div class = "recipe-head-links">
+      <button>Edit</button>
+      <%= link_to "party_ingredients", party_ingredients_path(@party) %>
+      </div>
+     </div>
+     <div class="recipe-content center">
+      <% @party.recipes.each do |recipe| %>
+        <div class="recipe-card">
+          <h3> Image placeholder </h3>
+          <h3> <%= recipe.title %> </h3>
+      </div>
+      <% end %>
+
+      <div class="recipe-card">
+        <h3> Image placeholder </h3>
+        <h3> Recipe </h3>
+      </div>
+
+      <div class="recipe-card">
+        <h3> Image placeholder </h3>
+        <h3> Recipe </h3>
+      </div>
+
+      <div class="recipe-card">
+        <h3> Image placeholder </h3>
+        <h3> Recipe </h3>
+      </div>
+      <hr>
+    </div>
+    </div>
+    <hr>
+    <div class="bottom-party-desc-container">
+    <div class="music-container">
+      <h3>Music</h3>
+    </div>
+    <div class="convo-container">
+    <h3>Conversation</h3>
+    </div>
+    </div>
+  </div>
+  <br>
+  <button class = "see-all"> see other dinner parties </button>
 </div>
