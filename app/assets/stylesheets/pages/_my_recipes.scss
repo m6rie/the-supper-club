@@ -2,12 +2,12 @@
   height: 120px;
   width: 40vw;
   display: flex;
-  margin-left: 350px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
   overflow: hidden;
   background: white;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .card-recipe img {
@@ -23,11 +23,11 @@
 }
 
 .card-recipe p {
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
-  margin-top: 8px;
+  margin-top: 5px;
 }
 
 .card-recipe .card-recipe-infos {
