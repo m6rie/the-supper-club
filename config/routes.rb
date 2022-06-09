@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :parties
+  resources :parties do
+    get "ingredients", to: "parties#ingredients"
+  end
 
   resources :recipes, only: [:index, :show]
   get "my_recipes", to: "recipes#my_recipes"

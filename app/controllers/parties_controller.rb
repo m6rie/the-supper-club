@@ -6,6 +6,8 @@ class PartiesController < ApplicationController
   end
 
   def show
+    @recipes = Recipe.all
+    @party_recipe = Recipe.where(user_id: @party.id)
   end
 
   def new
@@ -14,6 +16,15 @@ class PartiesController < ApplicationController
     # @theme = Theme.new
     # @party_theme = @theme
     @party = Party.new
+  end
+
+  def ingredients
+    @party = Party.find(params[:party_id])
+    @party_recipe = @party.recipes
+
+    @party_recipe.each do |recipe|
+      @ingredients = recipe[:ingredients].split(",")
+    end
   end
 
   def create
