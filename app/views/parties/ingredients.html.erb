@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <div class="row">
+    <%= render 'shared/party_info' %>
+    <div class="party-desc-container col-9">
+    <h1> Ingredient list </h1>
+    <ul>
+    <%  @ingredients.each do |ingredient| %>
+    <li class ="ingredient">   <%= check_box_tag ingredient, false %> <%= ingredient %> </li>
+    <% end %>
+    </ul>
+    </div>
+    </div>
+  </body>
+</html>

@@ -124,26 +124,42 @@ puts "Created #{UserRecipe.count} UserRecipes"
 
 puts "Creating Parties..."
 
-p1 = Party.create!(title: 'Mexican Fiesta', address: "Cancún", user_id: u3.id, recipe_id: r1.id)
-p2 = Party.create(title: 'Japanese Dinner', address: "Tokyo", user_id: u1.id, recipe_id: r2.id)
-p3 = Party.create(title: 'Cena Italiana', address: "Napoli", user_id: u1.id, recipe_id: r3.id)
-p4 = Party.create(title: 'Greek Feast', address: "Athens", user_id: u3.id, recipe_id: r4.id)
-p5 = Party.create(title: 'Romantic Dinner', address: "Paris", user_id: u2.id, recipe_id: r5.id)
-p6 = Party.create(title: 'French Finess', address: "Paris", user_id: u2.id, recipe_id: r6.id)
-p7 = Party.create(title: 'Brit Tea Party', address: "London", user_id: u4.id, recipe_id: r7.id)
-p8 = Party.create(title: 'Halloween Bagel Party', address: "London", user_id: u4.id, recipe_id: r8.id)
+p1 = Party.create!(title: 'Mexican Fiesta', address: "Cancún", theme: "Mexican", date: "21-06-2022", attendancy: 6, appetizers: 1, mains: 1, desserts: 1, user_id: u3.id)
+p2 = Party.create(title: 'Japanese Dinner', address: "Tokyo", theme: "Japanese", date: "29-06-2022", attendancy: 4, appetizers: 1, mains: 1, desserts: 1, user_id: u1.id)
+p3 = Party.create(title: 'Cena Italiana', address: "Napoli", theme: "Italian", date: "12-06-2022", attendancy: 4, appetizers: 1, mains: 1, desserts: 1, user_id: u1.id)
+p4 = Party.create(title: 'Greek Feast', address: "Athens", theme: "Greek", date: "6-06-2022", attendancy: 8, appetizers: 1, mains: 1, desserts: 1, user_id: u3.id)
+p5 = Party.create(title: 'Romantic Dinner', address: "Paris", theme: "Romantic", date: "8-06-2022", attendancy: 2, appetizers: 1, mains: 1, desserts: 1, user_id: u2.id)
+p6 = Party.create(title: 'French Finess', address: "Paris", theme: "French", date: "3-06-2022", attendancy: 5, appetizers: 1, mains: 1, desserts: 1, user_id: u2.id)
+p7 = Party.create(title: 'Brit Tea Party', address: "London", theme: "Tea", date: "26-06-2022", attendancy: 4, appetizers: 1, mains: 1, desserts: 1, user_id: u4.id)
+p8 = Party.create(title: 'Halloween Bagel Party', address: "London", theme: "Halloween", date: "29-06-2022", attendancy: 9, appetizers: 1, mains: 1, desserts: 1, user_id: u4.id)
 
 puts "Created #{Party.count} Parties"
 
 puts "Creating PartyRecipes..."
 
-pr1 = PartyRecipe.create!(recipe_id: r1.id, party_id: p1.id)
-pr2 = PartyRecipe.create(recipe_id: r2.id, party_id: p2.id)
-pr3 = PartyRecipe.create(recipe_id: r3.id, party_id: p3.id)
-pr4 = PartyRecipe.create(recipe_id: r4.id, party_id: p4.id)
-pr5 = PartyRecipe.create(recipe_id: r5.id, party_id: p5.id)
-pr6 = PartyRecipe.create(recipe_id: r6.id, party_id: p6.id)
-pr7 = PartyRecipe.create(recipe_id: r7.id, party_id: p7.id)
-pr8 = PartyRecipe.create(recipe_id: r8.id, party_id: p8.id)
+PartyRecipe.create!(recipe_id: r1.id, party_id: p1.id)
+PartyRecipe.create(recipe_id: r2.id, party_id: p2.id)
+PartyRecipe.create(recipe_id: r3.id, party_id: p3.id)
+PartyRecipe.create(recipe_id: r4.id, party_id: p4.id)
+PartyRecipe.create(recipe_id: r5.id, party_id: p5.id)
+PartyRecipe.create(recipe_id: r6.id, party_id: p6.id)
+PartyRecipe.create(recipe_id: r7.id, party_id: p7.id)
+PartyRecipe.create(recipe_id: r8.id, party_id: p8.id)
+PartyRecipe.create(recipe_id: r9.id, party_id: p2.id)
+PartyRecipe.create(recipe_id: r10.id, party_id: p3.id)
+PartyRecipe.create(recipe_id: r11.id, party_id: p1.id)
+PartyRecipe.create(recipe_id: r12.id, party_id: p6.id)
+PartyRecipe.create(recipe_id: r13.id, party_id: p2.id)
+PartyRecipe.create(recipe_id: r13.id, party_id: p1.id)
+PartyRecipe.create(recipe_id: r13.id, party_id: p3.id)
+PartyRecipe.create(recipe_id: r9.id, party_id: p4.id)
+PartyRecipe.create(recipe_id: r11.id, party_id: p7.id)
+PartyRecipe.create(recipe_id: r3.id, party_id: p8.id)
+PartyRecipe.create(recipe_id: r13.id, party_id: p4.id)
+PartyRecipe.create(recipe_id: r9.id, party_id: p5.id)
+PartyRecipe.create(recipe_id: r7.id, party_id: p5.id)
+PartyRecipe.create(recipe_id: r9.id, party_id: p6.id)
+PartyRecipe.create(recipe_id: r12.id, party_id: p7.id)
+PartyRecipe.create(recipe_id: r13.id, party_id: p8.id)
 
 puts "Created #{PartyRecipe.count} PartyRecipes"

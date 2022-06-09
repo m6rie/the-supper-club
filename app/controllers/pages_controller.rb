@@ -3,6 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @parties = Party.all
-    @my_party = Party.where(user_id: current_user.id)
+    @my_party = Party.where(user_id: current_user)
   end
 end

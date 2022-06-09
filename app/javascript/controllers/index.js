@@ -7,5 +7,10 @@ import { application } from "./application"
 import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
 
+
 import NavtabActiveController from "./navtab_active_controller.js"
 application.register("navtab-active", NavtabActiveController)
+
+import SearchRecipesController from "./search_recipes_controller.js"
+application.register("search-recipes", SearchRecipesController)
+

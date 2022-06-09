@@ -1,0 +1,56 @@
+.show-container {
+  margin-top: 20px;
+  height: 100vh;
+  max-width:100%;
+}
+
+.party-info-container {
+  background-color: #C9FBC5;
+  padding: 30px;
+  border-radius: 10px;
+  max-width:100%;
+}
+
+.party-desc-container {
+  padding: 20px;
+
+  .top-party-desc-container {
+    .recipe-head {
+      display: flex;
+      justify-content: space-between;
+
+      .recipe-card {
+        background: red;
+      }
+
+    }
+
+    .recipe-content {
+      display: flex;
+    }
+  }
+
+  .bottom-party-desc-container {
+    display: flex;
+
+    .music-container {
+      background: red;
+      padding: 100px;
+      flex-grow: 2;
+    }
+
+    .convo-container {
+      background: yellow;
+      padding: 100px;
+    }
+  }
+
+}
+
+// .music-container {
+//   background: red;
+// }
+
+// .bottom-party-desc-container {
+//   display: flex;
+// }
