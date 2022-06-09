@@ -15,6 +15,7 @@ class PartiesController < ApplicationController
     # @party_theme = PartyTheme.new
     # @theme = Theme.new
     # @party_theme = @theme
+    @recipes = Recipe.all
     @party = Party.new
   end
 
