@@ -65,24 +65,37 @@
   <% end %>
   <br>
 
-  <br>
-  <br>
-  <div data-controller="search-recipes">
 
-    <div>
-      <%= simple_form_for new_party_path, method: :get, html: { data: { search_recipes_target: "form", action: "submit->search-recipes#search"}} do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "search recipes",
-        data: {search_recipes_target: "input"}  %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-      <% end %>
+<%# draggable %>
+
+  <div class="container" data-controller="draggable">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-3"></div>
+      <div class="col-3"></div>
+      <div class="col-3"></div>
     </div>
-    <br>
-    <br>
 
-  <br>
-  <br>
-  <div class="row" data-search-recipes-target="content">
+
+    <br>
+    <br>
+    <div data-controller="search-recipes">
+
+      <div>
+        <%= simple_form_for new_party_path, method: :get, html: { data: { search_recipes_target: "form", action: "submit->search-recipes#search"}} do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "search recipes",
+          data: {search_recipes_target: "input"}  %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <br>
+      <br>
+
+    <br>
+    <br>
+    <div class="row" data-search-recipes-target="content">
+    </div>
   </div>
