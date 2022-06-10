@@ -1,31 +1,26 @@
-  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="pills-name-tab" data-bs-toggle="pill" data-bs-target="#pills-name" type="button" role="tab" aria-controls="pills-name" aria-selected="true">Name and details</button>
-    </li>
+    <div class= "new-party-container center">
+    <h1> Create your party! </h1>
+    <ul class="nav nav-pills mb-3 center" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-name-tab" data-bs-toggle="pill" data-bs-target="#pills-name" type="button" role="tab" aria-controls="pills-name" aria-selected="true">Name and details</button>
+      </li>
+      <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-theme-tab" data-bs-toggle="pill" data-bs-target="#pills-theme" type="button" role="tab" aria-controls="pills-theme" aria-selected="false">Theme</button>
+      </li>
+      <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Guests</button>
+      </li>
 
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-theme-tab" data-bs-toggle="pill" data-bs-target="#pills-theme" type="button" role="tab" aria-controls="pills-theme" aria-selected="false">Theme</button>
-    </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Attendancy</button>
-    </li>
-
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-food-tab" data-bs-toggle="pill" data-bs-target="#pills-food" type="button" role="tab" aria-controls="pills-food" aria-selected="false">Dishes</button>
-    </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-recipe-tab" data-bs-toggle="pill" data-bs-target="#pills-recipe" type="button" role="tab" aria-controls="pills-recipe" aria-selected="false">Your tailored recipes</button>
-    </li>
-  </ul>
-
+      <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-food-tab" data-bs-toggle="pill" data-bs-target="#pills-food" type="button" role="tab" aria-controls="pills-food" aria-selected="false">Dishes</button>
+      </li>
+      <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-recipe-tab" data-bs-toggle="pill" data-bs-target="#pills-recipe" type="button" role="tab" aria-controls="pills-recipe" aria-selected="false">Recipes</button>
+      </li>
+    </ul>
+    <br>
       <div class="tab-content" id="pills-tabContent"
           data-controller="navtab-active">
-          <%# <input data-navtab-active-target="navtabActive" type="text"> %>
-
-            <%# navtab_active_target: "navtabActive",
-            action: "button->navtab-active#active",
-            controller: "navtab-active"
-            # data-action="event->controller-name#method-name" %>
 
         <div class="tab-pane fade show active" id="pills-name" role="tabpanel" aria-labelledby="pills-name-tab" tabindex="0">
           <h2>Name and details</h2>
@@ -33,35 +28,32 @@
             <%= f.input :title, placeholder: "Name your dinner party" %>
             <%= f.input :address, placeholder: "Where is your dinner party" %>
             <%= f.input :date, html5: true %>
-
-            <%# <div data-controller="" class="btn btn-primary">Next page</div> %>
-            <%# <button class="btn btn-primary" data-action="click->navtab-active#active">Next</button> %>
         </div>
 
-        <div class="tab-pane fade" id="pills-theme" role="tabpanel" aria-labelledby="pills-theme-tab" tabindex="0" data-navtab-active-target="pages">
+        <div class="tab-pane new-theme fade" id="pills-theme" role="tabpanel" aria-labelledby="pills-theme-tab" tabindex="0" data-navtab-active-target="pages">
           <h2>Choose your theme</h2>
             <%= f.input :theme, collection: Theme::CATEGORY %>
         </div>
 
-        <div class="tab-pane fade" id="pills-contact" data-search-recipes-target="pages" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+        <div class="tab-pane fade center" id="pills-contact" data-search-recipes-target="pages" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
           <h2>How many people are coming?</h2>
-            <%= f.input :attendancy, placeholder: "Number of people coming" %>
+          <br>
+          <div class="guest-card">
+            <%= f.input :attendancy, placeholder: "0" %>
+            </div>
         </div>
 
         <div class="tab-pane fade container" id="pills-food" role="tabpanel" aria-labelledby="pills-food-tab" tabindex="0">
-          <div class="row align-items-start">
+          <div class="row align-items-start center">
             <h2>How many dishes do you like to make?</h2>
-              <div class="col-3" ><%= f.input :appetizers, placeholder: "appetizers"  %></div>
-              <div class="col-3" ><%= f.input :mains, placeholder: "mains" %></div>
-              <div class="col-3" ><%= f.input :desserts, placeholder: "dessert" %></div>
+            <br>
+              <div class="dishes-card col-3 center" ><%= f.input :appetizers, placeholder: "0"  %></div>
+              <div class="dishes-card col-3 center" ><%= f.input :mains, placeholder: "0" %></div>
+              <div class="dishes-card col-3 center" ><%= f.input :desserts, placeholder: "0" %></div>
           </div>
         </div>
 
         <div class="tab-pane fade" id="pills-recipe" role="tabpanel" aria-labelledby="pills-recipe-tab" tabindex="0">
-        <h2>Your recipes</h2>
-          <br>
-          <br>
-
         <div class="row">
           <div class="filter-container col-2" style = "background-color: none; border:1px solid black">
           <h2> Filter </h2>
@@ -74,7 +66,7 @@
             <div class="recipe-container">
             <% @recipes.first(3).each do |recipe| %>
               <div class="recipe-card center">
-              <div class="recipe-img" style="background-image: url(<%=recipe.photo_url%>); width: 300px; height: 150px; object-fit: cover"></div>
+              <div class="recipe-img" style="background-image: url(<%=recipe.photo_url%>); width: 300px; height: 150px; background-size: cover"></div>
               <p><%= recipe.title %><p>
               </div>
             <% end %>
@@ -98,6 +90,7 @@
             </div>
             </div>
           </div>
+</div>
 
 
 
