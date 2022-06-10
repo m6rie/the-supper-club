@@ -50,3 +50,32 @@
 .recipe-search-container {
   text-align: left;
 }
+
+.search-recipe-card {
+  width: 300px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.search-button {
+  color: black;
+  padding: 10px;
+  margin-bottom: 30px;
+  border: none;
+  text-decoration: underline;
+}
+
+.create-party-btn {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background-color: #C9FBC5;
+  color: black;
+  border: 1px solid black;
+  text-decoration: none;
+}
+
+.create-party-btn a {
+  text-decoration: none;
+}

@@ -55,21 +55,32 @@
 
         <div class="tab-pane fade" id="pills-recipe" role="tabpanel" aria-labelledby="pills-recipe-tab" tabindex="0">
         <div class="row">
-          <div class="filter-container col-2" style = "background-color: none; border:1px solid black">
+          <%# <div class="filter-container col-2" style = "background-color: none; border:1px solid black">
           <h2> Filter </h2>
 
-          </div>
+          </div> %>
           <div class="recipe-search-container col-10">
             <div class="top-recipe-search-container">
             <h2>On the menu</h2>
+            <p>Drag recipes to replace</p>
             </div>
             <div class="recipe-container">
-            <% @recipes.first(3).each do |recipe| %>
-              <div class="recipe-card center">
-              <div class="recipe-img" style="background-image: url(<%=recipe.photo_url%>); width: 300px; height: 150px; background-size: cover"></div>
-              <p><%= recipe.title %><p>
+            <div class="search-recipe-card center">
+              <div class="recipe-img" style="background-image: url(https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtbmFtZTYxOTYtbmFtZS1jaGltLmpwZw.jpg); width: 250px; height: 150px; background-size: cover"></div>
+              <p>Sushi Rolls<p>
               </div>
-            <% end %>
+
+              <div class="search-recipe-card center">
+              <div class="recipe-img" style="background-image: url(https://3sg1ub4c9ujs3ydnjk3mgck0-wpengine.netdna-ssl.com/wp-content/uploads/2020/06/John-West-Final_Italian-Tuna-and-Mozzarella-Salad-with-Ciabatta_2160x960px.jpg); width: 250px; height: 150px; background-size: cover"></div>
+              <p>Tuna Salad<p>
+              </div>
+
+              <div class="search-recipe-card center">
+              <div class="recipe-img" style="background-image: url(https://static01.nyt.com/images/2019/05/09/dining/key-lime-pie-2/key-lime-pie-2-articleLarge.jpg); width: 250px; height: 150px; background-size: cover"></div>
+              <p>Key Lime Pie<p>
+              </div>
+
+
             </div>
 
             <div class="bottom-recipe-search-container">
@@ -82,7 +93,7 @@
                 class: "form-control",
                 placeholder: "search recipes",
                 data: {search_recipes_target: "input"}  %>
-              <%= submit_tag "Search", class: "btn btn-primary" %>
+              <%= submit_tag "Search", class: "search-button" %>
               <% end %>
             </div>
             <div class="row" data-search-recipes-target="content">
@@ -90,27 +101,18 @@
             </div>
             </div>
           </div>
+          <br>
+           <br>
+            <%= link_to "Create party!",  '/parties/2', class: "create-party-btn" %>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
         <%# redirect_to party_recipe_search path %>
-          <%= f.submit class: "btn submit-btn" %>
+          <%# <%= f.submit class: "btn submit-btn" %>
         <% end %>
       </div>
   <br>
+
+
 
 
   <%# <p>
