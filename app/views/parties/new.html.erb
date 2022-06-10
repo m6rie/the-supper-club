@@ -58,10 +58,60 @@
         </div>
 
         <div class="tab-pane fade" id="pills-recipe" role="tabpanel" aria-labelledby="pills-recipe-tab" tabindex="0">
-          <h2>Your recipes</h2>
-            <%# <%= f.input :attendancy, placeholder: "Number of people coming" %>
-            <%# <%= @recipes.sample(5) %>
-            <%# <% raise %>
+        <h2>Your recipes</h2>
+          <br>
+          <br>
+
+        <div class="row">
+          <div class="filter-container col-2" style = "background-color: red">
+          <h2> Filter </h2>
+
+          </div>
+          <div class="recipe-search-container col-10">
+            <div class="top-recipe-search-container">
+            <h2>On the menu</h2>
+            </div>
+            <div class="recipe-container">
+            <% @recipes.first(3).each do |recipe| %>
+              <div class="recipe-card center">
+              <div class="recipe-img" style="background-image: url(<%=recipe.photo_url%>); width: 300px; height: 150px; object-fit cover;"></div>
+              <p><%= recipe.title %><p>
+              </div>
+            <% end %>
+            </div>
+
+            <div class="bottom-recipe-search-container">
+            <h2>Search from</h2>
+            <div data-controller="search-recipes">
+            <div>
+              <%= simple_form_for new_party_path, method: :get, html: { data: { search_recipes_target: "form", action: "submit->search-recipes#search"}} do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "search recipes",
+                data: {search_recipes_target: "input"}  %>
+              <%= submit_tag "Search", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+            <div class="row" data-search-recipes-target="content">
+            </div>
+            </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
         <%# redirect_to party_recipe_search path %>
           <%= f.submit class: "btn submit-btn" %>
@@ -83,26 +133,3 @@
       Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
     </div>
   </div> %>
-
-  <br>
-  <br>
-  <div data-controller="search-recipes">
-
-
-    <div>
-      <%= simple_form_for new_party_path, method: :get, html: { data: { search_recipes_target: "form", action: "submit->search-recipes#search"}} do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "search recipes",
-        data: {search_recipes_target: "input"}  %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-    <br>
-    <br>
-
-  <br>
-  <br>
-  <div class="row" data-search-recipes-target="content">
-  </div>
