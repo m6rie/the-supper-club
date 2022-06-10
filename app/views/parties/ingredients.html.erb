@@ -1,15 +1,21 @@
 <html>
   <body>
-    <div class="row">
-    <%= render 'shared/party_info' %>
-    <div class="party-desc-container col-9">
-    <h1> Ingredient list </h1>
-    <ul>
-    <%  @ingredients.each do |ingredient| %>
-    <li class ="ingredient">   <%= check_box_tag ingredient, false %> <%= ingredient %> </li>
-    <% end %>
-    </ul>
-    </div>
+    <div class="container mt-2 p-0 mx-0">
+      <div class="d-flex">
+        <div class="party-info-container col-2 px-0">
+          <%= render 'shared/party_info' %>
+        </div>
+        <div class="party-desc-container col-10">
+          <h1> Ingredient list </h1>
+            <ul>
+              <%  @ingredients.each do |ingredient| %>
+              <li class ="ingredient">
+                <%= check_box_tag ingredient, false %> <%= ingredient %>
+              </li>
+              <% end %>
+            </ul>
+        </div>
+      </div>
     </div>
   </body>
 </html>
