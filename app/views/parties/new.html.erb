@@ -63,7 +63,7 @@
           <br>
 
         <div class="row">
-          <div class="filter-container col-2" style = "background-color: red">
+          <div class="filter-container col-2" style = "background-color: none; border:1px solid black">
           <h2> Filter </h2>
 
           </div>
@@ -74,7 +74,7 @@
             <div class="recipe-container">
             <% @recipes.first(3).each do |recipe| %>
               <div class="recipe-card center">
-              <div class="recipe-img" style="background-image: url(<%=recipe.photo_url%>); width: 300px; height: 150px; object-fit cover;"></div>
+              <div class="recipe-img" style="background-image: url(<%=recipe.photo_url%>); width: 300px; height: 150px; object-fit: cover"></div>
               <p><%= recipe.title %><p>
               </div>
             <% end %>
