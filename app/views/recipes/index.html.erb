@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="mt-5 mb-5">R E C I P E S</h1>
+  <h1 class="recipe-head-page mt-5 mb-5">Recipes</h1>
 
 <div class="center">
   <div class="mb-5" style="width: 40vw">
@@ -8,7 +8,7 @@
         params[:query],
         class: "form-control",
         placeholder: "Find a recipe"%>
-      <%= submit_tag "Search", class: "btn btn-danger", style: "margin-left: 10px; color: white; background-color: rgba(73, 161, 93, 1); border: none" %>
+      <%= submit_tag "Search", class: "search-button"%>
     <% end %>
   </div>
 </div>
@@ -17,15 +17,17 @@
 <div class="row">
   <% @recipes.each do |recipe| %>
   <div class="col-6 d-flex">
+  <%= link_to recipe_path(recipe) do %>
     <div class="card-recipe">
       <img src="<%= recipe.photo_url %>" alt="Recipe Picture">
       <div class="card-recipe-infos p-2">
-        <h4><%= link_to recipe.title, recipe_path(recipe), style: "text-decoration: none; color: rgba(73, 161, 93, 1)" %></h4>
+        <h4><%= link_to recipe.title, recipe_path(recipe), class: "recipe-title", style: "text-decoration: none" %></h4>
         <p><strong>Description: </strong><%= recipe.description %></p>
         <p><strong>Prep Time: </strong> <%= recipe.prep_time %> min</p>
       </div>
 <br>
     </div>
+  <% end %>
     </div>
   <% end %>
 </div>

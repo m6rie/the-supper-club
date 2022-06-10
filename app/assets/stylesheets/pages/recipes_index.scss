@@ -33,3 +33,36 @@
 .card-recipe .card-recipe-infos {
   padding: 16px;
 }
+
+
+.search-button {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 18px;
+  padding-left: 18px;
+  background-color: transparent;
+  font-size: 15px;
+  border: 1px solid black;
+  font-family: $text-font;
+  margin-left: 10px
+}
+
+.search-button:hover {
+  background-color: #C9FBC5;
+}
+
+.recipe-head-page {
+  font-family: $display-font;
+        font-size: 50px;
+}
+
+.recipe-title {
+  font-family: $display-font;
+  font-size: 20px;
+  color: black;
+}
+
+.recipe-title:hover {
+  color: #b3eeaf;
+  text-shadow: 1px 1px grey;
+}
