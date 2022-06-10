@@ -1,3 +1,52 @@
+.new-party-container {
+  margin-top: 70px;
+  margin-left: 200px;
+  margin-right: 200px;
+  h1 {
+    font-family: $display-font;
+    font-size: 50px;
+  }
+
+  .nav-link.active {
+    background-color: black;
+    color: #C9FBC5;
+  }
+
+  .nav-link {
+    color: black;
+  }
+}
+
 .recipe-container {
   display: flex;
+}
+
+.new-details {
+  text-align: left;
+}
+
+.form-control {
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+  text-align: left;
+}
+
+.dishes-card {
+  background-color: #C9FBC5;
+  padding: 40px;
+  margin: 10px;
+}
+
+.guest-card {
+  margin: auto;
+  width: 50%;
+  background-color: #C9FBC5;
+  padding: 40px;
+}
+
+.recipe-search-container {
+  text-align: left;
 }
