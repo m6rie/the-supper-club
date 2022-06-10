@@ -1,6 +1,7 @@
 <div class="container">
 <ul>
   <h1><%= @recipe.title %></h1>
+
   <h3><%= @recipe.description %></h3>
   <li>Preparation time : <%= @recipe.prep_time %>min</li>
   <li>Ingredients: <%= @recipe.ingredients %></li>
@@ -10,4 +11,5 @@
 
 <div>
   <%= button_to "Add to favourites", my_recipes_path, :method => "get" %>
+</div>
 </div>

@@ -17,11 +17,11 @@
 <div class="row">
   <% @recipes.each do |recipe| %>
   <div class="col-6 d-flex">
-  <%= link_to recipe_path(recipe) do %>
+  <%= link_to "#" do %>
     <div class="card-recipe">
-      <img src="<%= recipe.photo_url %>" alt="Recipe Picture">
+      <img src="<%= recipe.photo_url %>" alt="Recipe Picture" class="picture-recipe">
       <div class="card-recipe-infos p-2">
-        <h4><%= link_to recipe.title, recipe_path(recipe), class: "recipe-title", style: "text-decoration: none" %></h4>
+        <h4><%= link_to recipe.title, "#", class: "recipe-title", style: "text-decoration: none" %></h4>
         <p><strong>Description: </strong><%= recipe.description %></p>
         <p><strong>Prep Time: </strong> <%= recipe.prep_time %> min</p>
       </div>
