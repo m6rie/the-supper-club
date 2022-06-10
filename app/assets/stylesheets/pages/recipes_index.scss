@@ -10,10 +10,10 @@
   margin-bottom: 10px;
 }
 
-.card-recipe img {
+.picture-recipe {
   height: 100%;
   width: 180px ;
-  object-fit: cover;
+  background-size: cover;
 }
 
 .card-recipe h4 {
