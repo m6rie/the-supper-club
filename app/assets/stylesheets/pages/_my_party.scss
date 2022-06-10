@@ -12,40 +12,120 @@
 }
 
 .party-desc-container {
-  padding: 20px;
 
   .top-party-desc-container {
+    padding-left: 40px;
+    padding-top: 45px;
+    padding-bottom: 50px;
     .recipe-head {
       display: flex;
       justify-content: space-between;
 
-      .recipe-card {
-        background: red;
+      h2 {
+        font-family: $display-font;
+        font-size: 50px;
       }
 
+      .ingredient-btn {
+        background-color: transparent;
+        font-size: 15px;
+        border: 1px solid black;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 18px;
+        padding-left: 18px;
+        font-family: $text-font;
+      }
+
+      .ingredient-btn:hover {
+        background-color: #C9FBC5;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+        font-family: $text-font;
+      }
+
+      .edit-btn {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 18px;
+        padding-left: 18px;
+        background-color: transparent;
+        font-size: 15px;
+        border: 1px solid black;
+        font-family: $text-font;
+      }
+
+      .edit-btn:hover {
+        background-color: #C9FBC5;
+      }
     }
 
     .recipe-content {
       display: flex;
+      flex-grow: 1 1 1;
+      .recipe-card {
+        width: 500px;
+        height: 220px;
+        .recipe-img-container {
+          width: 300px;
+          height: 200px;
+          object-fit: cover;
+          margin-bottom: 20px;
+        }
+
+        h3 {
+          font-family: $display-font;
+          font-size: 20px;
+        }
+      }
+      }
     }
   }
 
   .bottom-party-desc-container {
     display: flex;
+    padding-left: 40px;
 
+    h2 {
+      font-family: $display-font;
+      font-size: 50px;
+    }
     .music-container {
-      background: red;
-      padding: 100px;
-      flex-grow: 2;
+      border-right: 1px solid black;
+      margin-right: 80px;
+      flex-grow: 1;
+
+      .music-content {
+        padding: 60px;
+        .spotify-btn {
+          background-color: transparent;
+          font-family: $display-font;
+          border: 1px solid black;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          padding-right: 20px;
+          padding-left: 20px;
+
+        }
+      }
     }
 
     .convo-container {
-      background: yellow;
-      padding: 100px;
+      flex-grow: 1;
     }
   }
 
+.see-all-btn {
+    border: none;
+    margin-left: 40px;
+    padding: 10px;
+    background-color: transparent;
+    text-decoration: underline;
 }
+
 
 // .music-container {
 //   background: red;

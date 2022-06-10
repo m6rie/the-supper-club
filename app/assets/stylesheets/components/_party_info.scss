@@ -1,6 +1,43 @@
 .party-info-container {
   background-color: #C9FBC5;
-  padding: 30px;
+  padding-left: 30px;
   border-radius: 10px;
   max-width:100%;
+  position: relative;
+  h2 {
+    font-family: $display-font;
+    font-size: 30px;
+    letter-spacing: -0.5px;
+    line-height: 30px;
+  }
+
+  h4 {
+    line-height: 0;
+    margin-bottom: 8px;
+    color: #C9FBC5;
+    background-color: black;
+    padding: 15px;
+    font-size: 15px;
+    width: 85px;
+    border-radius: 5px;
+  }
+
+  p {
+    line-height: 10px;
+    font-size: 13px;
+  }
+
+  h5 {
+    line-height: 10px;
+  }
+
+  .edit-btn {
+    position: relative;
+    bottom: 0px;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    padding: none !important;
+    font-size: 15px;
+  }
 }
