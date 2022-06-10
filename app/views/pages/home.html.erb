@@ -7,12 +7,11 @@
   <body>
     <% if user_signed_in? %>
      <section class = "sign-in-home-container">
-        <h2> Welcome <%= current_user.name %>! </h2>
+        <h2> Hello <em><%= current_user.name %></em>! </h2>
         <br>
         <div class="row">
         <div class="col-sm-6 recent-container">
-          <h3>Your recent supper clubs</h3>
-          <br>
+          <h3>Your recent parties</h3>
           <div class="card-recent-container">
             <% @my_party.each do |party| %>
               <div class="card-party card center">
@@ -23,13 +22,15 @@
             <% end %>
             </div>
             <br>
-            <button>View all</button>
+            <button class ="view-btn">View all</button>
           </div>
 
           <div class="col-sm-6 new-party-container center">
           <%= link_to new_party_path do %>
           <%= image_tag "Dinner_party_1.png", class: "create-img" %>
-          <h3>Create a new supper club!</h3>
+          <br>
+          <br>
+          <h3>Create a <br> new party!</h3>
           <i class="fa-solid fa-arrow-right-long"></i>
           <% end %>
           <br>
@@ -50,19 +51,22 @@
             <% end %>
             </div>
      </section>
-
-
-
     <% else %>
-    <section class = "home-top">
-      <h1>Logo placeholder</h1>
-      <img src = "" alt="">
-      <button class = "start-btn"> <%=  link_to "Let's start planning your supper club!", user_session_path %>
-      </button>
-    </section>
-    <section class = "home-info">
-      <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </h2>
-    </section>
+      <div class="home-container">
+        <section class = "home-top center">
+        <%= image_tag "dots-left.png", class: "img-dots-left"%>
+          <%= image_tag "dots-right.png", class: "img-dots-right"%>
+          <%= image_tag "logo.png", class: "img-logo" %>
+          <%= image_tag "plate.png", class: "img-plate"%>
+          <button class = "start-btn"> <%=  link_to "Let's start planning your supper club!", user_session_path %>
+          </button>
+        </section>
+        <%# <section class = "home-info center">
+          <p>ABOUT</p>
+          <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </h2>
+        <%= image_tag "ellipse-green.png", class: "img-ellipse"%>
+        <%# </section>  %>
+      </div>
     <% end %>
   </body>
 </html>
