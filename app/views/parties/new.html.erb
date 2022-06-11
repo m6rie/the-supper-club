@@ -1,26 +1,27 @@
     <div class= "create-party-container center">
     <h1> Create your party! </h1>
-    <ul class="nav nav-pills mb-3 center" id="pills-tab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="pills-name-tab" data-bs-toggle="pill" data-bs-target="#pills-name" type="button" role="tab" aria-controls="pills-name" aria-selected="true">Name and details</button>
-      </li>
-      <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-theme-tab" data-bs-toggle="pill" data-bs-target="#pills-theme" type="button" role="tab" aria-controls="pills-theme" aria-selected="false">Theme</button>
-      </li>
-      <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Guests</button>
-      </li>
+    <div class="tab-content" id="pills-tabContent" data-controller="navtab-active">
+      <ul class="nav nav-pills mb-3 center" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation" data-navtab-active-target="pages">
+            <button class="nav-link active" id="pills-name-tab" data-bs-toggle="pill" data-bs-target="#pills-name" type="button" role="tab" aria-controls="pills-name" aria-selected="true">Name and details</button>
+        </li>
+        <li class="nav-item" role="presentation" data-navtab-active-target="pages">
+            <button class="nav-link" id="pills-theme-tab" data-bs-toggle="pill" data-bs-target="#pills-theme" type="button" role="tab" aria-controls="pills-theme" aria-selected="false">Theme</button>
+        </li>
+        <li class="nav-item" role="presentation" data-navtab-active-target="pages">
+            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Guests</button>
+        </li>
 
-      <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-food-tab" data-bs-toggle="pill" data-bs-target="#pills-food" type="button" role="tab" aria-controls="pills-food" aria-selected="false">Dishes</button>
-      </li>
-      <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-recipe-tab" data-bs-toggle="pill" data-bs-target="#pills-recipe" type="button" role="tab" aria-controls="pills-recipe" aria-selected="false">Recipes</button>
-      </li>
-    </ul>
-    <br>
-      <div class="tab-content" id="pills-tabContent"
-          data-controller="navtab-active">
+        <li class="nav-item" role="presentation" data-navtab-active-target="pages">
+            <button class="nav-link" id="pills-food-tab" data-bs-toggle="pill" data-bs-target="#pills-food" type="button" role="tab" aria-controls="pills-food" aria-selected="false">Dishes</button>
+        </li>
+        <li class="nav-item" role="presentation" data-navtab-active-target="pages">
+            <button class="nav-link" id="pills-recipe-tab" data-bs-toggle="pill" data-bs-target="#pills-recipe" type="button" role="tab" aria-controls="pills-recipe" aria-selected="false">Recipes</button>
+        </li>
+      </ul>
+      <br>
+
+        <button data-action="click->navtab-active#active"   data-navtab-active-target="button">Next</button>
 
         <div class="tab-pane fade show active" id="pills-name" role="tabpanel" aria-labelledby="pills-name-tab" tabindex="0">
           <h2>Name and details</h2>
@@ -28,9 +29,10 @@
             <%= f.input :title, placeholder: "Name your dinner party" %>
             <%= f.input :address, placeholder: "Where is your dinner party" %>
             <%= f.input :date, html5: true %>
+
         </div>
 
-        <div class="tab-pane new-theme fade" id="pills-theme" role="tabpanel" aria-labelledby="pills-theme-tab" tabindex="0" data-navtab-active-target="pages">
+        <div class="tab-pane new-theme fade" id="pills-theme" role="tabpanel" aria-labelledby="pills-theme-tab" tabindex="0">
           <h2>Choose your theme</h2>
             <%= f.input :theme, collection: Theme::CATEGORY %>
         </div>
@@ -40,48 +42,53 @@
           <br>
           <div class="guest-card">
             <%= f.input :attendancy, placeholder: "0" %>
-            </div>
+          </div>
         </div>
 
         <div class="tab-pane fade container" id="pills-food" role="tabpanel" aria-labelledby="pills-food-tab" tabindex="0">
           <div class="row align-items-start center">
             <h2>How many dishes do you like to make?</h2>
             <br>
-              <div class="dishes-card col-3 center" ><%= f.input :appetizers, placeholder: "0"  %></div>
-              <div class="dishes-card col-3 center" ><%= f.input :mains, placeholder: "0" %></div>
-              <div class="dishes-card col-3 center" ><%= f.input :desserts, placeholder: "0" %></div>
+              <div class="dishes-card col-3 center" >
+                <%= f.input :appetizers, placeholder: "0"  %>
+              </div>
+              <div class="dishes-card col-3 center" >
+                <%= f.input :mains, placeholder: "0" %>
+              </div>
+              <div class="dishes-card col-3 center" >
+                <%= f.input :desserts, placeholder: "0" %>
+              </div>
           </div>
         </div>
 
         <div class="tab-pane fade" id="pills-recipe" role="tabpanel" aria-labelledby="pills-recipe-tab" tabindex="0">
-        <div class="row">
+          <div class="row">
           <%# <div class="filter-container col-2" style = "background-color: none; border:1px solid black">
           <h2> Filter </h2>
 
           </div> %>
           <div class="recipe-search-container col-10">
             <div class="top-recipe-search-container">
-            <h2>On the menu</h2>
-            <p>Drag recipes to replace</p>
+              <h2>On the menu</h2>
+              <p>Drag recipes to replace</p>
             </div>
-            <div class="recipe-container">
-            <div class="search-recipe-card center">
-              <div class="recipe-img" style="background-image: url(https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtbmFtZTYxOTYtbmFtZS1jaGltLmpwZw.jpg); width: 250px; height: 150px; background-size: cover"></div>
-              <p>Sushi Rolls<p>
-              </div>
+                <div class="recipe-container">
+                <div class="search-recipe-card center">
+                  <div class="recipe-img" style="background-image: url(https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtbmFtZTYxOTYtbmFtZS1jaGltLmpwZw.jpg); width: 250px; height: 150px; background-size: cover"></div>
+                  <p>Sushi Rolls<p>
+                  </div>
 
-              <div class="search-recipe-card center">
-              <div class="recipe-img" style="background-image: url(https://3sg1ub4c9ujs3ydnjk3mgck0-wpengine.netdna-ssl.com/wp-content/uploads/2020/06/John-West-Final_Italian-Tuna-and-Mozzarella-Salad-with-Ciabatta_2160x960px.jpg); width: 250px; height: 150px; background-size: cover"></div>
-              <p>Tuna Salad<p>
-              </div>
+                  <div class="search-recipe-card center">
+                  <div class="recipe-img" style="background-image: url(https://3sg1ub4c9ujs3ydnjk3mgck0-wpengine.netdna-ssl.com/wp-content/uploads/2020/06/John-West-Final_Italian-Tuna-and-Mozzarella-Salad-with-Ciabatta_2160x960px.jpg); width: 250px; height: 150px; background-size: cover"></div>
+                  <p>Tuna Salad<p>
+                  </div>
 
-              <div class="search-recipe-card center">
-              <div class="recipe-img" style="background-image: url(https://static01.nyt.com/images/2019/05/09/dining/key-lime-pie-2/key-lime-pie-2-articleLarge.jpg); width: 250px; height: 150px; background-size: cover"></div>
-              <p>Key Lime Pie<p>
-              </div>
-
-
-            </div>
+                  <div class="search-recipe-card center">
+                  <div class="recipe-img" style="background-image: url(https://static01.nyt.com/images/2019/05/09/dining/key-lime-pie-2/key-lime-pie-2-articleLarge.jpg); width: 250px; height: 150px; background-size: cover"></div>
+                  <p>Key Lime Pie<p>
+                  </div>
+                  <button data-navtab-active-target="button" data-action="click->navtab-active#active">Next</button>
+          </div>
 
             <div class="bottom-recipe-search-container">
             <h2>Search from</h2>
@@ -102,9 +109,11 @@
             </div>
           </div>
           <br>
-           <br>
+          <br>
             <%= link_to "Create party!",  '/parties/2', class: "create-party-btn" %>
-</div>
+
+
+        </div>
         </div>
         <%# redirect_to party_recipe_search path %>
           <%# <%= f.submit class: "btn submit-btn" %>
@@ -145,7 +154,7 @@
         </div>
       </div>
   </div>
-
+</div>
 
   <%# <p>
   <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -160,4 +169,3 @@
       Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
     </div>
   </div> %>
-
