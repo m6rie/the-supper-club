@@ -29,6 +29,8 @@ class PartiesController < ApplicationController
   end
 
   def create
+    raise
+    # response_raw = request.raw_post
     @party = Party.new(party_params)
     @party.user_id = current_user.id
     # @party_date = PartyDate.new
@@ -36,6 +38,12 @@ class PartiesController < ApplicationController
       redirect_to party_path(@party)
     else
       render :new, status: :unprocessable_entity
+    end
+
+    respond_to do |format|
+      format.html { puts "html"}
+      format.js { puts "js"}
+      format.json { puts "json"}
     end
   end
 
@@ -56,7 +64,7 @@ class PartiesController < ApplicationController
   private
 
   def party_params
-    params.require(:party).permit(:title, :address, :date, :theme, :attendancy, :appetizers, :mains, :desserts)
+    params.require(:party).permit(:title, :address, :date, :theme, :attendancy, :appetizers, :mains, :desserts, :party, :parties, :data)
   end
 
   def set_party
