@@ -4,13 +4,25 @@
       <div class="d-flex">
           <%= render 'shared/party_info' %>
         <div class="ingredient-container col-9">
-          <h2> Ingredient list </h2>
+          <div class= "d-flex flex-row justify-content-between ">
+            <h2> Ingredient list </h2>
+            <button class="download-btn"><i class="fa-solid fa-arrow-down-to-bracket"></i> Download as PDF</button>
+          </div>
             <ul>
+            <div class="row justify-content-between">
               <%  @ingredients.each do |ingredient| %>
-              <li class ="ingredient">
+              <li class ="ingredient d-flex flex-column">
+              <div>
                 <%= check_box_tag ingredient, false %> <%= ingredient %>
+              </div>
+              </li>
+              <li class ="ingredient d-flex justify-content-end">
+              <div>
+                <%= "Amount" %>
+              </div>
               </li>
               <% end %>
+            </div>
             </ul>
             <br>
             <button class="download-btn"><i class="fa-solid fa-arrow-down-to-bracket"></i> Download as PDF</button>
