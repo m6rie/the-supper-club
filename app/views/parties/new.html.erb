@@ -114,6 +114,38 @@
 
 
 
+<%# draggable %>
+
+
+
+    <br>
+    <br>
+    <div data-controller="search-recipes" class=" pt-3">
+
+      <div>
+        <%= simple_form_for new_party_path, method: :get, html: { data: { search_recipes_target: "form", action: "submit->search-recipes#search"}} do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "search recipes",
+          data: {search_recipes_target: "input"}  %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+        <br>
+        <br>
+
+      <div class="container" data-controller="draggable">
+
+        <div class="row border border-5 pb-3" style="height:500px" id="emptyspace"  data-search-recipes-target="empty">
+        </div>
+        <br>
+
+        <div class="row" id="ourlist"  data-search-recipes-target="content">
+        </div>
+      </div>
+  </div>
+
 
   <%# <p>
   <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -128,3 +160,4 @@
       Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
     </div>
   </div> %>
+

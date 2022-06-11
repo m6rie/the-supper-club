@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="search-recipes"
 export default class extends Controller {
-  static targets = ["form", "input", "content"]
+  static targets = ["form", "input", "content", "empty"]
 
 
   search(event) {
@@ -17,20 +17,25 @@ export default class extends Controller {
     const apiKey = '9a33f2a981e7930dfb3369195fc15726'
     const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${input}&app_id=958988ca&app_key=${apiKey}`
 
-
-
-
     event.preventDefault()
     fetch(url)
     .then (response => response.json())
     .then((data) => {
       console.log(data.hits)
+      //  this.emptyTarget.insertAdjacentHTML("beforeend",
+      //   `<div class="col-3" ></div>
+      //   <div class="col-3" >some</div>
+      //   <div class="col-3" >text</div>
+      //   <div class="col-3" >test</div>`
+      // )
+
+      this.contentTarget.innerHTML = ""
 
       data.hits.forEach ((recipe) => {
         console.log(recipe)
 
-        this.contentTarget.insertAdjacentHTML("afterbegin",
-        `<a href="${recipe['recipe']['url']}" class="card border col-3">
+        this.contentTarget.insertAdjacentHTML("afterBegin",
+        `<a href="${recipe['recipe']['url']}" target="_blank" class="card border col-3">
           <div class="row border">
             <div class="col-12"><img src=${JSON.stringify(recipe['recipe']['image'])} width="100%"></div>
           </div>
@@ -43,7 +48,6 @@ export default class extends Controller {
           <div class="row border">
             <p><div class="col-12">${JSON.stringify(recipe['recipe']['ingredientLines'].length)}</div> ingredients</p>
           </div>
-
         </a>`
       )})
     })

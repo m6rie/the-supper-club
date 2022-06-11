@@ -109,6 +109,7 @@ GEM
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
+    draggable-rails (1.0.1)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.5)
@@ -266,6 +267,7 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
+  draggable-rails
   font-awesome-sass (~> 6.1)
   jbuilder
   jsbundling-rails
