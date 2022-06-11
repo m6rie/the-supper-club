@@ -8,7 +8,8 @@
             <ul>
               <%  @ingredients.each do |ingredient| %>
               <li class ="ingredient">
-                <%= check_box_tag ingredient, false %> <%= ingredient %>
+               <input type="checkbox" id="ingredient-checkbox">
+               <label for="ingredient-checkbox"><%= ingredient %></label>
               </li>
               <% end %>
             </ul>
