@@ -13,7 +13,7 @@
         <div class="col-sm-6 recent-container">
           <h3>Your recent parties</h3>
           <div class="card-recent-container">
-            <% @my_party.each do |party| %>
+            <% @my_party.limit(2).each do |party| %>
               <div class="card-party card center">
                 <%= link_to party_path(party) do %>
                 <p> <%= party.title %> </p>
