@@ -1,14 +1,14 @@
 <div class="container">
   <h1 class="recipe-head-page mt-5 mb-5">Recipes</h1>
 
-<div class="center">
-  <div class="mb-5" style="width: 40vw">
+<div class="search-form">
+  <div class="mb-5 search-field" style="width: 40vw">
     <%= form_tag recipes_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
         placeholder: "Find a recipe"%>
-      <%= submit_tag "Search", class: "search-button"%>
+      <%= submit_tag "Search", class: "search-buttonn"%>
     <% end %>
   </div>
 </div>

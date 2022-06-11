@@ -65,7 +65,7 @@
     z-index: -1;
     top: -16px;
     right: -16px;
-    background: $green;
+    background: #C9FBC5;
     opacity: 0.7;
     height: 1px;
     width: 1px;
@@ -117,7 +117,7 @@
 }
 
 
-.search-button {
+.search-form .search-buttonn {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-right: 18px;
@@ -126,12 +126,17 @@
   font-size: 15px;
   border: 1px solid black;
   font-family: $text-font;
-  margin-left: 10px
+  margin-left: 10px;
+
 }
 
-.search-button:hover {
+.search-buttonn:hover {
   background-color: #C9FBC5;
 }
+
+
+
+
 
 .recipe-head-page {
   font-family: $display-font;
