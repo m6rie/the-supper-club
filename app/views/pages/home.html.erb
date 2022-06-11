@@ -22,7 +22,7 @@
             <% end %>
             </div>
             <br>
-            <button class ="view-btn">View all</button>
+            <button onClick="document.getElementById('scroll-target').scrollIntoView();" class ="view-btn">View all</button>
           </div>
 
           <div class="col-sm-6 new-party-container center">
@@ -40,8 +40,8 @@
     </section>
      <section class = "my-parties-container">
       <hr>
-      <h2> My supper clubs </h2>
-      <div class="card-recent-container">
+      <h2 id="scroll-target"> My supper clubs </h2>
+      <div class="card-recent-container pb-5">
       <% @my_party.each do |party| %>
               <div class="card-party card center">
                 <%= link_to party_path(party) do %>
@@ -53,7 +53,7 @@
      </section>
     <% else %>
       <div class="home-container">
-        <section class = "home-top center">
+        <section class = "home-top center" id="scroll-target">
         <%= image_tag "dots-left.png", class: "img-dots-left"%>
           <%= image_tag "dots-right.png", class: "img-dots-right"%>
           <%= image_tag "logo.png", class: "img-logo" %>
