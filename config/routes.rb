@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :parties do
     get "ingredients", to: "parties#ingredients"
+    get :qr_code_generator
+    get :qr_code_download
   end
 
 

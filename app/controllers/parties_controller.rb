@@ -1,3 +1,6 @@
+require "rqrcode"
+require "chunky_png"
+
 class PartiesController < ApplicationController
   before_action :set_party, only: [:show, :edit, :update]
 
@@ -8,6 +11,23 @@ class PartiesController < ApplicationController
   def show
     @recipes = Recipe.all
     @party_recipe = Recipe.where(user_id: @party.id)
+
+    qrcode = RQRCode::QRCode.new("https://supperclub.pro/parties/#{@party.id}")
+
+      png = qrcode.as_png(
+        bit_depth: 1,
+        border_modules: 1,
+        color_mode: ChunkyPNG::COLOR_GRAYSCALE,
+        color: "black",
+        file: nil,
+        fill: "white",
+        module_px_size: 10,
+        resize_exactly_to: false,
+        resize_gte_to: false,
+        size: 250
+      )
+
+      IO.binwrite("./app/assets/images/qr_code#{@party.title}.png", png.to_s)
   end
 
   def new
@@ -56,7 +76,7 @@ class PartiesController < ApplicationController
   private
 
   def party_params
-    params.require(:party).permit(:title, :address, :date, :theme, :attendancy, :appetizers, :mains, :desserts)
+    params.require(:party).permit(:title, :address, :date, :theme, :attendancy, :appetizers, :mains, :desserts, :qr_code)
   end
 
   def set_party

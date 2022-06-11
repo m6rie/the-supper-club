@@ -5,6 +5,11 @@ ruby "3.0.3"
 
 gem 'draggable-rails'
 
+# QR-CODE FEATURE
+gem 'rqrcode', "~> 2.1"
+
+gem 'chunky_png', "~> 1.4"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"
 
