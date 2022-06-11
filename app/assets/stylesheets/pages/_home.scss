@@ -1,9 +1,85 @@
 // Specific CSS for your home-page
+.home-container {
+  position: relative;
+  .img-dots-left {
+    position: absolute;
+    z-index: 9999;
+    float: left;
+    left: 0px;
+    width: 300px;
+    height: auto;
+  }
+  .img-dots-right {
+    position: absolute;
+    z-index: 9999;
+    float: right;
+    right: 0px;
+    width: 300px;
+    height: auto;
+  }
+}
+
+.home-top {
+  position: relative;
+
+  .img-plate {
+    position: relative;
+    width: 90%;
+  }
+  .img-logo {
+    position: absolute;
+    z-index: 9999;
+    justify-content: center;
+    width: 50%;
+    left: 25%;
+    top: 8%
+  }
+  .start-btn {
+    display: block;
+    position: absolute;
+    z-index: 99999;
+    bottom: 0px;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 200px;
+    margin-left: 34%
+  }
+
+  .start-btn:hover {
+    color: black;
+    background-color: #C9FBC5;
+    border: 1px solid black;
+  }
+
+
+  .start-btn a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px
+  }
+
+  .start-btn a:hover {
+    color: black;
+    text-decoration: none;
+    font-size: 20px
+  }
+
+
+}
+
+
 .sign-in-home-container {
     margin-top: 50px;
     height: 100vh;
     h2 {
         font-size: 60px;
+        font-family: $display-font;
+        letter-spacing: -1px;
     }
     h3 {
         font-size: 30px;
@@ -12,7 +88,27 @@
         color: $black;
         text-decoration: none;
     }
-}
+
+
+    button {
+      background-color: #F9F9F4;
+      border: 1px solid black;
+      padding-right: 10px;
+      padding-left: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+
+    button:hover {
+      background-color: #C9FBC5;
+      border: 1px solid black;
+      padding-right: 10px;
+      padding-left: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
 
 .recent-container {
     border-right: 1px solid $black;
@@ -42,5 +138,10 @@
 }
 
 .new-party-container {
-    margin: auto;
+  margin: auto;
+}
+
+.img-ellipse {
+  position: relative;
+  width: 90%;
 }

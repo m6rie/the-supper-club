@@ -3,9 +3,35 @@ ul {
   list-style-type: none;
 }
 
-.ingredient {
-  padding-bottom: 10px;
-  padding-top: 10px;
-  padding-left: 0px;
-  border-bottom: 1px solid black;
+.ingredient-container {
+  padding-left: 40px;
+  padding-top: 45px;
+  padding-bottom: 50px;
+
+  h2 {
+    font-family: $display-font;
+    font-size: 50px;
+  }
+
+  .ingredient {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 0px;
+    border-bottom: 1px solid black;
+    width: 50%;
+  }
+
+  .download-btn {
+    padding: 14px;
+    border: 1px solid black;
+    color: black;
+    background-color: transparent;
+  }
+
+  .download-btn:hover {
+    padding: 14px;
+    border: 1px solid black;
+    color: black;
+    background-color: #C9FBC5;
+  }
 }

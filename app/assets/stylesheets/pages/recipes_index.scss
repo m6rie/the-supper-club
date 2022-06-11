@@ -1,0 +1,68 @@
+.card-recipe {
+  height: 120px;
+  width: 40vw;
+  display: flex;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
+  overflow: hidden;
+  background: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.picture-recipe {
+  height: 100%;
+  width: 180px ;
+  background-size: cover;
+}
+
+.card-recipe h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-recipe p {
+  font-size: 11px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+.card-recipe .card-recipe-infos {
+  padding: 16px;
+}
+
+
+.search-button {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 18px;
+  padding-left: 18px;
+  background-color: transparent;
+  font-size: 15px;
+  border: 1px solid black;
+  font-family: $text-font;
+  margin-left: 10px
+}
+
+.search-button:hover {
+  background-color: #C9FBC5;
+}
+
+.recipe-head-page {
+  font-family: $display-font;
+        font-size: 50px;
+}
+
+.recipe-title {
+  font-family: $display-font;
+  font-size: 20px;
+  color: black;
+}
+
+.recipe-title:hover {
+  color: #b3eeaf;
+  text-shadow: 1px 1px grey;
+}

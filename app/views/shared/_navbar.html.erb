@@ -1,14 +1,17 @@
+        <% if user_signed_in? %>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "THE SUPPER CLUB", root_path, class: "navbar-brand" %>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+    <%= link_to root_path do %>
+     <%= image_tag "supper-club-logo.png", class: "navbar-logo" %>
+    <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Recipes", recipes_path , class: "nav-link" %>
           </li>
@@ -16,19 +19,24 @@
             <%= link_to "Create a Party", new_party_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "costume.png", class: "avatar-square dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "profile.png", class: "avatar-bordered dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My Profile", "#", class: "dropdown-item" %>
               <%= link_to "Settings", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
       </ul>
     </div>
   </div>
 </div>
+        <% else %>
+        <div class="navbar-home">
+  <div class="container-fluid">
+          <li class="nav-item">
+           <%= link_to "Sign-up", new_user_session_path, class: "nav-signup-link" %>
+            <%= link_to "Login", new_user_session_path, class: "nav-login-link" %>
+          </li>
+  </div>
+</div>
+        <% end %>

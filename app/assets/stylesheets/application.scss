@@ -25,6 +25,21 @@ $black: #414141;
     src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'), url(https://example.com/MaterialIcons-Regular.woff) format('woff'), url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
 }
 
+// @font-face {
+//   font-family: Supper;
+//   font-weight: italic;
+//   src: url("../fonts/SupperDisplay/SupperDisplay-italic.otf");
+// }
+
+// @font-face {
+//   font-family: Supper;
+//   font-weight: medium;
+//   src: url("../fonts/SupperDisplay/SupperDisplay-Regular.otf");
+// }
+
+// $displayfont-regular:  "Supper Display";
+// $displayfont-italic:  "Supper Display";
+
 // All page configurations
 body {
     // overflow: auto;
