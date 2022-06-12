@@ -1,24 +1,20 @@
 import { Controller } from "@hotwired/stimulus"
 import { preventOverflow } from "@popperjs/core";
 import Sortable from 'sortablejs';
-// Connects to data-controller="draggable"
+
 export default class extends Controller {
-  // static targets = ["drag"]
 
   connect() {
-    // console.log(this.dragTarget)
+
+    // recipes data from draggable
     const dinnerRecipes = []
 
-    // function recipes() {
-    //   return dinnerRecipes
-    //   // return dinnerRecipes
-    // }
-
+    // global recipes variable
     window.recipes = function() {
       return dinnerRecipes
     }
 
-
+    // selected recipes via draggable
     const test = document.querySelector("#ourlist")
 
     new Sortable(test, {
@@ -28,10 +24,9 @@ export default class extends Controller {
       fallbackOnBody: false,
       pull: 'clone',
       put: ["recipes", "empty"]
-      // onRemove(event){
-
     });
 
+    // list of recipes from search
     const empty = document.querySelector("#emptyspace")
 
     new Sortable(empty, {
@@ -40,69 +35,54 @@ export default class extends Controller {
       swap: true,
       put: ["recipes", "empty"],
       onAdd(event){
-        // console.log(event)
-        // console.log(event.item)
         dinnerRecipes.push(event.item)
-        // console.log(recipes())
-        // const test = Object.assign({}, event.item.dataset )
-        // console.log(test)
       },
-
       onRemove(event){
-        // console.log(event)
-        // console.log(event.item)
         recipes().splice(event.item, 1)
-        // console.log(dinnerRecipes)
       }
-    });
+    })
+  }
 
-    }
+    // POSTing data to controller
     sendData() {
-
+      // recipes data
       const allRecipes = recipes()
       const labelData = []
       const photoData = []
-      const recipeIngredients = []
+      const ingredientsData = []
+      const urlData = []
+
       allRecipes.forEach ((recipe) => {
+        // recipe url
+        const recipeURL = recipe.href
+        urlData.push(recipeURL)
+        // recipe label
         const label = (recipe.querySelector("#label").dataset.label)
         labelData.push(label)
+        // recipe photo
         const photo = (recipe.querySelector("#image").dataset.image)
         photoData.push(photo)
-
-        const ingredients = recipe.querySelector("#ingredients")
-        console.log(ingredients)
-
-        // recipe['recipe']['ingredientLines'].forEach((ingredient) => {
-        //   recipeIngredients.push(ingredient)
-        // })
-        console.log(ingredients)
-        const recipeData = { title: JSON.stringify(label), photoUrl: JSON.stringify(photo) }
-        // console.log(recipeData)
-        // const recipe_obj = Object.create(recipeData)
-        // data.push(recipe_obj)
-        // console.log(recipe_obj)
-        // console.log(JSON.stringify(recipe_obj.title))
-        // console.log(JSON.stringify(recipe_obj.photoUrl))
+        // recipe ingredients
+        const ingredients = (recipe.querySelector("#ingredients").dataset.ingredients)
+        ingredientsData.push(ingredients)
+        // recipe data object <<<<<<<<<<<<<<<<<<
+        const recipeData = { title: JSON.stringify(label), photoUrl: JSON.stringify(photo), ingredients: ingredients, recipe_url: recipeURL }
       })
-      // console.log(data)
-      // console.log(labelDaxta)
-      // console.log(photoData)
-      // console.log(ingredients)
+
+      // token for the POST
       this.csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute("content")
 
-      // const form = new FormData()
-      // form.append( "party" , 'test', )
-      // console.log(form.entries().next())
+      // building POST paramsfor response body
       const params = {
         party: {
           title: labelData,
-          photo: photoData
+          photo: photoData,
+          ingredients: ingredientsData,
+          recipe_url: urlData
         }
       }
-      console.log(params)
-      console.log(JSON.stringify(params))
 
-
+      // fetch call with data
       fetch("http://localhost:3000/parties", {
         method: "POST",
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json','X-CSRF-Token': this.csrfToken },
@@ -110,7 +90,12 @@ export default class extends Controller {
       })
         .then(response => response.body)
         .then((data) => {
-          console.log(data)
+          // console.log(data)
         })
+    }
+
+    test(event) {
+      event.preventDefault()
+      alert("test")
     }
   }

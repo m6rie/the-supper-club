@@ -44,7 +44,8 @@ class PartiesController < ApplicationController
   end
 
   def create
-    puts params[:party]
+    @recipes = []
+    # puts params[:party]
     # if @party.save
     #   redirect_to party_path(@party)
     # else
@@ -73,11 +74,7 @@ class PartiesController < ApplicationController
   private
 
   def party_params
-<<<<<<< HEAD
-    params.require(:party).permit(:title, :address, :date, :theme, :attendancy, :appetizers, :mains, :desserts, :qr_code)
-=======
     params.require(:party).permit(:title, :address, :date, :theme, :attendancy, :appetizers, :mains, :desserts, :party, :parties, :data)
->>>>>>> d88e4e735bf28faaddecac39c5a588939ac7851a
   end
 
   def set_party

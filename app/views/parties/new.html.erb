@@ -62,7 +62,7 @@
           <p> First things first, give your party some info </p>
           <h2>Hey! It's <em><%= current_user.name %></em>,</h2>
 
-          <%= simple_form_for @party, html: { class: 'form-horizontal' },wrapper: :horizontal_form do |f| %>
+          <%= simple_form_for @party, html: { class: 'form-horizontal' }, data: { action: "submit->draggable#test" } , wrapper: :horizontal_form do |f| %>
           <div class="inline-form col-12"><h2>Come to my &nbsp</h2><%= f.input :title,  label: false, placeholder: "party name?"%><h2>!</h2>
           </div>
           <div class="inline-form col-12"><h2>It's at &nbsp</h2><%= f.input :address, label: false, placeholder: "where?" %></div>
@@ -180,17 +180,11 @@
 </div>
         </div>
         <%# redirect_to party_recipe_search path %>
-          <%# <%= f.submit class: "btn submit-btn" %>
+          <%= f.submit class: "btn submit-btn" %>%
         <% end %>
       </div>
   <br>
   </body>
-
-
-
-<%# draggable %>
-
-
 
     <br>
     <br>
@@ -219,8 +213,10 @@
 
         <div class="row" id="ourlist"  data-search-recipes-target="content">
         </div>
+
         <div class="row" id="ourlist"  data-search-recipes-target="drag">
         </div>
+
       </div>
   </div>
 

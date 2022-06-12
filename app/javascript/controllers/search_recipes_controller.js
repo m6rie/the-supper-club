@@ -7,33 +7,29 @@ export default class extends Controller {
 
   search(event) {
 
-    // console.log("hello")
-    // console.log(this.formTarget)
-    // console.log(this.inputTarget.value)
-    // console.log(this.imageTarget)
-    // console.log(this.contentTarget)
-
+    // api call data
     const input = this.inputTarget.value
     const apiKey = '9a33f2a981e7930dfb3369195fc15726'
     const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${input}&app_id=958988ca&app_key=${apiKey}`
 
+    // starting fetch
     event.preventDefault()
     fetch(url)
     .then (response => response.json())
     .then((data) => {
-      console.log(data.hits)
-      //  this.emptyTarget.insertAdjacentHTML("beforeend",
-      //   `<div class="col-3" ></div>
-      //   <div class="col-3" >some</div>
-      //   <div class="col-3" >text</div>
-      //   <div class="col-3" >test</div>`
-      // )
 
+      // clean previous search
       this.contentTarget.innerHTML = ""
 
+      //get ingredients
       data.hits.forEach ((recipe) => {
-        // console.log(recipe)
+        const ingredients = []
+        const ingr = recipe['recipe']['ingredientLines']
+        ingr.forEach((ingredient) => {
+         ingredients.push(ingredient)
+        })
 
+        // insert cards
         this.contentTarget.insertAdjacentHTML("afterBegin",
         `<a href="${recipe['recipe']['url']}" target="_blank" class="card border col-3">
           <div class="row border">
@@ -45,22 +41,12 @@ export default class extends Controller {
           <div class="row border">
             <p>Calories: </><div class="col-12">${JSON.stringify(Math.round(recipe['recipe']['calories']))}</div></p>
           </div>
-          <div class="row border" id="ingredients" data-ingredients=${JSON.stringify(recipe['recipe']['ingredients'])}>>
-            <p><div class="col-12">${(recipe['recipe']['ingredients'])}</div></p>
+          <div class="row border" id="ingredients" data-ingredients="[${ingredients}]">>
+            <p><div class="col-12">Igredients</div></p>
           </div>
         </a>`
-        )
-        console.log(JSON.stringify(recipe['recipe']['ingredients']))
-      }
-        )
-
+        )}
+      )
     })
   }
 }
-
-// Access point
-// https://api.edamam.com/api/recipes/v2
-// Request URL
-// `https://api.edamam.com/api/recipes/v2?type=public&q=${input}&app_id=958988ca&app_key=${apiKey}`
-
-// From recipe we want "image", "label" "healthLabel", "calories", "digest[0..2]"

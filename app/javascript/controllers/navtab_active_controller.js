@@ -15,23 +15,6 @@ import { Controller } from "@hotwired/stimulus"
 // }
 
 export default class extends Controller {
-<<<<<<< HEAD
-
-  }
-
-  next() {
-    $(document).ready(function() {
-      $(document).foundation();
-      $('.next-tab').click(function() {
-          $('.tabs li.is-active').next().children('a').click();
-        });
-      }
-
-            //   $('.prev-tab').click(function() {
-            //     $('.tabs li.is-active').prev().children('a').click();
-            //   });
-            // });
-=======
   // static targets = ["navtabActive", "pages"]
   active() {
     // console.log("test")
@@ -41,4 +24,3 @@ export default class extends Controller {
     // console.log(this.pagesTarget)
   }
 }
->>>>>>> d88e4e735bf28faaddecac39c5a588939ac7851a
