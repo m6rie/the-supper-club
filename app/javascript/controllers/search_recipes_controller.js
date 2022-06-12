@@ -32,7 +32,7 @@ export default class extends Controller {
       this.contentTarget.innerHTML = ""
 
       data.hits.forEach ((recipe) => {
-        console.log(recipe)
+        // console.log(recipe)
 
         this.contentTarget.insertAdjacentHTML("afterBegin",
         `<a href="${recipe['recipe']['url']}" target="_blank" class="card border col-3">
@@ -45,11 +45,14 @@ export default class extends Controller {
           <div class="row border">
             <p>Calories: </><div class="col-12">${JSON.stringify(Math.round(recipe['recipe']['calories']))}</div></p>
           </div>
-          <div class="row border">
-            <p><div class="col-12">${(recipe['recipe']['ingredientLines'])}</div> ingredients</p>
+          <div class="row border" id="ingredients" data-ingredients=${JSON.stringify(recipe['recipe']['ingredients'])}>>
+            <p><div class="col-12">${(recipe['recipe']['ingredients'])}</div></p>
           </div>
         </a>`
-        )})
+        )
+        console.log(JSON.stringify(recipe['recipe']['ingredients']))
+      }
+        )
 
     })
   }
