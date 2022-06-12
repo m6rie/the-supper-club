@@ -32,24 +32,28 @@ export default class extends Controller {
       this.contentTarget.innerHTML = ""
 
       data.hits.forEach ((recipe) => {
-        console.log(recipe)
+        // console.log(recipe)
 
         this.contentTarget.insertAdjacentHTML("afterBegin",
         `<a href="${recipe['recipe']['url']}" target="_blank" class="card border col-3">
           <div class="row border">
-            <div class="col-12"><img src=${JSON.stringify(recipe['recipe']['image'])} width="100%"></div>
+            <div class="col-12" id="image" data-image=${JSON.stringify(recipe['recipe']['image'])}><img src=${JSON.stringify(recipe['recipe']['image'])} width="100%"></div>
           </div>
           <div class="row border">
-            <div class="col-12">${JSON.stringify(recipe['recipe']['label'])}</div>
+            <div class="col-12" id="label" data-label=${JSON.stringify(recipe['recipe']['label'])}>${JSON.stringify(recipe['recipe']['label'])}"</div>
           </div>
           <div class="row border">
             <p>Calories: </><div class="col-12">${JSON.stringify(Math.round(recipe['recipe']['calories']))}</div></p>
           </div>
-          <div class="row border">
-            <p><div class="col-12">${JSON.stringify(recipe['recipe']['ingredientLines'].length)}</div> ingredients</p>
+          <div class="row border" id="ingredients" data-ingredients=${JSON.stringify(recipe['recipe']['ingredients'])}>>
+            <p><div class="col-12">${(recipe['recipe']['ingredients'])}</div></p>
           </div>
         </a>`
-      )})
+        )
+        console.log(JSON.stringify(recipe['recipe']['ingredients']))
+      }
+        )
+
     })
   }
 }
