@@ -93,6 +93,7 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     childprocess (4.1.0)
+    chunky_png (1.4.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     debug (1.5.0)
@@ -109,6 +110,7 @@ GEM
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
+    draggable-rails (1.0.1)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.5)
@@ -201,6 +203,10 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rqrcode (2.1.1)
+      chunky_png (~> 1.0)
+      rqrcode_core (~> 1.0)
+    rqrcode_core (1.2.0)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -266,15 +272,18 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap
   capybara
+  chunky_png (~> 1.4)
   debug
   devise
   dotenv-rails
+  draggable-rails
   font-awesome-sass (~> 6.1)
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3)
+  rqrcode (~> 2.1)
   sassc-rails
   selenium-webdriver
   simple_form!

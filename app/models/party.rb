@@ -1,5 +1,4 @@
 class Party < ApplicationRecord
-
   has_many :party_recipes
   has_many :recipes, through: :party_recipes
   belongs_to :user

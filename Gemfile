@@ -3,6 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.3"
 
+gem 'draggable-rails'
+
+# QR-CODE FEATURE
+gem 'rqrcode', "~> 2.1"
+
+gem 'chunky_png', "~> 1.4"
 
 gem 'wicked_pdf'
 
