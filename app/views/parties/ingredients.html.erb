@@ -5,8 +5,17 @@
           <%= render 'shared/party_info' %>
         <div class="ingredient-container col-9">
           <div class= "d-flex flex-row justify-content-between ">
-            <h2> Ingredient list </h2>
-            <button class="download-btn"><i class="fa-solid fa-arrow-down-to-bracket"></i> Download as PDF</button>
+            <div>
+              <h2> Ingredient list </h2>
+              <%# <%= image_tag("download.png")  %>
+            </div>
+            <div class="align-self-center">
+              <%= button_to "", class:"download-btn" do %>
+                <i class="fa-solid fa-arrow-down-to-bracket"></i>
+                <i class="fas fa-download"></i>
+                Save list as PDF
+              <% end %>
+            </div>
           </div>
             <ul>
             <div class="row justify-content-between">
@@ -25,7 +34,6 @@
             </div>
             </ul>
             <br>
-            <button class="download-btn"><i class="fa-solid fa-arrow-down-to-bracket"></i> Download as PDF</button>
         </div>
       </div>
     </div>
