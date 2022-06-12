@@ -3,15 +3,16 @@
     <div class="container mt-2 p-0 mx-0">
       <div class="d-flex">
           <%= render 'shared/party_info' %>
-        <div class="ingredient-container col-9">
+          <div class="ingredient-container col-9">
           <h2> Ingredient list </h2>
-            <ul>
-              <%  @ingredients.each do |ingredient| %>
-              <li class ="ingredient">
-                <%= check_box_tag ingredient, false %> <%= ingredient %>
-              </li>
-              <% end %>
-            </ul>
+             <% form_for "/parties/#{@party.id}/ingredients" do |f| %>
+                <%= @party_recipes = @party.recipes %>
+                <%= @ingredients %>
+                <% @ingredients.each do |ingredient| %>
+                <%= check_box_tag(ingredient) %>
+                <%= ingredient %>
+                <% end %>
+                <% end %>
             <br>
             <button class="download-btn"><i class="fa-solid fa-arrow-down-to-bracket"></i> Download as PDF</button>
         </div>

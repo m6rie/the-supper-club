@@ -11,21 +11,16 @@ class PartiesController < ApplicationController
   end
 
   def new
-    # @party_date = PartyDate.new
-    # @party_theme = PartyTheme.new
-    # @theme = Theme.new
-    # @party_theme = @theme
-    @recipes = Recipe.all
     @party = Party.new
   end
 
   def ingredients
     @party = Party.find(params[:party_id])
     @party_recipe = @party.recipes
-
     @party_recipe.each do |recipe|
-      @ingredients = recipe[:ingredients].split(",")
-    end
+    @ingredients = recipe.ingredients
+    @recipe_ingredient = RecipeIngredient.new
+  end
   end
 
   def create
