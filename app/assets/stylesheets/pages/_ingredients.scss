@@ -35,4 +35,8 @@ ul {
     color: black;
     background-color: #C9FBC5;
   }
+
+  input:checked {
+    accent-color: black;
+  }
 }
