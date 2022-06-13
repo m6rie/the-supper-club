@@ -105,6 +105,7 @@ export default class extends Controller {
           }
         }
       }
+      console.log(params)
 
       // FETCH CALL WITH RECIPE AND PARTY DATA
       fetch("http://localhost:3000/parties", {
