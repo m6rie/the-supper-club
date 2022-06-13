@@ -5,8 +5,6 @@ export default class extends Controller {
   static targets = ["drag"]
 
   connect() {
-    // console.log(this.dragTarget)
-
     const test = document.querySelector("#ourlist")
     console.log(test)
 
