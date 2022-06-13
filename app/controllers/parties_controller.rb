@@ -44,19 +44,19 @@ class PartiesController < ApplicationController
   end
 
   def create
-    # all recipes
+    # ALL RECIPES
     @recipes = []
-    # saving attributes
+    # SAVING ATTRIBUTES
     number_of_recipes = params[:party][:recipes_data][:title].size
     titles = params[:party][:recipes_data][:title]
     photo_urls = params[:party][:recipes_data][:recipe_url]
     # ingredients = params[:party][:recipes_data][:ingredients] ------ ingredients: ingredients[n - 1] ------ TBA -------
-    # building recipes
+    # BUILDING RECIPES
     number_of_recipes.times do |n|
       @recipes << Recipe.create(title: titles[n - 1], photo_url: photo_urls[n - 1], prep_time: 30, description: "Delicous recipe")
     end
 
-    # initializing party
+    # CREATING PARTY
     @party = Party.create(
       user: current_user,
       title: params[:party][:title],
@@ -69,12 +69,12 @@ class PartiesController < ApplicationController
       desserts: params[:party][:desserts]
     )
 
-    # connecting party and recipes
+    # CONNECTING PARTIES AND RECIPES
     @recipes.each do |recipe|
       PartyRecipe.create(party: @party, recipe: recipe)
     end
 
-    # AJAX response
+    # AJAX RESPONSE
     respond_to do |format|
       format.json { render :json => @recipes }
       format.html { puts "I am html" }
