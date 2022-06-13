@@ -15,18 +15,12 @@ import { Controller } from "@hotwired/stimulus"
 // }
 
 export default class extends Controller {
-
+  // static targets = ["navtabActive", "pages"]
+  active() {
+    // console.log("test")
+    // this.navtabActiveTarget
   }
-
-  next() {
-    $(document).ready(function() {
-      $(document).foundation();
-      $('.next-tab').click(function() {
-          $('.tabs li.is-active').next().children('a').click();
-        });
-      }
-
-            //   $('.prev-tab').click(function() {
-            //     $('.tabs li.is-active').prev().children('a').click();
-            //   });
-            // });
+  connect() {
+    // console.log(this.pagesTarget)
+  }
+}
