@@ -169,3 +169,40 @@
   background-color: black;
   border-radius: 9999px;
 }
+
+.card-recipe-api {
+  height: 150px;
+  width: 40vw;
+  display: flex;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
+  overflow: hidden;
+  background: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  top: 0px;
+  z-index: 0;
+  position: relative;
+}
+
+.recipe-api-img {
+  width: 180px;
+  object-fit: cover
+}
+
+.info-api {
+  text-align: left;
+  padding: 16px;
+}
+
+.move-icon {
+position: absolute;
+left: 95%;
+top: 10%;
+opacity: 0.6;
+}
+
+.move-icon:hover {
+  opacity: 1;
+  transform: scale(1.5);
+}
