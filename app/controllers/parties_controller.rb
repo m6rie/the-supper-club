@@ -3,6 +3,7 @@ require "chunky_png"
 
 class PartiesController < ApplicationController
   before_action :set_party, only: [:show, :edit, :update]
+  skip_before_action :authenticate_user!, only: :invite
 
   def index
     @parties = Party.all
@@ -12,7 +13,7 @@ class PartiesController < ApplicationController
     @recipes = Recipe.all
     @party_recipe = Recipe.where(user_id: @party.id)
 
-    qrcode = RQRCode::QRCode.new("https://supperclub.pro/parties/#{@party.id}")
+    qrcode = RQRCode::QRCode.new("https://supperclub.pro/parties/#{@party.id}/invite")
 
       png = qrcode.as_png(
         bit_depth: 1,
@@ -66,6 +67,10 @@ class PartiesController < ApplicationController
   end
 
   def destroy
+  end
+
+  def invite
+    @party = Party.find(params[:party_id])
   end
 
   private
