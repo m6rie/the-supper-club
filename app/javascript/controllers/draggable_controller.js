@@ -3,7 +3,8 @@ import { preventOverflow } from "@popperjs/core";
 import Sortable from 'sortablejs';
 
 export default class extends Controller {
-
+  static targets = ["title", "address", "partydate", "theme", "attendancy", "appetizers", "mains", "desserts"]
+  
   connect() {
 
     // recipes data from draggable
@@ -45,7 +46,32 @@ export default class extends Controller {
 
     // POSTing data to controller
     sendData() {
-      // recipes data
+      
+      // Party data
+      // Create page
+      const title = this.titleTarget.value
+      console.log(title)
+      const address = this.addressTarget.value
+      console.log(address)
+      const partyDate = this.partydateTarget.value
+      console.log(partyDate)
+      // Attendancy
+      const attendancy = this.attendancyTarget.value
+      console.log(attendancy)
+      // Theme
+      const theme = this.themeTarget.value
+      console.log(theme)
+      // Dishes
+      const appetizers = this.appetizersTarget.value
+      console.log(appetizers)
+      const mains = this.mainsTarget.value
+      console.log(mains)
+      const desserts = this.dessertsTarget.value
+      console.log(desserts)
+
+
+
+      // API RECIPE fetch DATA ----------------------------------------------------
       const allRecipes = recipes()
       const labelData = []
       const photoData = []
@@ -75,12 +101,24 @@ export default class extends Controller {
       // building POST paramsfor response body
       const params = {
         party: {
-          title: labelData,
-          photo: photoData,
-          ingredients: ingredientsData,
-          recipe_url: urlData
+          title: title,
+          address: address,
+          date: partyDate,
+          theme: theme,
+          attendancy: attendancy,
+          appetizers: appetizers,
+          mains: mains,
+          desserts: desserts,
+          recipes_data: {
+            title: labelData,
+            photo: photoData,
+            ingredients: ingredientsData,
+            recipe_url: urlData
+          }
         }
       }
+      
+      // ------------------------------------------------------
 
       // fetch call with data
       fetch("http://localhost:3000/parties", {
@@ -95,7 +133,7 @@ export default class extends Controller {
     }
 
     test(event) {
-      event.preventDefault()
+      console.log("test")
       alert("test")
     }
   }
