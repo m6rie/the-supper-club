@@ -5,31 +5,31 @@
 
     <div class= "create-party-container center">
 
-    <ul class="nav nav-pills mb-3 center tabs" id="pills-tab" role="tablist" data-tabs id="example-tabs">
-      <li class="nav-item tabs-title" role="presentation">
-        <button class="nav-link active tabs-title" id="pills-name-tab" data-bs-toggle="pill" data-bs-target="#pills-name" type="button" role="tab" aria-controls="pills-name" aria-selected="true">Name and details</button>
-      </li>
-      <li class="nav-item tabs-title" role="presentation">
-          <button class="nav-link tabs-title" id="pills-theme-tab" data-bs-toggle="pill" data-bs-target="#pills-loading" type="button" role="tab" aria-controls="pills-theme" aria-selected="false">Loading</button>
-      </li>
+      <ul class="nav nav-pills mb-3 center tabs" id="pills-tab" role="tablist" data-tabs id="example-tabs">
+        <li class="nav-item tabs-title" role="presentation">
+          <button class="nav-link active tabs-title" id="pills-name-tab" data-bs-toggle="pill" data-bs-target="#pills-name" type="button" role="tab" aria-controls="pills-name" aria-selected="true">Name and details</button>
+        </li>
+        <li class="nav-item tabs-title" role="presentation">
+            <button class="nav-link tabs-title" id="pills-theme-tab" data-bs-toggle="pill" data-bs-target="#pills-loading" type="button" role="tab" aria-controls="pills-theme" aria-selected="false">Loading</button>
+        </li>
 
-      <li class="nav-item tabs-title" role="presentation">
-          <button class="nav-link tabs-title" id="pills-theme-tab" data-bs-toggle="pill" data-bs-target="#pills-theme" type="button" role="tab" aria-controls="pills-theme" aria-selected="false">Theme</button>
-      </li>
+        <li class="nav-item tabs-title" role="presentation">
+            <button class="nav-link tabs-title" id="pills-theme-tab" data-bs-toggle="pill" data-bs-target="#pills-theme" type="button" role="tab" aria-controls="pills-theme" aria-selected="false">Theme</button>
+        </li>
 
 
-      <li class="nav-item tabs-title" role="presentation">
-          <button class="nav-link tabs-title" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Guests</button>
-      </li>
+        <li class="nav-item tabs-title" role="presentation">
+            <button class="nav-link tabs-title" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Guests</button>
+        </li>
 
-      <li class="nav-item tabs-title" role="presentation">
-          <button class="nav-link tabs-title" id="pills-food-tab" data-bs-toggle="pill" data-bs-target="#pills-food" type="button" role="tab" aria-controls="pills-food" aria-selected="false">Dishes</button>
-      </li>
-      <li class="nav-item tabs-title" role="presentation">
-          <button class="nav-link tabs-title" id="pills-recipe-tab" data-bs-toggle="pill" data-bs-target="#pills-recipe" type="button" role="tab" aria-controls="pills-recipe" aria-selected="false">Recipes</button>
-      </li>
-    </ul>
-    <br>
+        <li class="nav-item tabs-title" role="presentation">
+            <button class="nav-link tabs-title" id="pills-food-tab" data-bs-toggle="pill" data-bs-target="#pills-food" type="button" role="tab" aria-controls="pills-food" aria-selected="false">Dishes</button>
+        </li>
+        <li class="nav-item tabs-title" role="presentation">
+            <button class="nav-link tabs-title" id="pills-recipe-tab" data-bs-toggle="pill" data-bs-target="#pills-recipe" type="button" role="tab" aria-controls="pills-recipe" aria-selected="false">Recipes</button>
+        </li>
+      </ul>
+      <br>
       <div class="tab-content" id="pills-tabContent"
           data-controller="navtab-active">
 
@@ -66,24 +66,25 @@
             <div class="btn-group"><a href="#" class="next-tab" data-controller="navtab-active">Next</a> </div>
 
           <%= image_tag "create_img2.png" %>
-    </div>
-          <div class="col-6">
+        </div>
+        <div data-controller="select-theme">
+          <div class="col-6" >
             <div class="row justify-content-center">
-      <div class="col-sm-12 text-center">
-        <div class="d-flex flex-wrap justify-content-center pt-4">
-
-        <% Theme::CATEGORY.each do |theme| %>
-          <div class="clickable">
-            <p> <%= theme %> </p>
+             <div class="col-sm-12 text-center">
+              <div class="d-flex flex-wrap justify-content-center pt-4">
+                <% Theme::CATEGORY.each do |theme| %>
+                  <div class="clickable" data-select-theme-target="theme" id="<%= theme %>" data-action="click->select-theme#select">
+                    <p> <%= theme %> </p>
+                  </div>
+                <% end %>
+              </div>
+            </div>
           </div>
-          <% end %>
+          <% f.input :theme, collection: Theme::CATEGORY, input_html: { class: "d-none" }, input_html: { data: { select_theme_target: "input" } } %>
         </div>
-      </div>
-      </div>
-       <%= f.input :theme, collection: Theme::CATEGORY, input_html: { data: { draggable_target: "theme" } } %>
-    </div>
-</div>
         </div>
+       </div>
+      </div>
 
 
         <div class="tab-pane fade center " id="pills-contact" data-search-recipes-target="pages" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
@@ -142,7 +143,7 @@
           </div>
           <br>
            <br>
-           
+
           </div>
         </div>
         <%# redirect_to party_recipe_search path %>

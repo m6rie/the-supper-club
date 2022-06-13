@@ -161,8 +161,14 @@
 .clickable:hover {
   color:#C9FBC5;
   background-color: black;
+  cursor: grab;
 }
 
+.selected-card {
+  color:#C9FBC5;
+  background-color: black;
+  border: #ff0022;
+}
 
 .clickable.active {
   color:#C9FBC5;
