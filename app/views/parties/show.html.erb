@@ -129,4 +129,6 @@
   </div>
 </div>
             <%# QR CODE THING %>
-          <%= image_tag "qr_code#{@party.title}.png" %>
+          <%= link_to party_invite_path(@party) do %>
+            <%= image_tag "qr_code#{@party.title}.png" %>
+          <% end %>
