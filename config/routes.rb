@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     get :qr_code_download
   end
 
+  resources :conversations, only: [:index]
+
   get 'my_recipes', to: 'recipes#my_recipes'
 
   resources :recipes, only: [:index, :show]

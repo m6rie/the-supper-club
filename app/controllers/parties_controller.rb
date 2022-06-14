@@ -41,7 +41,17 @@ class PartiesController < ApplicationController
     @party_recipe.each do |recipe|
     @ingredients = recipe.ingredients
     @recipe_ingredient = RecipeIngredient.new
-  end
+    end
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render  pdf: "Ingredients",
+                template: "parties/ingredients",
+                formats: [:html],
+                disposition: :inline,
+                layout: 'pdf'
+      end
+    end
   end
 
   def create
