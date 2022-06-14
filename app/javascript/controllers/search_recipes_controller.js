@@ -4,59 +4,48 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["form", "input", "content", "empty"]
 
-
   search(event) {
 
-    // console.log("hello")
-    // console.log(this.formTarget)
-    // console.log(this.inputTarget.value)
-    // console.log(this.imageTarget)
-    // console.log(this.contentTarget)
-
+    // API CALL DATA
     const input = this.inputTarget.value
     const apiKey = '9a33f2a981e7930dfb3369195fc15726'
     const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${input}&app_id=958988ca&app_key=${apiKey}`
 
+    // STARTING FETCH FROM API
     event.preventDefault()
     fetch(url)
     .then (response => response.json())
     .then((data) => {
-      console.log(data.hits)
-      //  this.emptyTarget.insertAdjacentHTML("beforeend",
-      //   `<div class="col-3" ></div>
-      //   <div class="col-3" >some</div>
-      //   <div class="col-3" >text</div>
-      //   <div class="col-3" >test</div>`
-      // )
 
+      // CLEAN PREVIOUS SEARCH
       this.contentTarget.innerHTML = ""
 
+      // GET INGREDIENTS
       data.hits.forEach ((recipe) => {
-        console.log(recipe)
+        const ingredients = []
+        const ingr = recipe['recipe']['ingredientLines']
+        ingr.forEach((ingredient) => {
+         ingredients.push(ingredient)
+        })
 
-        this.contentTarget.insertAdjacentHTML("afterBegin",
-        `<a href="${recipe['recipe']['url']}" target="_blank" class="card border col-3">
-          <div class="row border">
-            <div class="col-12"><img src=${JSON.stringify(recipe['recipe']['image'])} width="100%"></div>
+      // INSERT CARDS TO VIEW
+      this.contentTarget.insertAdjacentHTML("afterBegin",
+
+      `<div class=" d-flex">
+        <div href="${recipe['recipe']['url']}" target="_blank" class="card-recipe-api">
+          <a href="${recipe['recipe']['url']}" target="_blank" id="image" data-image=${JSON.stringify(recipe['recipe']['image'])}><img class="recipe-api-img" src=${JSON.stringify(recipe['recipe']['image'])}></a>
+          <i class=" move-icon fa-solid fa-arrows-up-down-left-right"></i>
+        <div class="info-api">
+            <h5><strong>Title: </strong>${JSON.stringify(recipe['recipe']['label'])}</h5>
+            <br>
+            <p><strong>Calories: </strong>${JSON.stringify(Math.round(recipe['recipe']['calories']))} kcal</p>
+            <div id="ingredients" data-ingredients=[${ingredients}]>
+            <strong>Ingredients: </strong>${JSON.stringify((recipe['recipe']['ingredients'].length))}
+            </div>
           </div>
-          <div class="row border">
-            <div class="col-12">${JSON.stringify(recipe['recipe']['label'])}</div>
-          </div>
-          <div class="row border">
-            <p>Calories: </><div class="col-12">${JSON.stringify(Math.round(recipe['recipe']['calories']))}</div></p>
-          </div>
-          <div class="row border">
-            <p><div class="col-12">${JSON.stringify(recipe['recipe']['ingredientLines'].length)}</div> ingredients</p>
-          </div>
-        </a>`
-      )})
-    })
+        </div>
+     `
+      )}
+    )})
   }
 }
-
-// Access point
-// https://api.edamam.com/api/recipes/v2
-// Request URL
-// `https://api.edamam.com/api/recipes/v2?type=public&q=${input}&app_id=958988ca&app_key=${apiKey}`
-
-// From recipe we want "image", "label" "healthLabel", "calories", "digest[0..2]"
