@@ -1,5 +1,4 @@
 .show-container {
-  margin-top: 20px;
   height: 100vh;
   max-width:100%;
 }
@@ -40,14 +39,15 @@
       }
 
       .edit-btn {
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-right: 18px;
-        padding-left: 18px;
-        background-color: transparent;
+        color:#C9FBC5;
+        background-color: black;
         font-size: 15px;
         border: 1px solid black;
         font-family: $text-font;
+        text-decoration: none;
+        background-color: #333;
+        padding: 2px;
+        border-radius: 999px;
       }
 
       .edit-btn:hover {
@@ -57,8 +57,9 @@
 
     .recipe-content {
       display: flex;
-      flex-grow: 1 1 1;
       .recipe-card {
+        flex: 1;
+        min-width: 0;
         width: 500px;
         height: 220px;
         .recipe-img-container {
@@ -103,10 +104,6 @@
 
         }
       }
-    }
-
-    .convo-container {
-      // flex-grow: 1;
     }
   }
 
@@ -159,10 +156,6 @@ h2 {
 
 
 .convo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 
   .card {
     position: relative;
