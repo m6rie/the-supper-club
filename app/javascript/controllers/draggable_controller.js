@@ -63,6 +63,7 @@ export default class extends Controller {
     const attendancy = this.attendancyTarget.value;
     // THEME DATA
     const theme = this.themeTarget.value;
+    console.log(theme)
     // DISHES
     const appetizers = this.appetizersTarget.value;
     const mains = this.mainsTarget.value;
@@ -85,7 +86,8 @@ export default class extends Controller {
 
     allRecipes.forEach((recipe) => {
       // RECIPE URL
-      const recipeURL = recipe.href;
+      const recipeURL = recipe.querySelector("#recipeurl").href;
+      console.log(recipeURL)
       urlData.push(recipeURL);
       // RECIPE LABEL
       const label = recipe.querySelector("#label").dataset.label;
@@ -99,6 +101,7 @@ export default class extends Controller {
       ingredientsData.push(ingredients);
     });
 
+    console.log(urlData)
     // TOKEN FOR THE POST
     this.csrfToken = document
       .querySelector('meta[name="csrf-token"]')
@@ -119,11 +122,12 @@ export default class extends Controller {
           title: labelData,
           photo: photoData,
           ingredients: ingredientsData,
-          recipe_url: urlData,
+          url: urlData,
         },
       },
     };
     console.log(params);
+    console.log(JSON.stringify(params));
 
     // FETCH CALL WITH RECIPE AND PARTY DATA
     fetch("http://localhost:3000/parties", {

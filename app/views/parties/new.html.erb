@@ -36,7 +36,7 @@
 
             <h2>What's the theme?</h2>
             <%= image_tag "create_img2.png" %>
-          </div>  
+          </div>
           <div data-controller="select-theme">
             <div class="col-6" >
               <div class="row justify-content-center">
@@ -51,12 +51,12 @@
                 </div>
               </div>
               <div class= "d-none">
-                <%= f.input :theme, collection: Theme::CATEGORY, input_html: { data: { select_theme_target: "input" } } %>
+                <%= f.input :theme, collection: Theme::CATEGORY, input_html: { data: { select_theme_target: "input", draggable_target: "theme"  }} %>
               </div>
             </div>
           </div>
-            
-        
+
+
         </div>
       </div>
       <%# GUEST TAB %>
@@ -65,7 +65,7 @@
         <h2>How many people<br>are you inviting?</h2>
         <br>
         <div class="guest-card center">
-          <h2><%= f.input :attendancy, placeholder: "0", label:false, input_html: { data: { draggable_target: "attendancy" } } %></h2>
+          <%= f.input :attendancy, placeholder: "0", label:false, input_html: { data: { draggable_target: "attendancy" } } %>
         </div>
       </div>
       <%# DISHES TAB %>
