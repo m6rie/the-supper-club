@@ -1,7 +1,3 @@
-#create-body {
-  background-color: #c9fbc5;
-}
-
 body#green {
   background-color: #c9fbc5;
   position: relative;
@@ -33,6 +29,103 @@ body#green {
 }
 
 .create-party-container {
+  .recipe-container {
+    display: flex;
+  }
+
+  .new-details {
+    text-align: left;
+  }
+
+  .form-control {
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    text-align: left;
+  }
+
+  .dishes-card {
+    background-color: #c9fbc5;
+    padding: 40px;
+    margin: 10px;
+  }
+
+  .guest-card {
+    margin: auto;
+    width: 50%;
+    background-color: #c9fbc5;
+    padding: 40px;
+  }
+
+  .recipe-search-container {
+    text-align: left;
+  }
+
+  .search-recipe-card {
+    width: 300px;
+    height: auto;
+    margin-right: 10px;
+  }
+
+  .search-button {
+    color: black;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: none;
+    text-decoration: underline;
+  }
+
+  .create-party-btn {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    background-color: #c9fbc5;
+    color: black;
+    border: 1px solid black;
+    text-decoration: none;
+  }
+
+  .create-party-btn a {
+    text-decoration: none;
+  }
+
+  .clickable {
+    font-size: 30px;
+    padding: 40px;
+    width: 200px;
+    height: 200px;
+    // border: 1px solid black;
+    color: black;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: white;
+  }
+
+  .clickable.active {
+    color: inherit;
+    border-color: inherit;
+  }
+
+  .clickable:hover {
+    color: #c9fbc5;
+    background-color: black;
+  }
+
+  .clickable.active {
+    color: #c9fbc5;
+    background-color: black;
+    border-radius: 9999px;
+  }
+
   .inline-form {
     display: inline-flex;
     width: 100%;
@@ -96,98 +189,6 @@ body#green {
   .nav-link {
     color: black;
   }
-}
-
-.recipe-container {
-  display: flex;
-}
-
-.new-details {
-  text-align: left;
-}
-
-.form-control {
-  background-color: transparent;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid black;
-  text-align: left;
-}
-
-.dishes-card {
-  background-color: #c9fbc5;
-  padding: 40px;
-  margin: 10px;
-}
-
-.guest-card {
-  margin: auto;
-  width: 50%;
-  background-color: #c9fbc5;
-  padding: 40px;
-}
-
-.recipe-search-container {
-  text-align: left;
-}
-
-.search-recipe-card {
-  width: 300px;
-  height: auto;
-  margin-right: 10px;
-}
-
-.search-button {
-  color: black;
-  padding: 10px;
-  margin-bottom: 30px;
-  border: none;
-  text-decoration: underline;
-}
-
-.create-party-btn {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  background-color: #c9fbc5;
-  color: black;
-  border: 1px solid black;
-  text-decoration: none;
-}
-
-.create-party-btn a {
-  text-decoration: none;
-}
-
-.clickable {
-  font-size: 30px;
-  padding: 40px;
-  width: 200px;
-  height: 200px;
-  // border: 1px solid black;
-  color: black;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  border-radius: 10px;
-  background-color: white;
-}
-
-.clickable.active {
-  color: inherit;
-  border-color: inherit;
-}
-
-.clickable:hover {
-  color: #c9fbc5;
-  background-color: black;
-  cursor: grab;
 }
 
 .selected-card {

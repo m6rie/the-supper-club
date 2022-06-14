@@ -1,0 +1,119 @@
+<body id = "create-body green" data-controller="draggable">
+  <div class= "create-party-container center" data-controller="navtab-active">
+    <div class="tabs d-flex center">
+        <button class="btn btn-dark"  data-navtab-active-target="tab" data-action="click->navtab-active#show">Invite</button>
+        <%# <button class="btn" data-navtab-active-target="tab" data-action="click->navtab-active#show">Loading</button> %>
+        <button class="btn" data-navtab-active-target="tab" data-action="click->navtab-active#show">Theme</button>
+        <button class="btn" data-navtab-active-target="tab" data-action="click->navtab-active#show">Guests</button>
+        <button class="btn" data-navtab-active-target="tab" data-action="click->navtab-active#show">Dishes</button>
+        <button class="btn" data-navtab-active-target="tab" data-action="click->navtab-active#show">Recipes</button>
+    </div>
+    <div class="tab-content-container">
+        <%# INVITE TAB %>
+        <div class="tab-content-invite display-a" data-navtab-active-target="content" data-attribute="Invite">
+          <div class="row detail-container">
+            <div class = "col-6">
+              <%= image_tag "Dinner_party_1.png", class: "img-create"%>
+            </div>
+            <div class = "col-6 text-start">
+              <p> First things first, give your party some info </p>
+              <h2>Hey! It's <em><%= current_user.name %></em>,</h2>
+              <%= simple_form_for @party, html: { class: 'form-horizontal' }, data: { action: "submit->draggable#test" } , wrapper: :horizontal_form do |f| %>
+              <div class="inline-form col-12"><h2>Come to my &nbsp</h2><%= f.input :title, label: false, input_html: { data: { draggable_target: "title" } }, placeholder: "party name?" %><h2>!</h2>
+              </div>
+              <div class="inline-form col-12"><h2>It's at &nbsp</h2><%= f.input :address, label: false, placeholder: "where?", input_html: { data: { draggable_target: "address" } } %>
+              </div>
+              <div class="inline-form col-12"><h2>On &nbsp</h2><%= f.input :date, label: false, html5: true, input_html: { data: { draggable_target: "partydate" } } %>
+              </div>
+              <h2>See you there!<h2>
+            </div>
+          </div>
+        </div>
+        <%# LOADING PAGE %>
+        <%# <div class="tab-content-loading d-none" data-navtab-active-target="content" data-attribute="Loading">
+        </div> %>
+        <%# THEME TAB %>
+        <div class="tab-content-theme d-none" data-navtab-active-target="content" data-attribute="Theme">
+          <div class="row">
+            <div class="col-6 theme-container-left center">
+              <h2>What's the theme?</h2>
+              <%= image_tag "create_img2.png" %>
+            </div>
+            <div class="col-6">
+              <div class="row justify-content-center">
+                <div class="col-sm-12 text-center">
+                  <div class="d-flex flex-wrap justify-content-center pt-4">
+                    <% Theme::CATEGORY.each do |theme| %>
+                    <div class="clickable">
+                      <p> <%= theme %> </p>
+                    </div>
+                  <% end %>
+                  </div>
+                </div>
+              </div>
+              <%= f.input :theme, collection: Theme::CATEGORY, input_html: { data: { draggable_target: "theme" } } %>
+            </div>
+          </div>
+        </div>
+        <%# GUESTS TAB %>
+        <div class="tab-content-guests d-none" data-navtab-active-target="content" data-attribute="Guests">
+          <%= image_tag "create_img1.png" %>
+          <h2>How many people<br>are you inviting?</h2>
+          <br>
+          <div class="guest-card center">
+            <h2><%= f.input :attendancy, placeholder: "0", label:false, input_html: { data: { draggable_target: "attendancy" } } %></h2>
+          </div>
+        </div>
+        <%# DISHES TAB %>
+        <div class="tab-content-dishes d-none" data-navtab-active-target="content" data-attribute="Dishes">
+          <div class="row align-items-start center">
+            <h2>How many dishes<br>would you like to make?</h2>
+            <br>
+              <div class="dishes-card col-3 center" ><%= f.input :appetizers, placeholder: "0", input_html: { data: { draggable_target: "appetizers" } }  %></div>
+              <div class="dishes-card col-3 center" ><%= f.input :mains, placeholder: "0", input_html: { data: { draggable_target: "mains" } } %></div>
+              <div class="dishes-card col-3 center" ><%= f.input :desserts, placeholder: "0", input_html: { data: { draggable_target: "desserts" } } %></div>
+              <%= image_tag "create-img3.png", class: "img-dishes" %>
+          </div>
+        </div>
+        <%# RECIPES TAB %>
+        <div class="tab-content-recipes d-none" data-navtab-active-target="content" data-attribute="Recipes">
+          <h2>On the menu</h2>
+          <%# DRAGGABLE %>
+          <%= f.submit class: "btn submit-btn" %>
+          <% end %>
+          <button data-action="click->draggable#test">Test</button>
+
+          <div data-controller="search-recipes" class=" pt-3">
+            <div>
+              <%= simple_form_for new_party_path, method: :get, html: { data: { search_recipes_target: "form", action: "submit->search-recipes#search"}} do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "search recipes",
+                data: {search_recipes_target: "input"}  %>
+              <%= submit_tag "Search", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+            <br>
+            <br>
+            <div class="container">
+              <div class="row">
+                <div class="col-6 border border-5 pb-3" style="height:3191px;" id="emptyspace"  data-search-recipes-target="empty">
+                </div>
+                <br>
+                <div class="col-6" id="ourlist"  data-search-recipes-target="content">
+                </div>
+                <button class="btn btn-primary" style="margin: 24px;" data-action="click->draggable#sendData">Let's cook!</button>
+                <div class="row" id="ourlist"  data-search-recipes-target="drag">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <button class="btn-group next-tab" data-action="click->navtab-active#next" data-navtab-active-target="link">Next</button>
+    <button class="btn-group back-tab" data-action="click->navtab-active#next" data-navtab-active-target="link">Back</button>
+   <%# END OF FORM %>
+    <%# <button class="btn-group back-tab">Back</button> %>
+  </div>
+</body>
