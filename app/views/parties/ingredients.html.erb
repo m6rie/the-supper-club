@@ -1,21 +1,61 @@
-<html>
-  <body>
-    <div class="container mt-2 p-0 mx-0">
-      <div class="d-flex">
-          <%= render 'shared/party_info' %>
-        <div class="ingredient-container col-9">
-          <h2> Ingredient list </h2>
-            <ul>
-              <%  @ingredients.each do |ingredient| %>
-              <li class ="ingredient">
-                <%= check_box_tag ingredient, false %> <%= ingredient %>
-              </li>
-              <% end %>
-            </ul>
-            <br>
-            <button class="download-btn"><i class="fa-solid fa-arrow-down-to-bracket"></i> Download as PDF</button>
+<div class="flex-container">
+
+
+      <div class="flex-child party-info-container">
+        <h4><%= @party.status %></h4>
+        <h2><%= @party.title %></h2>
+        <hr>
+        <p>ADDRESS</p>
+        <h5><%= @party.address %><h5>
+        <hr>
+        <p>DATE</p>
+        <h5><%= @party.date %><h5>
+        <hr>
+        <h5><p>THEME</p><h5>
+        <%= @party.theme %>
+          <hr>
+        <h5><p>GUESTS</p><h5>
+        <%= @party.attendancy %>
+        <hr>
+        <div class="edit-btn">
+        <%= link_to "Edit" %>
         </div>
+        <%# <button class="">Edit</button> %>
       </div>
-    </div>
-  </body>
-</html>
+
+
+      <div class="flex-child ingredient-container">
+        <div class="title-ingredient">
+          <div>
+            <h2> Ingredient list </h2>
+          </div>
+          <div>
+            <div class="download-btn">
+              <i class="fas fa-download"></i>
+              <%= link_to "Save list as PDF", party_ingredients_path(@party, format: :pdf)%>
+            </div>
+
+          </div>
+        </div>
+          <ul>
+          <div>
+            <% @ingredients.each do |ingredient| %>
+            <li>
+            <div class="ingredient">
+              <div><%= check_box_tag ingredient, false %> <%= ingredient %></div>
+
+              <div class="amount"><%= "Amount" %></div>
+            </div>
+            </li>
+            <%# <li>
+            <div>
+              <%= "Amount" %>
+            <%# </div> %>
+            <%# </li> %>
+            <% end %>
+          </div>
+          </ul>
+          <br>
+      </div>
+
+</div>
