@@ -1,5 +1,35 @@
 #create-body {
-  background-color: #C9FBC5;
+  background-color: #c9fbc5;
+}
+
+body#green {
+  background-color: #c9fbc5;
+  position: relative;
+  .tabs {
+    position: fixed;
+    bottom: 30px;
+    left: 35%;
+    margin: auto;
+  }
+  .next-tab {
+    width: 100px;
+    position: fixed;
+    padding: 15px;
+    bottom: 20px;
+    background-color: black;
+    color: #c9fbc5;
+    right: 0px;
+  }
+  .back-tab {
+    justify-content: right;
+    width: 100px;
+    position: fixed;
+    padding: 15px;
+    bottom: 20px;
+    background-color: black;
+    color: #c9fbc5;
+    left: 0px;
+  }
 }
 
 .create-party-container {
@@ -27,15 +57,14 @@
     padding-left: 16px;
     font-size: 16px;
     background-color: black;
-    color:#C9FBC5;
+    color: #c9fbc5;
     border: 1px solid black;
   }
 
   .detail-container {
     padding-top: 10%;
-    height:100vh;
-    width:100vw;
-
+    height: 100vh;
+    width: 100vw;
   }
 
   p {
@@ -44,7 +73,7 @@
   }
 
   .form-select {
-    background-color:#C9FBC5;
+    background-color: #c9fbc5;
     border: 1px solid black;
   }
 
@@ -57,12 +86,11 @@
     font-size: 65px;
     font-family: $display-font;
     line-height: 55px;
-
   }
 
   .nav-link.active {
     background-color: black;
-    color: #C9FBC5;
+    color: #c9fbc5;
   }
 
   .nav-link {
@@ -88,7 +116,7 @@
 }
 
 .dishes-card {
-  background-color: #C9FBC5;
+  background-color: #c9fbc5;
   padding: 40px;
   margin: 10px;
 }
@@ -96,7 +124,7 @@
 .guest-card {
   margin: auto;
   width: 50%;
-  background-color: #C9FBC5;
+  background-color: #c9fbc5;
   padding: 40px;
 }
 
@@ -123,7 +151,7 @@
   padding-right: 30px;
   padding-top: 18px;
   padding-bottom: 18px;
-  background-color: #C9FBC5;
+  background-color: #c9fbc5;
   color: black;
   border: 1px solid black;
   text-decoration: none;
@@ -133,9 +161,8 @@
   text-decoration: none;
 }
 
-
 .clickable {
-  font-size: 30px;;
+  font-size: 30px;
   padding: 40px;
   width: 200px;
   height: 200px;
@@ -152,20 +179,62 @@
   background-color: white;
 }
 
-
 .clickable.active {
   color: inherit;
   border-color: inherit;
 }
 
 .clickable:hover {
-  color:#C9FBC5;
+  color: #c9fbc5;
   background-color: black;
+  cursor: grab;
 }
 
-
-.clickable.active {
+.selected-card {
   color:#C9FBC5;
   background-color: black;
+  border: #ff0022;
+}
+
+.clickable.active {
+  color: #c9fbc5;
+  background-color: black;
   border-radius: 9999px;
+}
+
+.card-recipe-api {
+  height: 150px;
+  width: 40vw;
+  display: flex;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
+  overflow: hidden;
+  background: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  top: 0px;
+  z-index: 0;
+  position: relative;
+}
+
+.recipe-api-img {
+  width: 180px;
+  object-fit: cover
+}
+
+.info-api {
+  text-align: left;
+  padding: 16px;
+}
+
+.move-icon {
+position: absolute;
+left: 95%;
+top: 10%;
+opacity: 0.6;
+}
+
+.move-icon:hover {
+  opacity: 1;
+  transform: scale(1.5);
 }

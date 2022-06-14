@@ -4,6 +4,32 @@
       <div class="d-flex">
           <%= render 'shared/party_info' %>
 
+        <div class="ingredient-container col-9">
+          <div class= "d-flex flex-row justify-content-between ">
+            <div>
+              <h2> Ingredient list </h2>
+            </div>
+              <div class="align-self-center">
+                <%= button_to "", class:"download-btn" do %>
+                <i class="fa-solid fa-arrow-down-to-bracket"></i>
+                <i class="fas fa-download"></i>
+                Save list as PDF
+                <% end %>
+              </div>
+          </div>
+            <ul>
+              <%# <div class="row justify-content-between"> %>
+              <% @party.recipes.each do |recipe| %>
+                <% recipe.ingredients.each do |ingredient| %>
+                <li class ="ingredient d-flex justify-content-start">
+                <%= check_box_tag(ingredient) %>
+                <%= ingredient.name %>
+                </li>
+                <% end %>
+                 <% end %>
+                <%# <div> %>
+              </div>
+            </ul>
             <br>
         </div>
       </div>

@@ -1,0 +1,22 @@
+<div class="party-info-container col-2">
+     <h4>
+     <%= @party.status %>
+     </h4>
+     <h2><%= @party.title %></h2>
+     <hr>
+     <p>ADDRESS</p>
+     <h5><%= @party.address %><h5>
+     <hr>
+     <p>DATE</p>
+     <h5><%= @party.date %><h5>
+     <hr>
+    <h5><p>THEME</p><h5>
+     <%= @party.theme %>
+<hr>
+     <h5><p>GUESTS</p><h5>
+     <%= @party.attendancy %>
+     <hr>
+     <button class="edit-btn">Edit</button>
+    </div>
+    <%# <div class="party-desc-container col-9">
+    </div> %>
