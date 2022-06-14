@@ -16,6 +16,7 @@
           <div class = "col-6">
             <%= image_tag "Dinner_party_1.png", class: "img-create"%>
           </div>
+
           <div class = "col-6 text-start">
             <p> First things first, give your party some info </p>
             <h2>Hey! It's <em><%= current_user.name %></em>,</h2>
@@ -32,23 +33,30 @@
       <div class="tab-content-theme d-none" data-navtab-active-target="content" data-attribute="Theme">
         <div class="row">
           <div class="col-6 theme-container-left center">
+
             <h2>What's the theme?</h2>
             <%= image_tag "create_img2.png" %>
-          </div>
-          <div class="col-6">
-            <div class="row justify-content-center">
-              <div class="col-sm-12 text-center">
-                <div class="d-flex flex-wrap justify-content-center pt-4">
-                  <% Theme::CATEGORY.each do |theme| %>
-                    <div class="clickable">
-                      <p> <%= theme %> </p>
-                    </div>
-                  <% end %>
+          </div>  
+          <div data-controller="select-theme">
+            <div class="col-6" >
+              <div class="row justify-content-center">
+                <div class="col-sm-12 text-center">
+                  <div class="d-flex flex-wrap justify-content-center pt-4">
+                    <% Theme::CATEGORY.each do |theme| %>
+                      <div class="clickable" data-select-theme-target="theme" id="<%= theme %>" data-action="click->select-theme#select">
+                        <p> <%= theme %> </p>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+              <div class= "d-none">
+                <%= f.input :theme, collection: Theme::CATEGORY, input_html: { data: { select_theme_target: "input" } } %>
               </div>
             </div>
           </div>
-          <%= f.input :theme, collection: Theme::CATEGORY, input_html: { data: { draggable_target: "theme" } } %>
-        </div>
+            
+        
         </div>
       </div>
       <%# GUEST TAB %>
@@ -69,6 +77,7 @@
             <div class="dishes-card col-3 center" ><%= f.input :mains, placeholder: "0", input_html: { data: { draggable_target: "mains" } } %></div>
             <div class="dishes-card col-3 center" ><%= f.input :desserts, placeholder: "0", input_html: { data: { draggable_target: "desserts" } } %></div>
             <%= image_tag "create-img3.png", class: "img-dishes" %>
+
         </div>
       </div>
       <%# END OF FORM %>
@@ -99,6 +108,7 @@
               <div class="row" id="ourlist"  data-search-recipes-target="drag">
               </div>
             </div>
+
           </div>
         </div>
       </div>

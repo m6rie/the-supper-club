@@ -12,3 +12,6 @@ application.register("navtab-active", NavtabActiveController)
 
 import SearchRecipesController from "./search_recipes_controller.js"
 application.register("search-recipes", SearchRecipesController)
+
+import SelectThemeController from "./select_theme_controller.js"
+application.register("select-theme", SelectThemeController)
