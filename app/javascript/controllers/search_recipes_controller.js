@@ -29,31 +29,33 @@ export default class extends Controller {
           // INSERT CARDS TO VIEW
           this.contentTarget.insertAdjacentHTML(
             "afterBegin",
-
-            `<a href="${
-              recipe["recipe"]["url"]
-            }" target="_blank" class="card border col-3">
-        <div class="row border">
-          <div class="col-12" id="image" data-image=${JSON.stringify(
-            recipe["recipe"]["image"]
-          )}><img src=${JSON.stringify(
+            `
+            <div class="d-flex">
+                <div href="${
+                  recipe["recipe"]["url"]
+                }" target="_blank" class="card-recipe-api">
+                  <a href="${recipe["recipe"]["url"]}" target="_blank" class="">
+                    <div class="" id="image" data-image=${JSON.stringify(
+                      recipe["recipe"]["image"]
+                    )}><img src=${JSON.stringify(
               recipe["recipe"]["image"]
-            )} width="100%"></div>
-        </div>
-        <div class="row border">
-          <div class="col-12" id="label" data-label=${JSON.stringify(
-            recipe["recipe"]["label"]
-          )}>${JSON.stringify(recipe["recipe"]["label"])}"</div>
-        </div>
-        <div class="row border">
-          <p>Calories: </><div class="col-12">${JSON.stringify(
-            Math.round(recipe["recipe"]["calories"])
-          )}</div></p>
-        </div>
-        <div class="row border" id="ingredients" data-ingredients="[${ingredients}]">>
-          <p><div class="col-12">Igredients</div></p>
-        </div>
-      </a>`
+            )} class ="recipe-api-img"width="100%"></div>
+                  </a>
+                  <i class=" move-icon fa-solid fa-arrows-up-down-left-right"></i>
+                  <div class="info-api">
+                    <div class="" id="label" data-label=${JSON.stringify(
+                      recipe["recipe"]["label"]
+                    )}>${JSON.stringify(recipe["recipe"]["label"])}"</div>
+                    <p><div/>${JSON.stringify(
+                      Math.round(recipe["recipe"]["calories"])
+                    )}kcal</div></p>
+                    <div class="" id="ingredients" data-ingredients="[${ingredients}]"></div>
+                    <strong>Ingredients: </strong>${JSON.stringify(
+                      recipe["recipe"]["ingredients"].length
+                    )}
+                  </div>
+                </div>
+            </div>`
           );
         });
       });
