@@ -10,9 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_09_133548) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_14_095819) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "conversations", force: :cascade do |t|
+    t.string "topic"
+    t.string "subject"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "parties", force: :cascade do |t|
     t.string "title"
@@ -39,15 +52,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_09_133548) do
     t.index ["recipe_id"], name: "index_party_recipes_on_recipe_id"
   end
 
+  create_table "recipe_ingredients", force: :cascade do |t|
+    t.bigint "recipe_id", null: false
+    t.bigint "ingredient_id", null: false
+    t.string "amount"
+    t.boolean "included", default: false
+    t.index ["ingredient_id"], name: "index_recipe_ingredients_on_ingredient_id"
+    t.index ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id"
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.integer "prep_time"
     t.string "ingredients"
-    t.text "instructions"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo_url"
+    t.string "recipe_url"
   end
 
   create_table "themes", force: :cascade do |t|
@@ -82,6 +104,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_09_133548) do
   add_foreign_key "parties", "users"
   add_foreign_key "party_recipes", "parties"
   add_foreign_key "party_recipes", "recipes"
+  add_foreign_key "recipe_ingredients", "ingredients"
+  add_foreign_key "recipe_ingredients", "recipes"
   add_foreign_key "user_recipes", "recipes"
   add_foreign_key "user_recipes", "users"
 end

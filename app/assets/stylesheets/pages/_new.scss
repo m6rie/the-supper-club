@@ -1,15 +1,189 @@
+body#green {
+  background-color: #c9fbc5;
+  position: relative;
+  .tabs {
+    position: fixed;
+    bottom: 30px;
+    left: 35%;
+    margin: auto;
+  }
+  .next-tab {
+    width: 100px;
+    position: fixed;
+    padding: 15px;
+    bottom: 20px;
+    background-color: black;
+    color: #c9fbc5;
+    right: 0px;
+  }
+  .back-tab {
+    justify-content: right;
+    width: 100px;
+    position: fixed;
+    padding: 15px;
+    bottom: 20px;
+    background-color: black;
+    color: #c9fbc5;
+    left: 0px;
+  }
+}
+
 .create-party-container {
-  margin-top: 70px;
-  margin-left: 200px;
-  margin-right: 200px;
+  .recipe-container {
+    display: flex;
+  }
+
+  .new-details {
+    text-align: left;
+  }
+
+  .form-control {
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    text-align: left;
+  }
+
+  .dishes-card {
+    background-color: #c9fbc5;
+    padding: 40px;
+    margin: 10px;
+  }
+
+  .guest-card {
+    margin: auto;
+    width: 50%;
+    background-color: #c9fbc5;
+    padding: 40px;
+  }
+
+  .recipe-search-container {
+    text-align: left;
+  }
+
+  .search-recipe-card {
+    width: 300px;
+    height: auto;
+    margin-right: 10px;
+  }
+
+  .search-button {
+    color: black;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: none;
+    text-decoration: underline;
+  }
+
+  .create-party-btn {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    background-color: #c9fbc5;
+    color: black;
+    border: 1px solid black;
+    text-decoration: none;
+  }
+
+  .create-party-btn a {
+    text-decoration: none;
+  }
+
+  .clickable {
+    font-size: 30px;
+    padding: 40px;
+    width: 200px;
+    height: 200px;
+    // border: 1px solid black;
+    color: black;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: white;
+  }
+
+  .clickable.active {
+    color: inherit;
+    border-color: inherit;
+  }
+
+  .clickable:hover {
+    color: #c9fbc5;
+    background-color: black;
+  }
+
+  .clickable.active {
+    color: #c9fbc5;
+    background-color: black;
+    border-radius: 9999px;
+  }
+
+  .inline-form {
+    display: inline-flex;
+    width: 100%;
+    align-items: flex-end;
+  }
+  .guest-card {
+    width: 40%;
+  }
+
+  .img-dishes {
+    width: 70%;
+  }
+
+  .theme-container-left {
+    justify-content: center;
+  }
+  .next-btn {
+    font-family: $text-font;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 16px;
+    background-color: black;
+    color: #c9fbc5;
+    border: 1px solid black;
+  }
+
+  .detail-container {
+    padding-top: 10%;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 0;
+  }
+
+  .form-select {
+    background-color: #c9fbc5;
+    border: 1px solid black;
+  }
+
   h1 {
     font-family: $display-font;
-    font-size: 50px;
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 65px;
+    font-family: $display-font;
+    line-height: 55px;
   }
 
   .nav-link.active {
     background-color: black;
-    color: #C9FBC5;
+    color: #c9fbc5;
   }
 
   .nav-link {
@@ -17,65 +191,51 @@
   }
 }
 
-.recipe-container {
+.selected-card {
+  color:#C9FBC5;
+  background-color: black;
+  border: #ff0022;
+}
+
+.clickable.active {
+  color: #c9fbc5;
+  background-color: black;
+  border-radius: 9999px;
+}
+
+.card-recipe-api {
+  height: 150px;
+  width: 40vw;
   display: flex;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
+  overflow: hidden;
+  background: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  top: 0px;
+  z-index: 0;
+  position: relative;
 }
 
-.new-details {
+.recipe-api-img {
+  width: 180px;
+  object-fit: cover
+}
+
+.info-api {
   text-align: left;
+  padding: 16px;
 }
 
-.form-control {
-  background-color: transparent;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid black;
-  text-align: left;
+.move-icon {
+position: absolute;
+left: 95%;
+top: 10%;
+opacity: 0.6;
 }
 
-.dishes-card {
-  background-color: #C9FBC5;
-  padding: 40px;
-  margin: 10px;
-}
-
-.guest-card {
-  margin: auto;
-  width: 50%;
-  background-color: #C9FBC5;
-  padding: 40px;
-}
-
-.recipe-search-container {
-  text-align: left;
-}
-
-.search-recipe-card {
-  width: 300px;
-  height: auto;
-  margin-right: 10px;
-}
-
-.search-button {
-  color: black;
-  padding: 10px;
-  margin-bottom: 30px;
-  border: none;
-  text-decoration: underline;
-}
-
-.create-party-btn {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  background-color: #C9FBC5;
-  color: black;
-  border: 1px solid black;
-  text-decoration: none;
-}
-
-.create-party-btn a {
-  text-decoration: none;
+.move-icon:hover {
+  opacity: 1;
+  transform: scale(1.5);
 }

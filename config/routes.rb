@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :parties do
     get "ingredients", to: "parties#ingredients"
+    get 'invite', to: "parties#invite"
+    get :qr_code_generator
+    get :qr_code_download
   end
 
+  resources :conversations, only: [:index]
 
   get 'my_recipes', to: 'recipes#my_recipes'
 
