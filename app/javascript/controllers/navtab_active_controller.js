@@ -1,52 +1,53 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
-// Connects to data-controller="navtab-active"
+
 export default class extends Controller {
-  static targets = ["button", "pages"]
+  static targets = ["tab", "content"];
 
-  connect() {
-  //  console.log("connected")
+  show(event) {
+    this.tabTargets.forEach((tab) => {
+      tab.classList.remove("btn-dark");
+      // tab.classList.add("btn-outline-dark");
+    });
+    event.currentTarget.classList.add("btn-dark");
+    this.contentTargets.forEach((content) => {
+      // console.log("hello");
+      // console.log(content.dataset.attribute);
+      // console.log(event.currentTarget.innerText);
+      content.classList.add("d-none");
+      content.classList.remove("display-a");
+      if (event.currentTarget.innerText === content.dataset.attribute) {
+        content.classList.remove("d-none");
+        content.classList.add("display-a");
+      }
+    });
   }
 
-  active(event) {
-    // console.log("test")
+  next(event) {
+    console.log("work");
 
-    // console.log(this.buttonTarget)
-    // console.log(this.pagesTarget)
-    // this.buttonTarget
+    const activeTab = document.querySelector(".btn-dark");
+    if (activeTab.nextElementSibling) {
+      // activeTab.nextElementSibling.classList.remove("btn-outline-dark");
+      activeTab.nextElementSibling.classList.add("btn-dark");
+      activeTab.classList.remove("btn-dark");
+      // activeTab.classList.add("btn-outine-dark");
+    }
 
+    const activeContent = document.querySelector(".display-a");
+    if (activeContent.nextElementSibling) {
+      activeContent.nextElementSibling.classList.remove("d-none");
+      activeContent.nextElementSibling.classList.add("display-a");
+      activeContent.classList.remove("display-a");
+      activeContent.classList.add("d-none");
+    }
 
-    // this.pagesTarget.classList.remove("active")
-    console.log(event.Target)
-    console.log(this.pagesTarget.querySelector('button').click())
-    // this.children.classList.remove("active")
-  //   loop(document);
-  //   function loop(node) {
-  //     console.log(this.pagesTarget.querySelector('button').classList.remove("active"))
-  //     console.log(this.pagesTarget.nextElementSibling.querySelector('button').classList.add('active'))
-  //     var nodes = node.childNodes;
-  //     for (var i = 0; i < nodes.length; i++){
-  //       if(!nodes[i]){
-  //         continue;
-  //       }
-
-  //       if(nodes[i].childNodes.length > 0){
-  //         loop(nodes[i]);
-  //     }
-  //   }
-
-  //   // for (nextElementSibling = null?); {
-  //   // console.log(this.pagesTarget.querySelector('button').classList.remove("active"))
-  //   // console.log(this.pagesTarget.nextElementSibling.querySelector('button').classList.add('active'))
-
-  //   // console.log(this.pagesTarget.childrenElement.classList)
-  // }
-    // console.log(this.buttonTarget.nextElementSibling)
-    // console.log(this.buttonTarget.nextElementSibling.classList)
-    // .remove("active")
-
-    // this.buttonTarget.nextElementSibling
-// window.relocate
-// function .click to stare at the next element
+    // this.tabTargets.forEach((tab) => {
+    //   if (tab.classList.contains("btn-dark")) {
+    //     console.log(tab.nextElementSibling);
+    //     tab.classList.remove("btn-dark");
+    //     tab.nextElementSibling.classList.add("btn-dark");
+    //   }
+    // });
   }
 }
