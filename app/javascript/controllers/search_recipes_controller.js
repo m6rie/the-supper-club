@@ -8,8 +8,9 @@ export default class extends Controller {
 
     // API CALL DATA
     const input = this.inputTarget.value
-    const apiKey = '9a33f2a981e7930dfb3369195fc15726'
-    const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${input}&app_id=958988ca&app_key=${apiKey}`
+    const apiKey = 'bf9c3c3a6e4b5f5c0b91664e51e3fe7b'
+    const apiID = '294d47a7'
+    const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${input}&app_id=${apiID}&app_key=${apiKey}`
 
     // STARTING FETCH FROM API
     event.preventDefault()
