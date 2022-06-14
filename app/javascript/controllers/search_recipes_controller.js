@@ -31,30 +31,23 @@ export default class extends Controller {
             "afterBegin",
             `
             <div class="d-flex">
-                <div href="${
-                  recipe["recipe"]["url"]
-                }" target="_blank" class="card-recipe-api">
-                  <a href="${recipe["recipe"]["url"]}" target="_blank" class="">
-                    <div class="" id="image" data-image=${JSON.stringify(
-                      recipe["recipe"]["image"]
-                    )}><img src=${JSON.stringify(
-              recipe["recipe"]["image"]
-            )} class ="recipe-api-img"width="100%"></div>
-                  </a>
-                  <i class=" move-icon fa-solid fa-arrows-up-down-left-right"></i>
-                  <div class="info-api">
-                    <div class="" id="label" data-label=${JSON.stringify(
-                      recipe["recipe"]["label"]
-                    )}>${JSON.stringify(recipe["recipe"]["label"])}"</div>
-                    <p><div/>${JSON.stringify(
-                      Math.round(recipe["recipe"]["calories"])
-                    )}kcal</div></p>
-                    <div class="" id="ingredients" data-ingredients="[${ingredients}]"></div>
-                    <strong>Ingredients: </strong>${JSON.stringify(
-                      recipe["recipe"]["ingredients"].length
-                    )}
-                  </div>
+              <div href="${recipe["recipe"]["url"]}" target="_blank" class="card-recipe-api">
+
+              <a href="${recipe["recipe"]["url"]}" id="recipeurl" target="_blank" class="">
+                <div class="" id="image" data-image=${JSON.stringify(recipe["recipe"]["image"])}><img src=${JSON.stringify(recipe["recipe"]["image"])} class ="recipe-api-img"width="100%">
                 </div>
+              </a>
+
+                <i class=" move-icon fa-solid fa-arrows-up-down-left-right"></i>
+
+                <div class="info-api">
+                  <div class="" id="label" data-label=${JSON.stringify(recipe["recipe"]["label"])}>${JSON.stringify(recipe["recipe"]["label"])}"
+                </div>
+                    <p><div/>${JSON.stringify(Math.round(recipe["recipe"]["calories"]))}kcal</div></p>
+                  <div class="" id="ingredients" data-ingredients="[${ingredients}]"></div>
+                    <strong>Ingredients: </strong>${JSON.stringify(recipe["recipe"]["ingredients"].length)}
+                </div>
+              </div>
             </div>`
           );
         });
