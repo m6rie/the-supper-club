@@ -1,163 +1,119 @@
-    <div class= "create-party-container center">
-    <h1> Create your party! </h1>
-    <ul class="nav nav-pills mb-3 center" id="pills-tab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="pills-name-tab" data-bs-toggle="pill" data-bs-target="#pills-name" type="button" role="tab" aria-controls="pills-name" aria-selected="true">Name and details</button>
-      </li>
-      <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-theme-tab" data-bs-toggle="pill" data-bs-target="#pills-theme" type="button" role="tab" aria-controls="pills-theme" aria-selected="false">Theme</button>
-      </li>
-      <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Guests</button>
-      </li>
-
-      <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-food-tab" data-bs-toggle="pill" data-bs-target="#pills-food" type="button" role="tab" aria-controls="pills-food" aria-selected="false">Dishes</button>
-      </li>
-      <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-recipe-tab" data-bs-toggle="pill" data-bs-target="#pills-recipe" type="button" role="tab" aria-controls="pills-recipe" aria-selected="false">Recipes</button>
-      </li>
-    </ul>
-    <br>
-      <div class="tab-content" id="pills-tabContent"
-          data-controller="navtab-active">
-
-        <div class="tab-pane fade show active" id="pills-name" role="tabpanel" aria-labelledby="pills-name-tab" tabindex="0">
-          <h2>Name and details</h2>
-          <%= simple_form_for @party do |f| %>
-            <%= f.input :title, placeholder: "Name your dinner party" %>
-            <%= f.input :address, placeholder: "Where is your dinner party" %>
-            <%= f.input :date, html5: true %>
-        </div>
-
-        <div class="tab-pane new-theme fade" id="pills-theme" role="tabpanel" aria-labelledby="pills-theme-tab" tabindex="0" data-navtab-active-target="pages">
-          <h2>Choose your theme</h2>
-            <%= f.input :theme, collection: Theme::CATEGORY %>
-        </div>
-
-        <div class="tab-pane fade center" id="pills-contact" data-search-recipes-target="pages" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
-          <h2>How many people are coming?</h2>
-          <br>
-          <div class="guest-card">
-            <%= f.input :attendancy, placeholder: "0" %>
-            </div>
-        </div>
-
-        <div class="tab-pane fade container" id="pills-food" role="tabpanel" aria-labelledby="pills-food-tab" tabindex="0">
-          <div class="row align-items-start center">
-            <h2>How many dishes do you like to make?</h2>
-            <br>
-              <div class="dishes-card col-3 center" ><%= f.input :appetizers, placeholder: "0"  %></div>
-              <div class="dishes-card col-3 center" ><%= f.input :mains, placeholder: "0" %></div>
-              <div class="dishes-card col-3 center" ><%= f.input :desserts, placeholder: "0" %></div>
-          </div>
-        </div>
-
-        <div class="tab-pane fade" id="pills-recipe" role="tabpanel" aria-labelledby="pills-recipe-tab" tabindex="0">
-        <div class="row">
-          <%# <div class="filter-container col-2" style = "background-color: none; border:1px solid black">
-          <h2> Filter </h2>
-
-          </div> %>
-          <div class="recipe-search-container col-10">
-            <div class="top-recipe-search-container">
-            <h2>On the menu</h2>
-            <p>Drag recipes to replace</p>
-            </div>
-            <div class="recipe-container">
-            <div class="search-recipe-card center">
-              <div class="recipe-img" style="background-image: url(https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtbmFtZTYxOTYtbmFtZS1jaGltLmpwZw.jpg); width: 250px; height: 150px; background-size: cover"></div>
-              <p>Sushi Rolls<p>
-              </div>
-
-              <div class="search-recipe-card center">
-              <div class="recipe-img" style="background-image: url(https://3sg1ub4c9ujs3ydnjk3mgck0-wpengine.netdna-ssl.com/wp-content/uploads/2020/06/John-West-Final_Italian-Tuna-and-Mozzarella-Salad-with-Ciabatta_2160x960px.jpg); width: 250px; height: 150px; background-size: cover"></div>
-              <p>Tuna Salad<p>
-              </div>
-
-              <div class="search-recipe-card center">
-              <div class="recipe-img" style="background-image: url(https://static01.nyt.com/images/2019/05/09/dining/key-lime-pie-2/key-lime-pie-2-articleLarge.jpg); width: 250px; height: 150px; background-size: cover"></div>
-              <p>Key Lime Pie<p>
-              </div>
-
-
-            </div>
-
-            <div class="bottom-recipe-search-container">
-            <h2>Search from</h2>
-            <div data-controller="search-recipes">
-            <div>
-              <%= simple_form_for new_party_path, method: :get, html: { data: { search_recipes_target: "form", action: "submit->search-recipes#search"}} do %>
-              <%= text_field_tag :query,
-                params[:query],
-                class: "form-control",
-                placeholder: "search recipes",
-                data: {search_recipes_target: "input"}  %>
-              <%= submit_tag "Search", class: "search-button" %>
-              <% end %>
-            </div>
-            <div class="row" data-search-recipes-target="content">
-            </div>
-            </div>
-            </div>
-          </div>
-          <br>
-           <br>
-            <%= link_to "Create party!",  '/parties/2', class: "create-party-btn" %>
-</div>
-        </div>
-        <%# redirect_to party_recipe_search path %>
-          <%# <%= f.submit class: "btn submit-btn" %>
-        <% end %>
-      </div>
-  <br>
-
-
-
-<%# draggable %>
-
-
-
-    <br>
-    <br>
-    <div data-controller="search-recipes" class=" pt-3">
-
-      <div>
-        <%= simple_form_for new_party_path, method: :get, html: { data: { search_recipes_target: "form", action: "submit->search-recipes#search"}} do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "search recipes",
-          data: {search_recipes_target: "input"}  %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-        <% end %>
-      </div>
-        <br>
-        <br>
-
-      <div class="container" data-controller="draggable">
-
-        <div class="row border border-5 pb-3" style="height:500px" id="emptyspace"  data-search-recipes-target="empty">
-        </div>
-        <br>
-
-        <div class="row" id="ourlist"  data-search-recipes-target="content">
-        </div>
-      </div>
-  </div>
-
-
-  <%# <p>
-  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Link with href
-  </a>
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Button with data-bs-target
-  </button>
-  </p>
-  <div class="collapse" id="collapseExample">
-    <div class="card card-body">
-      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+<body id = "green" data-controller="draggable">
+  <div class= "create-party-container center" data-controller="navtab-active">
+    <%# NAVIGATION TABS %>
+     <div class="tabs d-flex center">
+        <button class="btn btn-dark"  data-navtab-active-target="tab" data-action="click->navtab-active#show">Invite</button>
+        <button class="btn" data-navtab-active-target="tab" data-action="click->navtab-active#show">Theme</button>
+        <button class="btn" data-navtab-active-target="tab" data-action="click->navtab-active#show">Guests</button>
+        <button class="btn" data-navtab-active-target="tab" data-action="click->navtab-active#show">Dishes</button>
+        <button class="btn" data-navtab-active-target="tab" data-action="click->navtab-active#show">Recipes</button>
     </div>
-  </div> %>
+    <%# CONTENTS %>
+    <div class="tab-content-container">
+      <%# INVITE TAB %>
+      <div class="tab-content-invite display-a" data-navtab-active-target="content" data-attribute="Invite">
+        <div class="row detail-container">
+          <div class = "col-6">
+            <%= image_tag "Dinner_party_1.png", class: "img-create"%>
+          </div>
 
+          <div class = "col-6 text-start">
+            <p> First things first, give your party some info </p>
+            <h2>Hey! It's <em><%= current_user.name %></em>,</h2>
+            <%= simple_form_for @party, html: { class: 'form-horizontal' }, data: { action: "submit->draggable#sendData" } , wrapper: :horizontal_form do |f| %>
+            <div class="inline-form col-12"><h2>Come to my &nbsp</h2><%= f.input :title, label: false, input_html: { data: { draggable_target: "title" } }, placeholder: "party name?" %><h2>!</h2>
+            </div>
+            <div class="inline-form col-12"><h2>It's at &nbsp</h2><%= f.input :address, label: false, placeholder: "where?", input_html: { data: { draggable_target: "address" } } %></div>
+            <div class="inline-form col-12"><h2>On &nbsp</h2><%= f.input :date, label: false, html5: true, input_html: { data: { draggable_target: "partydate" } } %></div>
+            <h2>See you there!<h2>
+          </div>
+        </div>
+      </div>
+      <%# THEME TAB %>
+      <div class="tab-content-theme d-none" data-navtab-active-target="content" data-attribute="Theme">
+        <div class="row">
+          <div class="col-6 theme-container-left center">
+
+            <h2>What's the theme?</h2>
+            <%= image_tag "create_img2.png" %>
+          </div>
+          <div data-controller="select-theme">
+            <div class="col-6" >
+              <div class="row justify-content-center">
+                <div class="col-sm-12 text-center">
+                  <div class="d-flex flex-wrap justify-content-center pt-4">
+                    <% Theme::CATEGORY.each do |theme| %>
+                      <div class="clickable" data-select-theme-target="theme" id="<%= theme %>" data-action="click->select-theme#select">
+                        <p> <%= theme %> </p>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+              <div class= "d-none">
+                <%= f.input :theme, collection: Theme::CATEGORY, input_html: { data: { select_theme_target: "input", draggable_target: "theme"  }} %>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <%# GUEST TAB %>
+      <div class="tab-content-guests d-none" data-navtab-active-target="content" data-attribute="Guests">
+        <%= image_tag "create_img1.png" %>
+        <h2>How many people<br>are you inviting?</h2>
+        <br>
+        <div class="guest-card center">
+          <%= f.input :attendancy, placeholder: "0", label:false, input_html: { data: { draggable_target: "attendancy" } } %>
+        </div>
+      </div>
+      <%# DISHES TAB %>
+      <div class="tab-content-dishes d-none" data-navtab-active-target="content" data-attribute="Dishes">
+        <div class="row align-items-start center">
+          <h2>How many dishes<br>would you like to make?</h2>
+          <br>
+            <div class="dishes-card col-3 center" ><%= f.input :appetizers, placeholder: "0", input_html: { data: { draggable_target: "appetizers" } }  %></div>
+            <div class="dishes-card col-3 center" ><%= f.input :mains, placeholder: "0", input_html: { data: { draggable_target: "mains" } } %></div>
+            <div class="dishes-card col-3 center" ><%= f.input :desserts, placeholder: "0", input_html: { data: { draggable_target: "desserts" } } %></div>
+            <%= image_tag "create-img3.png", class: "img-dishes" %>
+
+        </div>
+      </div>
+      <%# END OF FORM %>
+      <% end %>
+      <%# RECIPES TAB %>
+      <div class="tab-content-recipes d-none" data-navtab-active-target="content" data-attribute="Recipes">
+        <div data-controller="search-recipes" class=" pt-3">
+          <div>
+            <%= simple_form_for new_party_path, method: :get, html: { data: { search_recipes_target: "form", action: "submit->search-recipes#search"}} do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "search recipes",
+              data: {search_recipes_target: "input"}  %>
+            <%= submit_tag "Search", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-6 border border-5 pb-3" style="height:3191px;" id="emptyspace"  data-search-recipes-target="empty">
+              </div>
+              <br>
+
+              <div class="col-6" id="ourlist"  data-search-recipes-target="content">
+              </div>
+              <button class="btn btn-primary" style="margin: 24px;" data-action="click->draggable#sendData">Let's cook!</button>
+
+              <div class="row" id="ourlist"  data-search-recipes-target="drag">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn-group next-tab" data-action="click->navtab-active#next" data-navtab-active-target="link">Next</button>
+    <button class="btn-group back-tab" data-action="click->navtab-active#next" data-navtab-active-target="link">Back</button>
+  </div>
+</body>

@@ -93,6 +93,7 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     childprocess (4.1.0)
+    chunky_png (1.4.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     debug (1.5.0)
@@ -185,7 +186,7 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.4.2)
+    rails-html-sanitizer (1.4.3)
       loofah (~> 2.3)
     railties (7.0.3)
       actionpack (= 7.0.3)
@@ -202,6 +203,10 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rqrcode (2.1.1)
+      chunky_png (~> 1.0)
+      rqrcode_core (~> 1.0)
+    rqrcode_core (1.2.0)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -260,14 +265,14 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
-  x86_64-darwin-19
-  x86_64-darwin-21
+  x86_64-darwin-20
   x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
   capybara
+  chunky_png (~> 1.4)
   debug
   devise
   dotenv-rails
@@ -278,6 +283,7 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3)
+  rqrcode (~> 2.1)
   sassc-rails
   selenium-webdriver
   simple_form!
@@ -295,4 +301,4 @@ RUBY VERSION
    ruby 3.0.3p157
 
 BUNDLED WITH
-   2.2.32
+   2.3.15

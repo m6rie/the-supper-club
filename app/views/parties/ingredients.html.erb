@@ -19,6 +19,7 @@
         <hr>
         <div class="edit-btn">
         <%= link_to "Edit" %>
+
         </div>
         <%# <button class="">Edit</button> %>
       </div>
@@ -44,14 +45,9 @@
             <div class="ingredient">
               <div><%= check_box_tag ingredient, false %> <%= ingredient %></div>
 
-              <div class="amount"><%= "Amount" %></div>
+              <div><%= "Amount" %></div>
             </div>
             </li>
-            <%# <li>
-            <div>
-              <%= "Amount" %>
-            <%# </div> %>
-            <%# </li> %>
             <% end %>
           </div>
           </ul>
