@@ -1,30 +1,17 @@
-<body id = "create-body" data-controller="draggable">
-  <div class= "create-party-container center">
+<body id = "green" data-controller="draggable">
+  <div class= "create-party-container center" data-controller="navtab-active">
     <%# NAVIGATION TABS %>
-    <ul class="nav nav-pills mb-3 center tabs" id="pills-tab" role="tablist" data-tabs id="example-tabs">
-      <li class="nav-item tabs-title" role="presentation">
-        <button class="nav-link active tabs-title" id="pills-name-tab" data-bs-toggle="pill" data-bs-target="#pills-name" type="button" role="tab" aria-controls="pills-name" aria-selected="true">Name and details</button>
-      </li>
-      <li class="nav-item tabs-title" role="presentation">
-          <button class="nav-link tabs-title" id="pills-theme-tab" data-bs-toggle="pill" data-bs-target="#pills-loading" type="button" role="tab" aria-controls="pills-theme" aria-selected="false">Loading</button>
-      </li>
-      <li class="nav-item tabs-title" role="presentation">
-          <button class="nav-link tabs-title" id="pills-theme-tab" data-bs-toggle="pill" data-bs-target="#pills-theme" type="button" role="tab" aria-controls="pills-theme" aria-selected="false">Theme</button>
-      </li>
-      <li class="nav-item tabs-title" role="presentation">
-          <button class="nav-link tabs-title" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Guests</button>
-      </li>
-      <li class="nav-item tabs-title" role="presentation">
-          <button class="nav-link tabs-title" id="pills-food-tab" data-bs-toggle="pill" data-bs-target="#pills-food" type="button" role="tab" aria-controls="pills-food" aria-selected="false">Dishes</button>
-      </li>
-      <li class="nav-item tabs-title" role="presentation">
-          <button class="nav-link tabs-title" id="pills-recipe-tab" data-bs-toggle="pill" data-bs-target="#pills-recipe" type="button" role="tab" aria-controls="pills-recipe" aria-selected="false">Recipes</button>
-      </li>
-    </ul>
+     <div class="tabs d-flex center">
+        <button class="btn btn-dark"  data-navtab-active-target="tab" data-action="click->navtab-active#show">Invite</button>
+        <button class="btn" data-navtab-active-target="tab" data-action="click->navtab-active#show">Theme</button>
+        <button class="btn" data-navtab-active-target="tab" data-action="click->navtab-active#show">Guests</button>
+        <button class="btn" data-navtab-active-target="tab" data-action="click->navtab-active#show">Dishes</button>
+        <button class="btn" data-navtab-active-target="tab" data-action="click->navtab-active#show">Recipes</button>
+    </div>
     <%# CONTENTS %>
-    <div class="tab-content" id="pills-tabContent" data-controller="navtab-active">
+    <div class="tab-content-container">
       <%# INVITE TAB %>
-      <div class="tab-pane fade show active" id="pills-name" role="tabpanel" aria-labelledby="pills-name-tab" tabindex="0">
+      <div class="tab-content-invite display-a" data-navtab-active-target="content" data-attribute="Invite">
         <div class="row detail-container">
           <div class = "col-6">
             <%= image_tag "Dinner_party_1.png", class: "img-create"%>
@@ -42,7 +29,7 @@
         </div>
       </div>
       <%# THEME TAB %>
-      <div class="tab-pane new-theme fade" id="pills-theme" role="tabpanel" aria-labelledby="pills-theme-tab" tabindex="0" data-navtab-active-target="pages">
+      <div class="tab-content-theme d-none" data-navtab-active-target="content" data-attribute="Theme">
         <div class="row">
           <div class="col-6 theme-container-left center">
             <h2>What's the theme?</h2>
@@ -65,7 +52,7 @@
         </div>
       </div>
       <%# GUEST TAB %>
-      <div class="tab-pane fade center " id="pills-contact" data-search-recipes-target="pages" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+      <div class="tab-content-guests d-none" data-navtab-active-target="content" data-attribute="Guests">
         <%= image_tag "create_img1.png" %>
         <h2>How many people<br>are you inviting?</h2>
         <br>
@@ -74,7 +61,7 @@
         </div>
       </div>
       <%# DISHES TAB %>
-      <div class="tab-pane fade container" id="pills-food" role="tabpanel" aria-labelledby="pills-food-tab" tabindex="0">
+      <div class="tab-content-dishes d-none" data-navtab-active-target="content" data-attribute="Dishes">
         <div class="row align-items-start center">
           <h2>How many dishes<br>would you like to make?</h2>
           <br>
@@ -87,7 +74,7 @@
       <%# END OF FORM %>
       <% end %>
       <%# RECIPES TAB %>
-      <div class="tab-pane fade" id="pills-recipe" role="tabpanel" aria-labelledby="pills-recipe-tab" tabindex="0">
+      <div class="tab-content-recipes d-none" data-navtab-active-target="content" data-attribute="Recipes">
         <div data-controller="search-recipes" class=" pt-3">
           <div>
             <%= simple_form_for new_party_path, method: :get, html: { data: { search_recipes_target: "form", action: "submit->search-recipes#search"}} do %>
@@ -116,5 +103,7 @@
         </div>
       </div>
     </div>
+    <button class="btn-group next-tab" data-action="click->navtab-active#next" data-navtab-active-target="link">Next</button>
+    <button class="btn-group back-tab" data-action="click->navtab-active#next" data-navtab-active-target="link">Back</button>
   </div>
 </body>
