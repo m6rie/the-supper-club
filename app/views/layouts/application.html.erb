@@ -15,9 +15,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></script>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-
+  <body>
+    <% unless action_name == "internal_server_error" || action_name == "not_found" %>
+      <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
+    <% end %>
     <%= yield %>
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
