@@ -30,20 +30,21 @@ export default class extends Controller {
 
       // INSERT CARDS TO VIEW
       this.contentTarget.insertAdjacentHTML("afterBegin",
-      `<a href="${recipe['recipe']['url']}" target="_blank" class="card border col-3">
-        <div class="row border">
-          <div class="col-12" id="image" data-image=${JSON.stringify(recipe['recipe']['image'])}><img src=${JSON.stringify(recipe['recipe']['image'])} width="100%"></div>
+
+      `<div class=" d-flex">
+        <div href="${recipe['recipe']['url']}" target="_blank" class="card-recipe-api">
+          <a href="${recipe['recipe']['url']}" target="_blank" id="image" data-image=${JSON.stringify(recipe['recipe']['image'])}><img class="recipe-api-img" src=${JSON.stringify(recipe['recipe']['image'])}></a>
+          <i class=" move-icon fa-solid fa-arrows-up-down-left-right"></i>
+        <div class="info-api">
+            <h5><strong>Title: </strong>${JSON.stringify(recipe['recipe']['label'])}</h5>
+            <br>
+            <p><strong>Calories: </strong>${JSON.stringify(Math.round(recipe['recipe']['calories']))} kcal</p>
+            <div id="ingredients" data-ingredients=[${ingredients}]>
+            <strong>Ingredients: </strong>${JSON.stringify((recipe['recipe']['ingredients'].length))}
+            </div>
+          </div>
         </div>
-        <div class="row border">
-          <div class="col-12" id="label" data-label=${JSON.stringify(recipe['recipe']['label'])}>${JSON.stringify(recipe['recipe']['label'])}"</div>
-        </div>
-        <div class="row border">
-          <p>Calories: </><div class="col-12">${JSON.stringify(Math.round(recipe['recipe']['calories']))}</div></p>
-        </div>
-        <div class="row border" id="ingredients" data-ingredients="[${ingredients}]">>
-          <p><div class="col-12">Igredients</div></p>
-        </div>
-      </a>`
+     `
       )}
     )})
   }

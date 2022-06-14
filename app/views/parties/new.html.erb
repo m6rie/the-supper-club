@@ -172,19 +172,18 @@
         <br>
 
       <div class="container">
+        <div class="row">
+          <div class="col-6 border border-5 pb-3" style="height:3191px;" id="emptyspace"  data-search-recipes-target="empty">
+          </div>
+          <br>
 
-        <div class="row border border-5 pb-3" style="height:500px" id="emptyspace"  data-search-recipes-target="empty">
+          <div class="col-6" id="ourlist"  data-search-recipes-target="content">
+          </div>
+          <button class="btn btn-primary" style="margin: 24px;" data-action="click->draggable#sendData">Let's cook!</button>
+
+          <div class="row" id="ourlist"  data-search-recipes-target="drag">
+          </div>
         </div>
-        <br>
-
-        <button class="btn btn-primary" style="margin: 24px;" data-action="click->draggable#sendData">Let's cook!</button>
-
-        <div class="row" id="ourlist"  data-search-recipes-target="content">
-        </div>
-
-        <div class="row" id="ourlist"  data-search-recipes-target="drag">
-        </div>
-
       </div>
   </div>
 
