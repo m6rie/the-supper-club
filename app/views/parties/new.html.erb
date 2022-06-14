@@ -80,7 +80,7 @@
               </div>
             </div>
           </div>
-          <% f.input :theme, collection: Theme::CATEGORY, input_html: { class: "d-none" }, input_html: { data: { select_theme_target: "input" } } %>
+          <%= f.input :theme, collection: Theme::CATEGORY, input_html: { display: "none" }, input_html: { data: { select_theme_target: "input" } } %>
         </div>
         </div>
        </div>
@@ -92,7 +92,7 @@
             <h2>How many people<br>are you inviting?</h2>
             <br>
             <div class="guest-card center">
-              <h2><%= f.input :attendancy, placeholder: "0", label:false, input_html: { data: { draggable_target: "attendancy" } } %></h2>
+              <%= f.input :attendancy %>
             </div>
         </div>
 

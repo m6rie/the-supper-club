@@ -10,9 +10,16 @@ export default class extends Controller {
   select(event) {
     event.preventDefault()
 
+    this.themeTargets.forEach((theme) => {
+      if (theme.classList.contains("selected-card")) {
+        theme.classList.remove("selected-card")
+      }
+    })
+    event.currentTarget.classList.add('selected-card')
+
     const partyTheme = event.currentTarget.innerText
-    event.currentTarget.classList.toggle('selected-card')
     this.inputTarget.value = partyTheme
+    console.log(partyTheme)
 
   }
 }
