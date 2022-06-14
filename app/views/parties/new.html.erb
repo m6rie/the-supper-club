@@ -80,7 +80,9 @@
               </div>
             </div>
           </div>
-          <%= f.input :theme, collection: Theme::CATEGORY, input_html: { display: "none" }, input_html: { data: { select_theme_target: "input" } } %>
+          <div class= "d-none">
+            <%= f.input :theme, collection: Theme::CATEGORY, input_html: { data: { select_theme_target: "input" } } %>
+          </div>
         </div>
         </div>
        </div>
@@ -147,9 +149,9 @@
           </div>
         </div>
         <%# redirect_to party_recipe_search path %>
-          <%= f.submit class: "btn submit-btn" %>
+          <%# <%= f.submit class: "btn submit-btn" %>
         <% end %>
-         <button data-action="click->draggable#test">Test</button>
+         <%# <button data-action="click->draggable#test">Test</button> %>
       </div>
   <br>
   </body>
