@@ -36,7 +36,6 @@ class PartiesController < ApplicationController
   end
 
   def new
-    raise
     @party = Party.new
   end
 
