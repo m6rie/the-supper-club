@@ -42,6 +42,14 @@ export default class extends Controller {
       activeContent.classList.add("d-none");
     }
 
+    const finalTab = document.querySelector(".final-tab");
+    const nextBtn = document.querySelector(".next-tab");
+    if (finalTab.classList.contains("btn-dark")) {
+      nextBtn.classList.add("d-none");
+    }
+
+
+
     // this.tabTargets.forEach((tab) => {
     //   if (tab.classList.contains("btn-dark")) {
     //     console.log(tab.nextElementSibling);

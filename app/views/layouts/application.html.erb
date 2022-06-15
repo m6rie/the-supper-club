@@ -16,9 +16,10 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
-
+    <% unless action_name == "internal_server_error" || action_name == "not_found" %>
+      <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
+    <% end %>
     <%= yield %>
 
   </body>

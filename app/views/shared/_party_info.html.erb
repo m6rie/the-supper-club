@@ -1,4 +1,4 @@
-<div class="party-info-container col-2">
+<div class="party-info-container col-2 text-left">
      <h4>
      <%= @party.status %>
      </h4>
@@ -12,14 +12,16 @@
      <hr>
     <h5><p>THEME</p><h5>
      <%= @party.theme %>
-<hr>
+    <hr>
      <h5><p>GUESTS</p><h5>
      <%= @party.attendancy %>
      <hr>
-     <button class="edit-btn">Edit</button>
-     <%= link_to party_path(@party), class: "btn book-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this party?" } do %>
+     <h5><p>INVITATION</p><h5>
+    <%= image_tag "qr_code#{@party.title}.png", class: "qr-code" %>
+    <br>
+    <hr>
+     <button class="edit-btn"><i class="fa-solid fa-pencil"></i>&nbsp edit</button>
+       <%= link_to party_path(@party), class: "btn book-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this party?" } do %>
       <button class="edit-btn">Delete</button>
      <% end %>
-    </div>
-    <%# <div class="party-desc-container col-9">
-    </div> %>
+</div>

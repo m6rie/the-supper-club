@@ -1,52 +1,58 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 // Connects to data-controller="search-recipes"
 export default class extends Controller {
-  static targets = ["form", "input", "content", "empty"]
+  static targets = ["form", "input", "content", "empty"];
 
   search(event) {
-
     // API CALL DATA
-    const input = this.inputTarget.value
-    const apiKey = 'bf9c3c3a6e4b5f5c0b91664e51e3fe7b'
-    const apiID = '294d47a7'
-    const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${input}&app_id=${apiID}&app_key=${apiKey}`
+    const input = this.inputTarget.value;
+    const apiKey = "9a33f2a981e7930dfb3369195fc15726";
+    const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${input}&app_id=958988ca&app_key=${apiKey}`;
 
     // STARTING FETCH FROM API
-    event.preventDefault()
+    event.preventDefault();
     fetch(url)
-    .then (response => response.json())
-    .then((data) => {
+      .then((response) => response.json())
+      .then((data) => {
+        // CLEAN PREVIOUS SEARCH
+        this.contentTarget.innerHTML = "";
 
-      // CLEAN PREVIOUS SEARCH
-      this.contentTarget.innerHTML = ""
+        // GET INGREDIENTS
+        data.hits.forEach((recipe) => {
+          const ingredients = [];
+          const ingr = recipe["recipe"]["ingredientLines"];
+          ingr.forEach((ingredient) => {
+            ingredients.push(ingredient);
+          });
 
-      // GET INGREDIENTS
-      data.hits.forEach ((recipe) => {
-        const ingredients = []
-        const ingr = recipe['recipe']['ingredientLines']
-        ingr.forEach((ingredient) => {
-         ingredients.push(ingredient)
-        })
+          // INSERT CARDS TO VIEW
+          this.contentTarget.insertAdjacentHTML(
+            "afterBegin",
+            `
+            <div class="d-flex">
+              <div href="${recipe["recipe"]["url"]}" target="_blank" class="card-recipe-api">
 
-      // INSERT CARDS TO VIEW
-      this.contentTarget.insertAdjacentHTML("afterBegin",
+              <a href="${recipe["recipe"]["url"]}" id="recipeurl" target="_blank" class="">
+                <div class="" id="image" data-image=${JSON.stringify(recipe["recipe"]["image"])}><img src=${JSON.stringify(recipe["recipe"]["image"])} class ="recipe-api-img"width="100%">
+                </div>
+              </a>
 
-      `<div class=" d-flex">
-        <div href="${recipe['recipe']['url']}" target="_blank" class="card-recipe-api">
-          <a href="${recipe['recipe']['url']}" target="_blank" id="image" data-image=${JSON.stringify(recipe['recipe']['image'])}><img class="recipe-api-img" src=${JSON.stringify(recipe['recipe']['image'])}></a>
-          <i class=" move-icon fa-solid fa-arrows-up-down-left-right"></i>
-        <div class="info-api">
-            <h5><strong>Title: </strong>${JSON.stringify(recipe['recipe']['label'])}</h5>
-            <br>
-            <p><strong>Calories: </strong>${JSON.stringify(Math.round(recipe['recipe']['calories']))} kcal</p>
-            <div id="ingredients" data-ingredients=[${ingredients}]>
-            <strong>Ingredients: </strong>${JSON.stringify((recipe['recipe']['ingredients'].length))}
-            </div>
-          </div>
-        </div>
-     `
-      )}
-    )})
+                <i class=" move-icon fa-solid fa-arrows-up-down-left-right"></i>
+
+                <div class="info-api">
+                  <div class="" id="label" data-label=${JSON.stringify(recipe["recipe"]["label"])}><h4>${JSON.stringify(recipe["recipe"]["label"])}</h4>
+                </div>
+                <div class="d-flex">
+                    <p><div/>${JSON.stringify(Math.round(recipe["recipe"]["calories"]))}kcal |</div></p>
+                  <div class="" id="ingredients" data-ingredients="[${ingredients}]"></div>
+                    ${JSON.stringify(recipe["recipe"]["ingredients"].length)} Ingredients
+                    </div>
+                </div>
+              </div>
+            </div>`
+          );
+        });
+      });
   }
 }

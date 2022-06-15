@@ -5,6 +5,10 @@ class PartiesController < ApplicationController
   before_action :set_party, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: :invite
 
+  def home
+    @parties = Party.all
+  end
+
   def index
     @parties = Party.all
   end
@@ -41,7 +45,17 @@ class PartiesController < ApplicationController
     @party_recipe.each do |recipe|
     @ingredients = recipe.ingredients
     @recipe_ingredient = RecipeIngredient.new
-  end
+    end
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render  pdf: "Ingredients",
+                template: "parties/ingredients",
+                formats: [:html],
+                disposition: :inline,
+                layout: 'pdf'
+      end
+    end
   end
 
   def create
@@ -50,11 +64,12 @@ class PartiesController < ApplicationController
     # SAVING ATTRIBUTES
     number_of_recipes = params[:party][:recipes_data][:title].size
     titles = params[:party][:recipes_data][:title]
-    photo_urls = params[:party][:recipes_data][:recipe_url]
+    photo_urls = params[:party][:recipes_data][:photo]
+    urls = params[:party][:recipes_data][:url]
     # ingredients = params[:party][:recipes_data][:ingredients] ------ ingredients: ingredients[n - 1] ------ TBA -------
     # BUILDING RECIPES
     number_of_recipes.times do |n|
-      @recipes << Recipe.create(title: titles[n - 1], photo_url: photo_urls[n - 1], prep_time: 30, description: "Delicous recipe")
+      @recipes << Recipe.create(title: titles[n - 1], recipe_url: urls[n - 1], photo_url: photo_urls[n - 1], prep_time: 30, description: "Delicous recipe")
     end
 
     # CREATING PARTY
@@ -83,6 +98,7 @@ class PartiesController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
@@ -105,7 +121,7 @@ class PartiesController < ApplicationController
   private
 
   def party_params
-    params.require(:party).permit(:title, :address, :date, :theme, :attendancy, :appetizers, :mains, :desserts, :recipes_data)
+    params.require(:party).permit(:title, :address, :date, :theme, :attendancy, :appetizers, :mains, :desserts, :recipes_data )
   end
 
   def set_party

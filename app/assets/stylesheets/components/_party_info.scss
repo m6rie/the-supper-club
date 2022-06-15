@@ -1,10 +1,21 @@
 .party-info-container {
+  height: fit-content;
+  // position: absolute;
+
+float: left;
+    margin-top: 45px;
     background-color: #C9FBC5;
     padding: 30px;
     border-radius: 10px;
     max-width:100%;
-    height: 500px;
-  h2 {
+    text-align: left;
+
+    img {
+      width: 90%;
+      mix-blend-mode: multiply;
+    }
+
+    h2 {
     font-family: $display-font;
     font-size: 30px;
     letter-spacing: -0.5px;
@@ -36,7 +47,6 @@
     bottom: 0px;
     background-color: transparent;
     border: none;
-    text-decoration: underline;
     padding: none !important;
     font-size: 15px;
   }

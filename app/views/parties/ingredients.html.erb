@@ -1,38 +1,40 @@
-<html>
-  <body>
-    <div class="container mt-2 p-0 mx-0">
-      <div class="d-flex">
-          <%= render 'shared/party_info' %>
+      <div class="row">
+    <%= render 'shared/party_info' %>
 
-        <div class="ingredient-container col-9">
-          <div class= "d-flex flex-row justify-content-between ">
-            <div>
-              <h2> Ingredient list </h2>
-            </div>
-              <div class="align-self-center">
-                <%= button_to "", class:"download-btn" do %>
-                <i class="fa-solid fa-arrow-down-to-bracket"></i>
-                <i class="fas fa-download"></i>
-                Save list as PDF
-                <% end %>
-              </div>
+    <div class="col-9">
+      <div class="flex-child ingredient-container">
+        <div class="title-ingredient">
+          <div>
+
+            <h2> Ingredient list </h2>
           </div>
-            <ul>
-              <%# <div class="row justify-content-between"> %>
-              <% @party.recipes.each do |recipe| %>
-                <% recipe.ingredients.each do |ingredient| %>
-                <li class ="ingredient d-flex justify-content-start">
-                <%= check_box_tag(ingredient) %>
-                <%= ingredient.name %>
-                </li>
-                <% end %>
-                 <% end %>
-                <%# <div> %>
-              </div>
-            </ul>
-            <br>
+          <div>
+            <div class="download-btn">
+              <i class="fas fa-download"></i>
+              <%= link_to "Save list as PDF", party_ingredients_path(@party, format: :pdf)%>
+            </div>
+
+          </div>
         </div>
+          <ul>
+          <div>
+          <%= raise %>
+          <% @party.recipes.each do |recipe| %>
+            <% recipe.ingredients.each do |ingredient| %>
+            <li>
+            <div class="ingredient">
+              <div><%= check_box_tag ingredient, false %> <%= ingredient.name %></div>
+
+              <div><%= recipe.title %></div>
+            </div>
+            </li>
+            <% end %>
+            <% end %>
+          </div>
+          </ul>
+          <br>
       </div>
-    </div>
-  </body>
-</html>
+
+</div>
+</div>
+</div>

@@ -15,7 +15,7 @@
 
       h2 {
         font-family: $display-font;
-        font-size: 50px;
+        font-size: 35px;
       }
 
       .ingredient-btn {
@@ -40,14 +40,15 @@
       }
 
       .edit-btn {
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-right: 18px;
-        padding-left: 18px;
-        background-color: transparent;
+        color:#C9FBC5;
+        background-color: black;
         font-size: 15px;
         border: 1px solid black;
         font-family: $text-font;
+        text-decoration: none;
+        background-color: #333;
+        padding: 2px;
+        border-radius: 999px;
       }
 
       .edit-btn:hover {
@@ -57,12 +58,15 @@
 
     .recipe-content {
       display: flex;
-      flex-grow: 1 1 1;
-      .recipe-card {
-        width: 500px;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   width: 100%;
+      .show-recipe-card {
+        flex: 0 1 32%;
         height: 220px;
+        margin-right: 3px;
         .recipe-img-container {
-          width: 300px;
+          flex: 0 1 24%;
           height: 200px;
           object-fit: cover;
           margin-bottom: 20px;
@@ -71,6 +75,7 @@
         h3 {
           font-family: $display-font;
           font-size: 20px;
+          line-height: 0;
         }
       }
       }
@@ -83,11 +88,12 @@
 
     h2 {
       font-family: $display-font;
-      font-size: 50px;
+      font-size: 40px;
     }
     .music-container {
       border-right: 1px solid black;
       margin-right: 80px;
+
       flex-grow: 1;
 
       .music-content {
@@ -134,8 +140,8 @@
 // CONVO CARDS
 $bg-color: #E6E5E1;
 $shdow-gray: #d3d3d5;
-$orange: #DA4D1D;
-$blue: #2b26c3;
+$orange: #C9FBC5;
+// $blue: #2b26c3;
 $img-url: "https://i0.wp.com/cdn.vox-cdn.com/thumbor/6Ufhk68YHfyheXJZVGFGZw3mC2M=/342x0:4014x2754/1310x983/cdn.vox-cdn.com/uploads/chorus_image/image/69137931/shutterstock_592709111.0.jpg";
 $img-url2: "drinking-games.png";
 
@@ -159,14 +165,13 @@ h2 {
 
 
 .convo-container {
-  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
   .card {
     position: relative;
-    width: 500px;
+    width: 350px;
     height: 200px;
     background-color: #fff;
     overflow: hidden;
@@ -212,7 +217,7 @@ h2 {
     }
     h2 {
       z-index: 99;
-      font-family: "Poppins", sans-serif;
+      font-family: $display-font;
       position: absolute;
       bottom: 0;
       right: 130px;
