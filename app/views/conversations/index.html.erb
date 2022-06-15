@@ -1,77 +1,130 @@
 <h1>Convo</h1>
 
-<div class="container">
+
 
   <% travel_convo = @convo.select { |convo| convo.topic == "Travel"} %>
   <h2>Travel</h2>
+    <div class="conv-container d-flex">
     <% travel_convo.each do |convo| %>
-      <ul>
-        <li><%= convo.subject %></li>
-      </ul>
+      <div class="conv-cards travel-cards d-flex">
+        <div class="conv-card travel-card card-four">
+        <h2 class="conv-card-title"><%= convo.topic %></h2>
+        <p class="conv-description"><%= convo.subject %></p>
+      </div>
+      </div>
 
     <% end %>
+      </div>
 
   <% connection_convo = @convo.select { |convo| convo.topic == "Connection"} %>
   <h2>Connection</h2>
-  <% connection_convo.each do |convo| %>
-      <ul>
-        <li><%= convo.subject %></li>
-      </ul>
+  <div class="conv-container d-flex">
+    <% connection_convo.each do |convo| %>
+      <div class="conv-cards  conn-cards d-flex">
+        <div class="conv-card conn-card card-four">
+        <h2 class="conv-card-title"><%= convo.topic %></h2>
+        <p class="conv-description"><%= convo.subject %></p>
+      </div>
+      </div>
+
     <% end %>
+      </div>
 
   <% tv_convo = @convo.select { |convo| convo.topic == "Tv/Cinema"} %>
   <h2>Tv/Cinema</h2>
-  <% tv_convo.each do |convo| %>
-      <ul>
-        <li><%= convo.subject %></li>
-      </ul>
+  <div class="conv-container d-flex">
+    <% tv_convo.each do |convo| %>
+      <div class="conv-cards tv-cards d-flex">
+        <div class="conv-card tv-card card-four">
+        <h2 class="conv-card-title"><%= convo.topic %></h2>
+        <p class="conv-description"><%= convo.subject %></p>
+      </div>
+      </div>
+
     <% end %>
+      </div>
 
     <% music_convo = @convo.select { |convo| convo.topic == "Music"} %>
   <h2>Music</h2>
-  <% music_convo.each do |convo| %>
-      <ul>
-        <li><%= convo.subject %></li>
-      </ul>
+  <div class="conv-container d-flex">
+    <% music_convo.each do |convo| %>
+      <div class="conv-cards music-cards d-flex">
+        <div class="conv-card music-card card-four">
+        <h2 class="conv-card-title"><%= convo.topic %></h2>
+        <p class="conv-description"><%= convo.subject %></p>
+      </div>
+      </div>
+
     <% end %>
+      </div>
 
     <% art_convo = @convo.select { |convo| convo.topic == "Art"} %>
   <h2>Art</h2>
-  <% art_convo.each do |convo| %>
-      <ul>
-        <li><%= convo.subject %></li>
-      </ul>
+  <div class="conv-container d-flex">
+    <% art_convo.each do |convo| %>
+      <div class="conv-cards art-cards d-flex">
+        <div class="conv-card art-card card-four">
+        <h2 class="conv-card-title"><%= convo.topic %></h2>
+        <p class="conv-description"><%= convo.subject %></p>
+      </div>
+      </div>
+
     <% end %>
+      </div>
 
     <% world_convo = @convo.select { |convo| convo.topic == "World"} %>
   <h2>World</h2>
-  <% world_convo.each do |convo| %>
-      <ul>
-        <li><%= convo.subject %></li>
-      </ul>
+  <div class="conv-container d-flex">
+    <% world_convo.each do |convo| %>
+      <div class="conv-cards world-cards d-flex">
+        <div class="conv-card world-card card-four">
+        <h2 class="conv-card-title"><%= convo.topic %></h2>
+        <p class="conv-description"><%= convo.subject %></p>
+      </div>
+      </div>
+
     <% end %>
+      </div>
 
     <% trends_convo = @convo.select { |convo| convo.topic == "Trends"} %>
-  <h2>Treds</h2>
-  <% trends_convo.each do |convo| %>
-      <ul>
-        <li><%= convo.subject %></li>
-      </ul>
+  <h2>Trends</h2>
+  <div class="conv-container d-flex">
+    <% trends_convo.each do |convo| %>
+      <div class="conv-cards trends-cards d-flex">
+        <div class="conv-card trends-card card-four">
+        <h2 class="conv-card-title"><%= convo.topic %></h2>
+        <p class="conv-description"><%= convo.subject %></p>
+      </div>
+      </div>
+
     <% end %>
+      </div>
 
     <% random_convo = @convo.select { |convo| convo.topic == "Random"} %>
   <h2>Random</h2>
-  <% random_convo.each do |convo| %>
-      <ul>
-        <li><%= convo.subject %></li>
-      </ul>
+  <div class="conv-container d-flex">
+    <% random_convo.each do |convo| %>
+      <div class="conv-cards random-cards d-flex">
+        <div class="conv-card random-card card-four">
+        <h2 class="conv-card-title"><%= convo.topic %></h2>
+        <p class="conv-description"><%= convo.subject %></p>
+      </div>
+      </div>
+
     <% end %>
+      </div>
 
     <% would_you_convo = @convo.select { |convo| convo.topic == "Would you rather"} %>
   <h2>Would You Rather</h2>
-  <% would_you_convo.each do |convo| %>
-      <ul>
-        <li><%= convo.subject %></li>
-      </ul>
+  <div class="conv-container d-flex">
+    <% would_you_convo.each do |convo| %>
+      <div class="conv-cards wyr-cards d-flex">
+        <div class="conv-card wyr-card card-four">
+        <h2 class="conv-card-title"><%= convo.topic %></h2>
+        <p class="conv-description"><%= convo.subject %></p>
+      </div>
+      </div>
+
     <% end %>
+      </div>
 </div>

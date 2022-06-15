@@ -2,7 +2,7 @@ require "rqrcode"
 require "chunky_png"
 
 class PartiesController < ApplicationController
-  before_action :set_party, only: [:show, :edit, :update]
+  before_action :set_party, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: :invite
 
   def home
@@ -110,6 +110,8 @@ class PartiesController < ApplicationController
   end
 
   def destroy
+    @party.destroy
+    redirect_to root_path, status: :see_other
   end
 
   def invite
