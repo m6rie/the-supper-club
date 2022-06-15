@@ -69,7 +69,7 @@ class PartiesController < ApplicationController
     ingredients = params[:party][:recipes_data][:ingredients]
     # BUILDING RECIPES
     number_of_recipes.times do |n|
-      @recipes << Recipe.create(title: titles[n - 1], recipe_url: urls[n - 1], ingredients: ingredients[n - 1], photo_url: photo_urls[n - 1], prep_time: 30, description: "Delicous recipe")
+      @recipes << Recipe.create(title: titles[n - 1], recipe_url: urls[n - 1], ingredients: ingredients, photo_url: photo_urls[n - 1], prep_time: 30, description: "Delicous recipe")
     end
 
     # CREATING PARTY

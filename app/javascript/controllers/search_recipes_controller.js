@@ -17,7 +17,7 @@ export default class extends Controller {
       .then((data) => {
         // CLEAN PREVIOUS SEARCH
         this.contentTarget.innerHTML = "";
-
+        // console.log(data.hits)
         // GET INGREDIENTS
         data.hits.forEach((recipe) => {
           const ingredients = [];
@@ -25,6 +25,7 @@ export default class extends Controller {
           ingr.forEach((ingredient) => {
             ingredients.push(ingredient);
           });
+          // console.log(ingredients)
 
           // INSERT CARDS TO VIEW
           this.contentTarget.insertAdjacentHTML(
