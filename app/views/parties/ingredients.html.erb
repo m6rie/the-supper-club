@@ -1,33 +1,11 @@
-<div class="flex-container">
+      <div class="row">
+    <%= render 'shared/party_info' %>
 
-
-      <div class="flex-child party-info-container">
-        <h4><%= @party.status %></h4>
-        <h2><%= @party.title %></h2>
-        <hr>
-        <p>ADDRESS</p>
-        <h5><%= @party.address %><h5>
-        <hr>
-        <p>DATE</p>
-        <h5><%= @party.date %><h5>
-        <hr>
-        <h5><p>THEME</p><h5>
-        <%= @party.theme %>
-          <hr>
-        <h5><p>GUESTS</p><h5>
-        <%= @party.attendancy %>
-        <hr>
-        <div class="edit-btn">
-        <%= link_to "Edit" %>
-
-        </div>
-        <%# <button class="">Edit</button> %>
-      </div>
-
-
+    <div class="col-9">
       <div class="flex-child ingredient-container">
         <div class="title-ingredient">
           <div>
+
             <h2> Ingredient list </h2>
           </div>
           <div>
@@ -40,18 +18,23 @@
         </div>
           <ul>
           <div>
-            <% @ingredients.each do |ingredient| %>
+          <%= raise %>
+          <% @party.recipes.each do |recipe| %>
+            <% recipe.ingredients.each do |ingredient| %>
             <li>
             <div class="ingredient">
-              <div><%= check_box_tag ingredient, false %> <%= ingredient %></div>
+              <div><%= check_box_tag ingredient, false %> <%= ingredient.name %></div>
 
-              <div><%= "Amount" %></div>
+              <div><%= recipe.title %></div>
             </div>
             </li>
+            <% end %>
             <% end %>
           </div>
           </ul>
           <br>
       </div>
 
+</div>
+</div>
 </div>
