@@ -23,7 +23,7 @@
             <div class="status"><p> <%= party.status %> </p></div>
             <%= image_tag "platedish.png", class: "party-card-img" %>
             <div class="text">
-            <p> <%= party.date %> </p>
+            <p> <%= party.date.strftime("%A, %b %d") %> </p>
             <h3> <%= party.title %> </h3></div>
             <% end %>
           </div>
@@ -60,7 +60,7 @@
             <div class="status"><p> <%= party.status %> </p></div>
             <%= image_tag "platedish.png", class: "party-card-img" %>
             <div class="text">
-            <p> <%= party.date %> </p>
+            <p> <%= party.date.strftime("%A, %b %d") %> </p>
             <h3> <%= party.title %> </h3></div>
             <% end %>
           </div>
