@@ -17,6 +17,11 @@
   justify-content: flex-end;
 }
 
+.nav-link {
+  font-family: $headers-font;
+  margin-right: 20px;
+}
+
 .navbar-home {
   background-color: transparent;
   text-align: right;
