@@ -3,6 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.3"
 
+#WICKED GEM
+gem 'wicked_pdf'
+gem "wkhtmltopdf-binary", group: :development
+gem "wkhtmltopdf-heroku", group: :production
+
+
 gem 'draggable-rails'
 
 # QR-CODE FEATURE

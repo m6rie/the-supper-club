@@ -5,6 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+puts "destroying Conversations..."
+Conversation.destroy_all
+puts "destroyin IngredientRecipes..."
+RecipeIngredient.destroy_all
+puts "destroying Ingredients..."
+Ingredient.destroy_all
 puts "destroying PartyRecipes..."
 PartyRecipe.destroy_all
 puts "destroying UserRecipes..."
@@ -93,6 +99,71 @@ r13 = Recipe.create(title: 'Key Lime Pie',
                     prep_time: 50,
                     # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
                     photo_url: 'https://static01.nyt.com/images/2019/05/09/dining/key-lime-pie-2/key-lime-pie-2-articleLarge.jpg')
+r14 = Recipe.create(title: 'Chicken noodle soup',
+                    description: "The aromatic broth will warm you up on a winter's evening - it contains ginger, which is particularly good for colds.",
+                    prep_time: 15,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://img.delicious.com.au/rKurYnEG/w1200/del/2015/10/chicken-noodle-soup-14133-1.jpg')
+r15 = Recipe.create(title: 'Egg-fried rice',
+                    description: "Don't call the Chinese takeaway - make your own egg-fried rice. Use leftover rice, or cook and dry it on a plate before using so it doesn't stick to the wok",
+                    prep_time: 35,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://images.ctfassets.net/qu53tdnhexvd/2vgQsi1MdiwIgmyySyS6gK/47c59187dac4e4321a3da2327271b879/egg-fried-rice.jpg')
+r16 = Recipe.create(title: 'Strawberry pavlova',
+                    description: "When you find a punnet of perfectly ripe strawberries, showcase them in this irresistible summer pavlova",
+                    prep_time: 45,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://img.taste.com.au/4pBEPiyl/taste/2016/11/strawberry-pavlova-107222-1.jpeg')
+r17 = Recipe.create(title: 'Chicken & chorizo jambalaya',
+                    description: "A Cajun-inspired rice pot recipe with spicy Spanish sausage, sweet peppers and tomatoes",
+                    prep_time: 50,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://food-images.files.bbci.co.uk/food/recipes/microwave_jambalaya_72083_16x9.jpg')
+r18 = Recipe.create(title: 'Chicken arrabbiata stew & parmesan dumplings',
+                    description: "Try a modern take on stew and dumplings with Italian classic tomato alla arrabbiata and parmesan dumplings. Simple and oh so comforting, it's perfect for cold weather cooking",
+                    prep_time: 60,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://144f2a3a2f948f23fc61-ca525f0a2beaec3e91ca498facd51f15.ssl.cf3.rackcdn.com/uploads/food_portal_data/recipes/recipe/hero_article_image/2733/letterbox_Homemade_AW_Mealplan_Chick_Stew4125-593.jpg')
+r19 = Recipe.create(title: 'Home-style chicken curry',
+                    description: "A rustic and authentic quick Indian one-pot packed with tonnes of hot Asian spices and fragrant coriander.",
+                    prep_time: 30,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://assets.vogue.in/photos/5efdf623800c753aed1a4acd/16:9/w_5038,h_2834,c_limit/chicken%20curry%20recipe%20homestyle%20chicken%20curry%20recipe%20easy%20recipes%20to%20make%20at%20home%20chicken%20and%20rice.jpg')
+r20 = Recipe.create(title: 'Teriyaki chicken',
+                    description: "Try this easy, sticky Asian-style teriyaki chicken for a speedy weeknight supper - it takes just 20 minutes to make! Serve it with sticky rice and steamed greens",
+                    prep_time: 45,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://iamafoodblog.b-cdn.net/wp-content/uploads/2020/12/teriyaki-chicken-8201w.jpg')
+r21 = Recipe.create(title: 'Chicken supreme',
+                    description: "Enjoy this creamy chicken supreme with mashed potato and steamed green veggies. It makes an easy midweek meal for two ",
+                    prep_time: 40,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://www.afamilyfeast.com/wp-content/uploads/2019/12/Chicken-Supreme-2.jpg')
+r22 = Recipe.create(title: 'Pasta with salmon & peas',
+                    description: "Make this salmon pasta in under 20 minutes for a dinner the whole family can enjoy. Kids will love the fun-shaped pasta while packing in fibre and omega-3",
+                    prep_time: 15,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://ellerepublic.de/wp-content/uploads/2017/03/Raucherlachs-Pasta-mit-Erbsen-Main.jpg')
+r23 = Recipe.create(title: 'Smoked salmon & lemon risotto',
+                    description: "Inspired by a risotto from London restaurant Ooze, smoked salmon may sound expensive for a midweek meal, but is no more costly than cooking with red meat",
+                    prep_time: 20,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'http://articles.snowballsunderwear.com/wp-content/uploads/salmon-and-chive-risotto-1.jpg')
+r24 = Recipe.create(title: 'Salmon & leek parcel',
+                    description: "A simple salmon dish, parcelled up to seal in the flavours. With creamy mascarpone and fresh leeks, this keto-friendly fish supper is easy and rich in omega-3 ",
+                    prep_time: 35,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://images-gmi-pmc.edge-generalmills.com/44a2f600-5622-45a1-964b-a21d5fb52fc7.jpg')
+r25 = Recipe.create(title: 'Chocolate fudge cake',
+                    description: "Need a guaranteed crowd-pleasing cake that's easy to make? This super-squidgy chocolate fudge cake with smooth icing is an instant baking win",
+                    prep_time: 45,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://hips.hearstapps.com/delish/assets/17/16/1492694005-108-sein-9781101967140-art-r1-1.jpg')
+r26 = Recipe.create(title: 'Ultimate chocolate cake',
+                    description: "Indulge yourself with this ultimate chocolate cake recipe that is beautifully moist, rich and fudgy. Perfect for a celebration or an afternoon tea",
+                    prep_time: 55,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/ultimate-chocolate-cake-700-350-b721692.jpg')
 
 puts "Created #{Recipe.count} Recipes"
 
@@ -117,7 +188,7 @@ p3 = Party.create(title: 'Cena Italiana', address: "Napoli", theme: "Italian", d
 p4 = Party.create(title: 'Greek Feast', address: "Athens", theme: "Greek", date: "6-06-2022", attendancy: 8, appetizers: 1, mains: 1, desserts: 1, user_id: u3.id)
 p5 = Party.create(title: 'Romantic Dinner', address: "Paris", theme: "Romantic", date: "8-06-2022", attendancy: 2, appetizers: 1, mains: 1, desserts: 1, user_id: u2.id)
 p6 = Party.create(title: 'French Finess', address: "Paris", theme: "French", date: "3-06-2022", attendancy: 5, appetizers: 1, mains: 1, desserts: 1, user_id: u2.id)
-p7 = Party.create(title: 'Brit Tea Party', address: "London", theme: "Tea", date: "26-06-2022", attendancy: 4, appetizers: 1, mains: 1, desserts: 1, user_id: u4.id)
+p7 = Party.create(title: "Broadway New Year's Eve", address: "London", theme: "NYE", date: "31-12-2022", attendancy: 6, appetizers: 1, mains: 1, desserts: 1, user_id: u4.id)
 p8 = Party.create(title: 'Halloween Bagel Party', address: "London", theme: "Halloween", date: "29-06-2022", attendancy: 9, appetizers: 1, mains: 1, desserts: 1, user_id: u4.id)
 
 puts "Created #{Party.count} Parties"
@@ -130,7 +201,7 @@ PartyRecipe.create(recipe_id: r3.id, party_id: p3.id)
 PartyRecipe.create(recipe_id: r4.id, party_id: p4.id)
 PartyRecipe.create(recipe_id: r5.id, party_id: p5.id)
 PartyRecipe.create(recipe_id: r6.id, party_id: p6.id)
-PartyRecipe.create(recipe_id: r7.id, party_id: p7.id)
+PartyRecipe.create(recipe_id: r15.id, party_id: p7.id)
 PartyRecipe.create(recipe_id: r8.id, party_id: p8.id)
 PartyRecipe.create(recipe_id: r9.id, party_id: p2.id)
 PartyRecipe.create(recipe_id: r10.id, party_id: p3.id)
@@ -140,13 +211,13 @@ PartyRecipe.create(recipe_id: r13.id, party_id: p2.id)
 PartyRecipe.create(recipe_id: r13.id, party_id: p1.id)
 PartyRecipe.create(recipe_id: r13.id, party_id: p3.id)
 PartyRecipe.create(recipe_id: r9.id, party_id: p4.id)
-PartyRecipe.create(recipe_id: r11.id, party_id: p7.id)
+PartyRecipe.create(recipe_id: r14.id, party_id: p7.id)
 PartyRecipe.create(recipe_id: r3.id, party_id: p8.id)
 PartyRecipe.create(recipe_id: r13.id, party_id: p4.id)
 PartyRecipe.create(recipe_id: r9.id, party_id: p5.id)
 PartyRecipe.create(recipe_id: r7.id, party_id: p5.id)
 PartyRecipe.create(recipe_id: r9.id, party_id: p6.id)
-PartyRecipe.create(recipe_id: r12.id, party_id: p7.id)
+PartyRecipe.create(recipe_id: r16.id, party_id: p7.id)
 PartyRecipe.create(recipe_id: r13.id, party_id: p8.id)
 
 puts "Created #{PartyRecipe.count} PartyRecipes"
@@ -199,3 +270,87 @@ RecipeIngredient.create(recipe_id: r2.id, ingredient_id: i19.id)
 RecipeIngredient.create(recipe_id: r2.id, ingredient_id: i20.id)
 
 puts "Created #{RecipeIngredient.count} Recipe Ingredients"
+
+puts "Creating Conversations..."
+
+Conversation.create(topic: "Travel", subject: "Where are you travelling next?")
+Conversation.create(topic: "Travel", subject: "What was your favourite trip?")
+Conversation.create(topic: "Travel", subject: "Where is your dream destination?")
+Conversation.create(topic: "Travel", subject: "What's the best thing about traveling? How about the worst thing?")
+Conversation.create(topic: "Travel", subject: "Where is the most awe-inspiring place you have been?")
+Conversation.create(topic: "Travel", subject: "If you could live anywhere in the world, where would it be?”")
+Conversation.create(topic: "Travel", subject: "What's the best way to travel? (Plane, car, train, etc.)")
+Conversation.create(topic: "Travel", subject: "Where is the most relaxing place you have been?")
+Conversation.create(topic: "Travel", subject: "Do you prefer traveling alone or with a group?")
+Conversation.create(topic: "Travel", subject: "What is the worst hotel you have stayed at? How about the best hotel?")
+Conversation.create(topic: "Travel", subject: "Talk about some of the interesting people you have met while traveling.")
+Conversation.create(topic: "Travel", subject: "What do you think of staycations? (Vacationing and seeing tourist attractions where you live.)")
+Conversation.create(topic: "Connection", subject: "What is your guilty pleasure?")
+Conversation.create(topic: "Connection", subject: "What do you do to improve your mood when you are in a bad mood?")
+Conversation.create(topic: "Connection", subject: "What's your favorite food?")
+Conversation.create(topic: "Connection", subject: "What do you look for in a guy/girl?")
+Conversation.create(topic: "Connection", subject: "When do you want to retire? What do you want to do when you retire?")
+Conversation.create(topic: "Connection", subject: "What did you do this past weekend?")
+Conversation.create(topic: "Connection", subject: "Are you a Dog or Cat person?")
+Conversation.create(topic: "Tv/Cinema", subject: "What's the worst movie you have seen recently?")
+Conversation.create(topic: "Tv/Cinema", subject: "What is the funniest movie you have ever seen?")
+Conversation.create(topic: "Tv/Cinema", subject: "What's the best show currently on TV?")
+Conversation.create(topic: "Tv/Cinema", subject: "What's the best sitcom?")
+Conversation.create(topic: "Tv/Cinema", subject: "What cartoons did you watch as a child?")
+Conversation.create(topic: "Tv/Cinema", subject: "If you could bring back one TV show that was canceled, which one would you bring back?")
+Conversation.create(topic: "Tv/Cinema", subject: "What do you think about reality TV? Why do you think it’s so popular?")
+Conversation.create(topic: "Tv/Cinema", subject: "Favourite Actor/Actress?")
+Conversation.create(topic: "Music", subject: "Records, tapes, CDs, MP3s, streaming. Which did you grow up with? What is good and bad about each?")
+Conversation.create(topic: "Music", subject: "Do you like going to concerts? Why or why not? What was the last concert you went to?")
+Conversation.create(topic: "Music", subject: "Favourite music genre?")
+Conversation.create(topic: "Music", subject: "Best Music Festival you have been to?")
+Conversation.create(topic: "Music", subject: "What's the best way to discover new music?")
+Conversation.create(topic: "Music", subject: "What bands or types of music do you listen to when you exercise?")
+Conversation.create(topic: "Music", subject: "Who was the first band or musician you were really into? Do you still like them?")
+Conversation.create(topic: "Art", subject: "What was your favourite museum?")
+Conversation.create(topic: "Art", subject: "What famous artist (Dead or Alive) would you want to paint your portrait?")
+Conversation.create(topic: "Art", subject: "If you could have any piece of art in your living room, what would it be?")
+Conversation.create(topic: "Art", subject: "What is the purpose of art in society?")
+Conversation.create(topic: "Art", subject: "Do you prefere Painting or Sculpture?")
+Conversation.create(topic: "Art", subject: "Do you think that anything can be considered art?")
+Conversation.create(topic: "Art", subject: "What kind of art do you enjoy most?")
+Conversation.create(topic: "World", subject: "What would you change to make the world a better place?")
+Conversation.create(topic: "World", subject: "Do you get involved in Politics?")
+Conversation.create(topic: "World", subject: "What country impresses you the most in terms of structure and organization?")
+Conversation.create(topic: "World", subject: "Name 3 things in nature you find most beautiful?")
+Conversation.create(topic: "World", subject: "What is the most uplifting thing happening in the world right now? What is the most tragic thing?")
+Conversation.create(topic: "World", subject: "What are the most important factors in maintaining a well functioning society? What does it mean for a society to function well?")
+Conversation.create(topic: "Trends", subject: "Did you support Johnny Depp or Amber Heard?")
+Conversation.create(topic: "Trends", subject: "What fashion trend do you wish would come back?")
+Conversation.create(topic: "Trends", subject: "What fashion trend do you wish would go away?")
+Conversation.create(topic: "Trends", subject: "Tik Tok or Instagram?")
+Conversation.create(topic: "Trends", subject: "What are your thoughts on Augmented Reality and Virtual Reality?")
+Conversation.create(topic: "Trends", subject: "What are your thoughts on Elon Musk buying Twitter?")
+Conversation.create(topic: "Random", subject: "If you could go back in time 1,000 years, what year would you visit?")
+Conversation.create(topic: "Random", subject: "What two languages would you like to be fluent in?")
+Conversation.create(topic: "Random", subject: "If someone wrote a biography about you, what do you think the title should be?")
+Conversation.create(topic: "Random", subject: "If you could trade lives with anyone for a day who would it be and why?")
+Conversation.create(topic: "Random", subject: "If you could have one superpower, what would it be and why?")
+Conversation.create(topic: "Random", subject: "What is the strangest thing you've ever eaten?")
+Conversation.create(topic: "Random", subject: "What's the dumbest thing you've ever cried about?")
+Conversation.create(topic: "Random", subject: "What are the top two most used apps on your phone?")
+Conversation.create(topic: "Would you rather", subject: "Would you rather lose the ability to read or lose the ability to speak?")
+Conversation.create(topic: "Would you rather", subject: "Would you rather be in jail for a year or lose a year off your life?")
+Conversation.create(topic: "Would you rather", subject: "Would you rather have an easy job working for someone else or work for yourself but work incredibly hard?")
+Conversation.create(topic: "Would you rather", subject: "Would you rather be the first person to explore a planet or be the inventor of a drug that cures a deadly disease?")
+Conversation.create(topic: "Would you rather", subject: "Would you rather be born again in the same country or a different one of your choosing?")
+Conversation.create(topic: "Would you rather", subject: "Would you rather give up using a phone or tablet forever or give up having any salt in food?")
+Conversation.create(topic: "Would you rather", subject: "Would you rather never be able to drink water again or only be able to drink water?")
+Conversation.create(topic: "Would you rather", subject: "Would you rather be a successful artist or a successful business owner?")
+Conversation.create(topic: "Would you rather", subject: "Would you rather be compelled to high five everyone you meet or be compelled to give wedgies to anyone in a green shirt?")
+Conversation.create(topic: "Would you rather", subject: "Would you rather only be able to wear clown shoes or not be able to wear any shoes?")
+Conversation.create(topic: "Would you rather", subject: "Would you rather be able to teleport anywhere or be able to read minds?")
+Conversation.create(topic: "Would you rather", subject: "Would you rather be forced to eat only spicy food or only incredibly bland food?")
+Conversation.create(topic: "Tech", subject: "What was for you the best invention of the last 50 years?")
+Conversation.create(topic: "Tech", subject: "Does technology simplify life or make it more complicated?")
+Conversation.create(topic: "Tech", subject: "Which emerging technology are you most excited about?")
+Conversation.create(topic: "Tech", subject: "Can you think of any technology that has only made the world worse? How about a piece of technology that has only made the world better?")
+Conversation.create(topic: "Tech", subject: "What is your favorite piece of technology that you own?")
+Conversation.create(topic: "Tech", subject: "Will technology save the human race or destroy it?")
+
+puts "Created #{Conversation.count} Conversations"
