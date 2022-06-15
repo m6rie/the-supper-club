@@ -1,9 +1,9 @@
 .login-container {
-  margin-left: 350px;
-  margin-right: 350px;
-  margin-top: 60px;
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-top: 30px;
   background-color: #C9FBC5;
-  padding: 70px;
+  padding: 50px;
   h2 {
   font-family: $display-font;
   font-size: 80px;
@@ -34,4 +34,17 @@
     color: black;
 
   }
+}
+
+.form-input-custom {
+  background-color: #C9FBC5;
+}
+
+.form-input-custom:focus {
+  background-color: #C9FBC5;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid rgb(0, 183, 0);
+  box-shadow: none;
 }
