@@ -6,17 +6,19 @@
       <div class="party-desc-container">
         <div class="top-party-desc-container">
           <div class="recipe-head">
-            <h2> Your <%= @party.recipes.length %> dish menu<h2>
+            <h2> Your <%= @party.recipes.length %> dish menu</h2>
             <div class = "recipe-head-links">
               <%= link_to "See ingredients", party_ingredients_path(@party), class: "ingredient-btn" %>
             </div>
         </div>
-        <div class="recipe-content center">
+        <div class="recipe-content center d-flex">
           <% @party.recipes.each do |recipe| %>
+          <div class="show-recipe-card">
             <a href=<%= recipe.recipe_url %> target="_blank" class="recipe-card">
               <div class="recipe-img-container" style="background-image: url(<%= recipe.photo_url %>); background-size: cover"></div>
             </a>
               <h3> <%= recipe.title %> </h3>
+              </div >
           <% end %>
         </div>
       </div>
@@ -28,15 +30,17 @@
             <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0zubeiljQV39EDfjbq3VF9?utm_source=generator&theme=0" width="90%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
           <% elsif @party.theme == "Italian" %>
             <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5Y9MelZDlAy1FCGuOJGbGY?utm_source=generator&theme=0" width="90%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          <% else %>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7fk4COnzvJAIRaGEa8eGLn?utm_source=generator&theme=0" width="90%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
           <% end %>
         </div>
-        <div class="convo-container">
+        <div class="convo-container text-left">
           <h2>Activities</h2>
           <%# ACTIVITIES CARDS %>
-            <div class="card">
+            <div class="card text-left">
               <h2>Convo</h2>
               <i class=" ii fas fa-arrow-right"></i>
-              <p style="">No awkward silence.</p>
+              <%# <p style="">No awkward silence.</p> %>
               <div class="pict"></div>
               <ul>
                 <li></li>
@@ -79,4 +83,3 @@
     </div>
   </div>
 </div>
-

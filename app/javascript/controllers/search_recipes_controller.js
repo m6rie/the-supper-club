@@ -41,11 +41,13 @@ export default class extends Controller {
                 <i class=" move-icon fa-solid fa-arrows-up-down-left-right"></i>
 
                 <div class="info-api">
-                  <div class="" id="label" data-label=${JSON.stringify(recipe["recipe"]["label"])}>${JSON.stringify(recipe["recipe"]["label"])}"
+                  <div class="" id="label" data-label=${JSON.stringify(recipe["recipe"]["label"])}><h4>${JSON.stringify(recipe["recipe"]["label"])}</h4>
                 </div>
-                    <p><div/>${JSON.stringify(Math.round(recipe["recipe"]["calories"]))}kcal</div></p>
+                <div class="d-flex">
+                    <p><div/>${JSON.stringify(Math.round(recipe["recipe"]["calories"]))}kcal |</div></p>
                   <div class="" id="ingredients" data-ingredients="[${ingredients}]"></div>
-                    <strong>Ingredients: </strong>${JSON.stringify(recipe["recipe"]["ingredients"].length)}
+                    ${JSON.stringify(recipe["recipe"]["ingredients"].length)} Ingredients
+                    </div>
                 </div>
               </div>
             </div>`

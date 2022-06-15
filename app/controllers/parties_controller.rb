@@ -5,6 +5,10 @@ class PartiesController < ApplicationController
   before_action :set_party, only: [:show, :edit, :update]
   skip_before_action :authenticate_user!, only: :invite
 
+  def home
+    @parties = Party.all
+  end
+
   def index
     @parties = Party.all
   end
@@ -94,6 +98,7 @@ class PartiesController < ApplicationController
   end
 
   def edit
+
   end
 
   def update

@@ -1,30 +1,93 @@
 body#green {
   background-color: #c9fbc5;
   position: relative;
+  overflow: hidden;
   .tabs {
     position: fixed;
     bottom: 30px;
     left: 35%;
     margin: auto;
   }
+
+  .invite-container {
+    padding-left: 60px;
+  }
+
+  .search-recipe-container {
+    padding-right: 30px;
+    text-align: left;
+  }
+  .choosen-container {
+    padding-top: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+
+  .tab-content-recipes {
+    margin-top: 40px;
+  }
+
+  .tab-content-dishes {
+    margin-top: 40px;
+  }
+
+  .guest-form {
+    background-color: red;
+  }
+
+  .tab-content-guests {
+    margin-top: 40px;
+  }
+  .footer-container {
+    background-color: red;
+  }
+
+  .select-theme-container {
+    height: 800px;
+    overflow: scroll;
+  }
+
+  .tab-content-theme {
+    margin-top: 50px;
+  }
+  i {
+    font-size: 20px;
+  }
   .next-tab {
     width: 100px;
     position: fixed;
-    padding: 15px;
+    padding: 10px;
     bottom: 20px;
-    background-color: black;
-    color: #c9fbc5;
+    background-color: transparent;
+    border: none;
+    color: black;
+    right: 100px;
+    z-index: 99999
+  }
+
+  .create-party-btn {
+    width: 250px;
+    text-align: right;
+    position: absolute;
+    padding: 10px;
+    bottom: 0px;
+    background-color: transparent;
+    border: none;
+    color: black;
     right: 0px;
+    z-index: 99999;
   }
   .back-tab {
     justify-content: right;
     width: 100px;
     position: fixed;
-    padding: 15px;
+    padding: 10px;
     bottom: 20px;
-    background-color: black;
-    color: #c9fbc5;
-    left: 0px;
+    background-color: transparent;
+    border: none;
+    color: black;
+    left: 100px;
+    z-index: 99999;
   }
 }
 
@@ -38,6 +101,7 @@ body#green {
   }
 
   .form-control {
+    color: black;
     background-color: transparent;
     border-top: none;
     border-left: none;
@@ -48,8 +112,8 @@ body#green {
 
   .dishes-card {
     background-color: #c9fbc5;
-    padding: 40px;
-    margin: 10px;
+    padding-top: 40px;
+    // margin: 10px;
   }
 
   .guest-card {
@@ -136,7 +200,8 @@ body#green {
   }
 
   .img-dishes {
-    width: 70%;
+    width: 40%;
+    height: 50%;
   }
 
   .theme-container-left {
@@ -186,6 +251,10 @@ body#green {
     color: #c9fbc5;
   }
 
+  a {
+    color: #c9fbc5;
+  }
+
   .nav-link {
     color: black;
   }
@@ -204,10 +273,10 @@ body#green {
 }
 
 .card-recipe-api {
-  height: 150px;
+  height: 100px;
   width: 40vw;
   display: flex;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
   overflow: hidden;
   background: white;
@@ -216,6 +285,11 @@ body#green {
   top: 0px;
   z-index: 0;
   position: relative;
+}
+
+#ourlist {
+  height: 430px;
+  overflow: scroll;
 }
 
 .recipe-api-img {
@@ -231,12 +305,13 @@ body#green {
 .move-icon {
 position: absolute;
 left: 95%;
+height: 70%;
 top: 10%;
 opacity: 0.6;
 }
 
-.move-icon:hover {
-  opacity: 1;
-  transform: scale(1.5);
-}
+// .move-icon:hover {
+//   opacity: 1;
+//   transform: scale(1.5);
+// }
 }
