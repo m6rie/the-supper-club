@@ -36,6 +36,7 @@ class PartiesController < ApplicationController
   end
 
   def new
+    raise
     @party = Party.new
   end
 
@@ -66,10 +67,10 @@ class PartiesController < ApplicationController
     titles = params[:party][:recipes_data][:title]
     photo_urls = params[:party][:recipes_data][:photo]
     urls = params[:party][:recipes_data][:url]
-    # ingredients = params[:party][:recipes_data][:ingredients] ------ ingredients: ingredients[n - 1] ------ TBA -------
+    ingredients = params[:party][:recipes_data][:ingredients]
     # BUILDING RECIPES
     number_of_recipes.times do |n|
-      @recipes << Recipe.create(title: titles[n - 1], recipe_url: urls[n - 1], photo_url: photo_urls[n - 1], prep_time: 30, description: "Delicous recipe")
+      @recipes << Recipe.create(title: titles[n - 1], recipe_url: urls[n - 1], ingredients: ingredients[n - 1], photo_url: photo_urls[n - 1], prep_time: 30, description: "Delicous recipe")
     end
 
     # CREATING PARTY
@@ -100,7 +101,6 @@ class PartiesController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
