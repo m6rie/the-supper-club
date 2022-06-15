@@ -43,8 +43,9 @@ class PartiesController < ApplicationController
     @party = Party.find(params[:party_id])
     @party_recipe = @party.recipes
     @party_recipe.each do |recipe|
-    @ingredients = recipe.ingredients
-    @recipe_ingredient = RecipeIngredient.new
+      # @ingredients = recipe[:ingredients].split(",")
+      @ingredients = recipe.ingredients
+      @recipe_ingredient = RecipeIngredient.new
     end
     respond_to do |format|
       format.html
