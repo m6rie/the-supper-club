@@ -7,30 +7,39 @@
   <body>
     <% if user_signed_in? %>
      <section class = "sign-in-home-container">
+        <div class = "center">
         <h2> Hello <em><%= current_user.name %></em>! </h2>
+        </div>
         <br>
-        <div class="row">
-        <div class="col-sm-6 recent-container">
+        <div class="row text-left">
+        <div class="col-sm-6 recent-container text-left">
           <h3>Your recent parties</h3>
-          <div class="card-recent-container">
-            <% @my_party.limit(2).each do |party| %>
-              <div class="card-party card center">
-                <%= link_to party_path(party) do %>
-                <p> <%= party.title %> </p>
-              </div>
-              <% end %>
+          <br>
+          <div class="card-recent-container pb-5" >
+          <% @my_party.first(2).each do |party| %>
+          <div class="card-party card text-left"
+            style = "background-color:<%= @color.sample %>">
+            <%= link_to party_path(party) do %>
+            <div class="status"><p> <%= party.status %> </p></div>
+            <%= image_tag "platedish.png", class: "party-card-img" %>
+            <div class="text">
+            <p> <%= party.date %> </p>
+            <h3> <%= party.title %> </h3></div>
             <% end %>
-            </div>
-            <br>
+          </div>
+            <% end %>
+        </div>
             <button onClick="document.getElementById('scroll-target').scrollIntoView();" class ="view-btn">View all</button>
           </div>
 
           <div class="col-sm-6 new-party-container center">
           <%= link_to new_party_path do %>
+          <%= image_tag "confetti.png", class: "confetti-img" %>
           <%= image_tag "Dinner_party_1.png", class: "create-img" %>
           <br>
           <br>
           <h3>Create a <br> new party!</h3>
+          <br>
           <i class="fa-solid fa-arrow-right-long"></i>
           <% end %>
           <br>
@@ -38,18 +47,27 @@
       </div>
 
     </section>
-     <section class = "my-parties-container">
+     <section class = "my-parties-container text-left">
       <hr>
-      <h2 id="scroll-target"> My supper clubs </h2>
-      <div class="card-recent-container pb-5">
-      <% @my_party.each do |party| %>
-              <div class="card-party card center">
-                <%= link_to party_path(party) do %>
-                <p> <%= party.title %> </p>
-              </div>
-              <% end %>
+      <br>
+      <h3 class = "center" id="scroll-target center"> My parties </h3>
+ <br>
+        <div class="card-recent-container pb-5 text-left" >
+          <% @my_party.each do |party| %>
+          <div class="card-party card text-left"
+            style = "background-color:<%= @color.sample %>">
+            <%= link_to party_path(party) do %>
+            <div class="status"><p> <%= party.status %> </p></div>
+            <%= image_tag "platedish.png", class: "party-card-img" %>
+            <div class="text">
+            <p> <%= party.date %> </p>
+            <h3> <%= party.title %> </h3></div>
             <% end %>
-            </div>
+          </div>
+            <% end %>
+        </div>
+
+
      </section>
     <% else %>
       <div class="home-container">

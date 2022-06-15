@@ -1,6 +1,38 @@
 // Specific CSS for your home-page
+.my-parties-container {
+  h3 {
+    font-size: 40px;
+  }
+}
+
+
+.confetti-img {
+  height: 60%;
+  width: auto;
+  display: none;
+  z-index: -1;
+  position: absolute;
+  right: 50px;
+}
+
+// .confetti-img:hover {
+//   height: 60%;
+//   width: auto;
+//   // display: none;
+//   z-index: -1;
+//   position: absolute;
+//   right: 50px;
+// }
 .home-container {
   position: relative;
+
+
+  // .confetti-img:hover {
+  //   display: block;
+  //   z-index: 1000;
+  //   position: absolute;
+  //   right: 50px;
+  // }
   .img-dots-left {
     position: absolute;
     z-index: 9999;
@@ -82,7 +114,8 @@
         letter-spacing: -1px;
     }
     h3 {
-        font-size: 30px;
+        font-size: 43px;
+        line-height: 30px;
     }
     a {
         color: $black;
@@ -122,14 +155,51 @@
 }
 
 .card-party {
-    width: 250px;
+  position: relative;
+  overflow: hidden;
+    width: 280px;
     height: 400px;
+    padding-left: 30px;
+    padding-right: 10px;
     margin-right: 10px;
-    border: 1px solid $black;
+    border-radius: 20px;
+    border: none;
     background: none;
+    .status {
+      position: absolute;
+      top: 0px;
+      justify-content: center;
+      text-align: center;
+      background-color: black;
+      color: white;
+      width: 90px;
+      height: 30px;
+      padding-top: 12px;
+      border-radius: 0 0 10px 10px;
+    }
+    .party-card-img {
+      position: absolute;
+      left: 20px;
+      top: 40px;
+      width: 200px;
+      height: auto;
+      justify-content: center;
+    }
     a {
         color: black;
         text-decoration: none;
+    }
+    .text {
+      position: absolute;
+      bottom: 20px;
+    }
+    h3 {
+      font-size: 43px;
+      line-height: 40px;
+    }
+    p {
+      font-size: 15px;
+      line-height: 0
     }
 }
 
@@ -138,7 +208,15 @@
 }
 
 .new-party-container {
+  height: 500px;
   margin: auto;
+}
+
+.new-party-container:hover {
+  margin: auto;
+  // background-color: red;
+  background-image: url("https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655268110/confetti_m4gptr.png");
+  background-size: cover;
 }
 
 .img-ellipse {
