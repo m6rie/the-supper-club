@@ -17,7 +17,8 @@
      <%= @party.attendancy %>
      <hr>
      <h5><p>INVITATION</p><h5>
-    <%= image_tag "qr_code#{@party.title}.png", class: "qr-code" %>
+    <%= link_to party_invite_path(@party) do %> <%= image_tag "qr_code#{@party.title}.png", class: "qr-code" %> <% end %>
+
     <br>
     <hr>
      <button class="edit-btn"><i class="fa-solid fa-pencil"></i>&nbsp edit</button>

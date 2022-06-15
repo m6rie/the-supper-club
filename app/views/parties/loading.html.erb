@@ -1,1 +1,7 @@
-<h2>Preparing your party...</h2>
+<head>
+<meta HTTP-EQUIV="REFRESH" content="4; url=<%= party_path(params[:party_id])%>">
+</head>
+<div class="center loading ">
+<%= image_tag "loading.png" %>
+<h2 class = "cursor message">Preparing your party...</h2>
+</div>
