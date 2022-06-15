@@ -17,6 +17,9 @@
      <%= @party.attendancy %>
      <hr>
      <button class="edit-btn">Edit</button>
+     <%= link_to party_path(@party), class: "btn book-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this party?" } do %>
+      <button class="edit-btn">Delete</button>
+     <% end %>
     </div>
     <%# <div class="party-desc-container col-9">
     </div> %>

@@ -1,0 +1,153 @@
+
+.conv-container {
+  padding: 1rem 0;
+  display: flex;
+  place-content: center;
+  flex-wrap: wrap;
+
+  .conv-cards {
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    pointer-events: none;
+    margin: 20px;
+    background-color: rgb(97, 186, 73); //background of cards
+
+  }
+
+
+
+  .conv-card {
+    border-radius: 2px;
+    max-width: 15rem;
+    color: #ffffffda; //color of text
+    padding: 1.5rem;
+    background-color: #49A15D; //color of card
+
+    pointer-events: auto;
+
+    transform: scale(1);
+    opacity: 1;
+    transition: all 150ms ease-in-out;
+
+    display: flex;
+    flex-direction: column;
+
+    .conv-card-title {
+      position: relative;
+
+      &::before {
+        content: "";
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+        box-shadow: inset 0 0 3px #ffffff; //little circle on top-right corner
+        background-color: transparent;
+
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    .conv-date {
+      color: #000000;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .conv-description {
+      font-size: 1.3rem;
+    }
+
+    &:nth-child(even) {
+      transform: translateY(8px);
+    }
+
+    &:nth-child(n) {
+      transform: rotate(-5deg);
+    }
+  }
+}
+
+.conv-cards:hover > .conv-card:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  z-index: 10;
+}
+.conv-cards:hover > .conv-card:not(:hover) {
+  opacity: 0.5;
+}
+
+
+//TRAVEL CARDS
+.travel-cards {
+  background-color: aquamarine!important;//BACKGROUND COLOR
+  .travel-card {
+    background-color: rgb(211, 142, 24); //COLOR CARDS
+  }
+}
+
+
+//CONNECTION CARDS
+.conn-cards {
+  background-color: aquamarine!important;//BACKGROUND COLOR
+  .conn-card {
+    background-color: rgb(98, 187, 74); //COLOR CARDS
+  }
+}
+
+//TV/CINEMA CARDS
+.tv-cards {
+  background-color: aquamarine!important;//BACKGROUND COLOR
+  .tv-card {
+    background-color: rgb(53, 91, 189); //COLOR CARDS
+  }
+}
+
+//MUSIC CARDS
+.music-cards {
+  background-color: aquamarine!important;//BACKGROUND COLOR
+  .music-card {
+    background-color: rgb(195, 106, 146); //COLOR CARDS
+  }
+}
+
+//CONNECTION CARDS
+.art-cards {
+  background-color: aquamarine!important;//BACKGROUND COLOR
+  .art-card {
+    background-color: rgb(187, 116, 72); //COLOR CARDS
+  }
+}
+
+//WORLD CARDS
+.world-cards {
+  background-color: aquamarine!important;//BACKGROUND COLOR
+  .world-card {
+    background-color: rgb(61, 127, 60); //COLOR CARDS
+  }
+}
+
+//TRENDS CARDS
+.trends-cards {
+  background-color: aquamarine!important;//BACKGROUND COLOR
+  .trends-card {
+    background-color: rgb(105, 24, 211); //COLOR CARDS
+  }
+}
+
+//RANDOM CARDS
+.random-cards {
+  background-color: aquamarine!important;//BACKGROUND COLOR
+  .random-card {
+    background-color: rgb(29, 87, 66); //COLOR CARDS
+  }
+}
+
+//WOULD YOU RATHER CARDS
+.wyr-cards {
+  background-color: aquamarine!important;//BACKGROUND COLOR
+  .wyr-card {
+    background-color: rgb(233, 117, 21); //COLOR CARDS
+  }
+}
