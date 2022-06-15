@@ -8,13 +8,13 @@
      <h5><%= @party.address %><h5>
      <hr>
      <p>DATE</p>
-     <h5><%= @party.date %><h5>
+     <h5><%= @party.date.strftime("%A, %b %d") %><h5>
      <hr>
     <h5><p>THEME</p><h5>
-     <%= @party.theme %>
+     <%= @party.theme %> Party
     <hr>
      <h5><p>GUESTS</p><h5>
-     <%= @party.attendancy %>
+     <%= @party.attendancy %> pax
      <hr>
      <h5><p>INVITATION</p><h5>
     <%= link_to party_invite_path(@party) do %><%= image_tag "qr_code#{@party.title}.png", class: "qr-code" %> <% end %>
