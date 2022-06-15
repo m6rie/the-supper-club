@@ -205,6 +205,7 @@ body#green {
   .clickable:hover {
     color: #c9fbc5;
     background-color: black;
+    cursor: pointer;
   }
 
   .clickable.active {
