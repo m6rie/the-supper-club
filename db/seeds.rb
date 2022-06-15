@@ -99,6 +99,71 @@ r13 = Recipe.create(title: 'Key Lime Pie',
                     prep_time: 50,
                     # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
                     photo_url: 'https://static01.nyt.com/images/2019/05/09/dining/key-lime-pie-2/key-lime-pie-2-articleLarge.jpg')
+r14 = Recipe.create(title: 'Chicken noodle soup',
+                    description: "The aromatic broth will warm you up on a winter's evening - it contains ginger, which is particularly good for colds.",
+                    prep_time: 15,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://img.delicious.com.au/rKurYnEG/w1200/del/2015/10/chicken-noodle-soup-14133-1.jpg')
+r15 = Recipe.create(title: 'Egg-fried rice',
+                    description: "Don't call the Chinese takeaway - make your own egg-fried rice. Use leftover rice, or cook and dry it on a plate before using so it doesn't stick to the wok",
+                    prep_time: 35,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://images.ctfassets.net/qu53tdnhexvd/2vgQsi1MdiwIgmyySyS6gK/47c59187dac4e4321a3da2327271b879/egg-fried-rice.jpg')
+r16 = Recipe.create(title: 'Strawberry pavlova',
+                    description: "When you find a punnet of perfectly ripe strawberries, showcase them in this irresistible summer pavlova",
+                    prep_time: 45,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://img.taste.com.au/4pBEPiyl/taste/2016/11/strawberry-pavlova-107222-1.jpeg')
+r17 = Recipe.create(title: 'Chicken & chorizo jambalaya',
+                    description: "A Cajun-inspired rice pot recipe with spicy Spanish sausage, sweet peppers and tomatoes",
+                    prep_time: 50,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://food-images.files.bbci.co.uk/food/recipes/microwave_jambalaya_72083_16x9.jpg')
+r18 = Recipe.create(title: 'Chicken arrabbiata stew & parmesan dumplings',
+                    description: "Try a modern take on stew and dumplings with Italian classic tomato alla arrabbiata and parmesan dumplings. Simple and oh so comforting, it's perfect for cold weather cooking",
+                    prep_time: 60,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://144f2a3a2f948f23fc61-ca525f0a2beaec3e91ca498facd51f15.ssl.cf3.rackcdn.com/uploads/food_portal_data/recipes/recipe/hero_article_image/2733/letterbox_Homemade_AW_Mealplan_Chick_Stew4125-593.jpg')
+r19 = Recipe.create(title: 'Home-style chicken curry',
+                    description: "A rustic and authentic quick Indian one-pot packed with tonnes of hot Asian spices and fragrant coriander.",
+                    prep_time: 30,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://assets.vogue.in/photos/5efdf623800c753aed1a4acd/16:9/w_5038,h_2834,c_limit/chicken%20curry%20recipe%20homestyle%20chicken%20curry%20recipe%20easy%20recipes%20to%20make%20at%20home%20chicken%20and%20rice.jpg')
+r20 = Recipe.create(title: 'Teriyaki chicken',
+                    description: "Try this easy, sticky Asian-style teriyaki chicken for a speedy weeknight supper - it takes just 20 minutes to make! Serve it with sticky rice and steamed greens",
+                    prep_time: 45,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://iamafoodblog.b-cdn.net/wp-content/uploads/2020/12/teriyaki-chicken-8201w.jpg')
+r21 = Recipe.create(title: 'Chicken supreme',
+                    description: "Enjoy this creamy chicken supreme with mashed potato and steamed green veggies. It makes an easy midweek meal for two ",
+                    prep_time: 40,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://www.afamilyfeast.com/wp-content/uploads/2019/12/Chicken-Supreme-2.jpg')
+r22 = Recipe.create(title: 'Pasta with salmon & peas',
+                    description: "Make this salmon pasta in under 20 minutes for a dinner the whole family can enjoy. Kids will love the fun-shaped pasta while packing in fibre and omega-3",
+                    prep_time: 15,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://ellerepublic.de/wp-content/uploads/2017/03/Raucherlachs-Pasta-mit-Erbsen-Main.jpg')
+r23 = Recipe.create(title: 'Smoked salmon & lemon risotto',
+                    description: "Inspired by a risotto from London restaurant Ooze, smoked salmon may sound expensive for a midweek meal, but is no more costly than cooking with red meat",
+                    prep_time: 20,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'http://articles.snowballsunderwear.com/wp-content/uploads/salmon-and-chive-risotto-1.jpg')
+r24 = Recipe.create(title: 'Salmon & leek parcel',
+                    description: "A simple salmon dish, parcelled up to seal in the flavours. With creamy mascarpone and fresh leeks, this keto-friendly fish supper is easy and rich in omega-3 ",
+                    prep_time: 35,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://images-gmi-pmc.edge-generalmills.com/44a2f600-5622-45a1-964b-a21d5fb52fc7.jpg')
+r25 = Recipe.create(title: 'Chocolate fudge cake',
+                    description: "Need a guaranteed crowd-pleasing cake that's easy to make? This super-squidgy chocolate fudge cake with smooth icing is an instant baking win",
+                    prep_time: 45,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://hips.hearstapps.com/delish/assets/17/16/1492694005-108-sein-9781101967140-art-r1-1.jpg')
+r26 = Recipe.create(title: 'Ultimate chocolate cake',
+                    description: "Indulge yourself with this ultimate chocolate cake recipe that is beautifully moist, rich and fudgy. Perfect for a celebration or an afternoon tea",
+                    prep_time: 55,
+                    # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
+                    photo_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/ultimate-chocolate-cake-700-350-b721692.jpg')
 
 puts "Created #{Recipe.count} Recipes"
 
@@ -123,7 +188,7 @@ p3 = Party.create(title: 'Cena Italiana', address: "Napoli", theme: "Italian", d
 p4 = Party.create(title: 'Greek Feast', address: "Athens", theme: "Greek", date: "6-06-2022", attendancy: 8, appetizers: 1, mains: 1, desserts: 1, user_id: u3.id)
 p5 = Party.create(title: 'Romantic Dinner', address: "Paris", theme: "Romantic", date: "8-06-2022", attendancy: 2, appetizers: 1, mains: 1, desserts: 1, user_id: u2.id)
 p6 = Party.create(title: 'French Finess', address: "Paris", theme: "French", date: "3-06-2022", attendancy: 5, appetizers: 1, mains: 1, desserts: 1, user_id: u2.id)
-p7 = Party.create(title: 'Brit Tea Party', address: "London", theme: "Tea", date: "26-06-2022", attendancy: 4, appetizers: 1, mains: 1, desserts: 1, user_id: u4.id)
+p7 = Party.create(title: "Broadway New Year's Eve", address: "London", theme: "NYE", date: "31-12-2022", attendancy: 6, appetizers: 1, mains: 1, desserts: 1, user_id: u4.id)
 p8 = Party.create(title: 'Halloween Bagel Party', address: "London", theme: "Halloween", date: "29-06-2022", attendancy: 9, appetizers: 1, mains: 1, desserts: 1, user_id: u4.id)
 
 puts "Created #{Party.count} Parties"
@@ -136,7 +201,7 @@ PartyRecipe.create(recipe_id: r3.id, party_id: p3.id)
 PartyRecipe.create(recipe_id: r4.id, party_id: p4.id)
 PartyRecipe.create(recipe_id: r5.id, party_id: p5.id)
 PartyRecipe.create(recipe_id: r6.id, party_id: p6.id)
-PartyRecipe.create(recipe_id: r7.id, party_id: p7.id)
+PartyRecipe.create(recipe_id: r15.id, party_id: p7.id)
 PartyRecipe.create(recipe_id: r8.id, party_id: p8.id)
 PartyRecipe.create(recipe_id: r9.id, party_id: p2.id)
 PartyRecipe.create(recipe_id: r10.id, party_id: p3.id)
@@ -146,13 +211,13 @@ PartyRecipe.create(recipe_id: r13.id, party_id: p2.id)
 PartyRecipe.create(recipe_id: r13.id, party_id: p1.id)
 PartyRecipe.create(recipe_id: r13.id, party_id: p3.id)
 PartyRecipe.create(recipe_id: r9.id, party_id: p4.id)
-PartyRecipe.create(recipe_id: r11.id, party_id: p7.id)
+PartyRecipe.create(recipe_id: r14.id, party_id: p7.id)
 PartyRecipe.create(recipe_id: r3.id, party_id: p8.id)
 PartyRecipe.create(recipe_id: r13.id, party_id: p4.id)
 PartyRecipe.create(recipe_id: r9.id, party_id: p5.id)
 PartyRecipe.create(recipe_id: r7.id, party_id: p5.id)
 PartyRecipe.create(recipe_id: r9.id, party_id: p6.id)
-PartyRecipe.create(recipe_id: r12.id, party_id: p7.id)
+PartyRecipe.create(recipe_id: r16.id, party_id: p7.id)
 PartyRecipe.create(recipe_id: r13.id, party_id: p8.id)
 
 puts "Created #{PartyRecipe.count} PartyRecipes"
