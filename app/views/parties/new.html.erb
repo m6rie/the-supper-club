@@ -21,10 +21,10 @@
             <p> First things first, give your party some details </p>
             <h2>Hey! It's <em><%= current_user.name %></em>,</h2>
             <%= simple_form_for @party, html: { class: 'form-horizontal' }, data: { action: "submit->draggable#sendData" } , wrapper: :horizontal_form do |f| %>
-            <div class="inline-form col-12"><h2>Come to my &nbsp</h2><%= f.input :title, label: false, input_html: { data: { draggable_target: "title" } }, placeholder: "party name?" %><h2>&nbsp!</h2>
+            <div class="inline-form col-12"><h2>Come to my &nbsp</h2><%= f.input :title, label: false, input_html: { data: { draggable_target: "title" }, class: "form-input-custom" }, placeholder: "party name?" %><h2>&nbsp!</h2>
             </div>
-            <div class="inline-form col-12"><h2>It's at &nbsp</h2><%= f.input :address, label: false, placeholder: "where?", input_html: { data: { draggable_target: "address" } } %></div>
-            <div class="inline-form col-12"><h2>On &nbsp</h2><%= f.input :date, label: false, html5: true, input_html: { data: { draggable_target: "partydate" } } %></div>
+            <div class="inline-form col-12"><h2>It's at &nbsp</h2><%= f.input :address, label: false, placeholder: "where?", input_html: { data: { draggable_target: "address" }, class: "form-input-custom" } %></div>
+            <div class="inline-form col-12"><h2>On &nbsp</h2><%= f.input :date, label: false, html5: true, input_html: { data: { draggable_target: "partydate" }, class: "form-input-custom" } %></div>
             <h2>See you there!<h2>
           </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="row">
           <div class="col-6 theme-container-left center">
 
-            <h2>What's the theme?</h2>
+            <h2>Any themes <br>or occasions?</h2>
             <%= image_tag "create_img2.png" %>
           </div>
             <div class="col-6 select-theme-container" >
@@ -58,23 +58,36 @@
         </div>
       </div>
       <%# GUEST TAB %>
+
       <div class="tab-content-guests d-none" data-navtab-active-target="content" data-attribute="Guests">
-        <%= image_tag "create_img1.png" %>
-        <h2>How many people<br>are you inviting?</h2>
-        <br>
-        <div class="guest-card center">
-          <%= f.input :attendancy, placeholder: "0", label:false, input_html: { data: { draggable_target: "attendancy" } }, class: "guest-form" %>
-        </div>
-      </div>
-      <%# DISHES TAB %>
-      <div class="tab-content-dishes d-none" data-navtab-active-target="content" data-attribute="Dishes">
-        <div class="row align-items-start center">
-          <h2>How many dishes<br>would you like to make?</h2>
+      <div class = "row guest-form">
+          <div class = "col-6">
+          <%= image_tag "create_img1.png" %>
           <br>
-            <div class="dishes-card col-3 center" ><%= f.input :appetizers, placeholder: "0", input_html: { data: { draggable_target: "appetizers" } }  %></div>
-            <div class="dishes-card col-3 center" ><%= f.input :mains, placeholder: "0", input_html: { data: { draggable_target: "mains" } } %></div>
-            <div class="dishes-card col-3 center" ><%= f.input :desserts, placeholder: "0", input_html: { data: { draggable_target: "desserts" } } %></div>
-            <%= image_tag "create-img3.png", class: "img-dishes" %>
+          </div>
+          <div class="col-6">
+          <h2>How many people<br>are you inviting?</h2>
+          <div class="guest-card center">
+            <%= f.input :attendancy, placeholder: "0", label:false, input_html: { data: { draggable_target: "attendancy" }, class: "guest-input" }, class: "guest-form" %>
+          </div>
+          </div>
+          </div>
+        </div>
+        <%# DISHES TAB %>
+        <div class="tab-content-dishes d-none" data-navtab-active-target="content" data-attribute="Dishes">
+        <div class = "row dishes-form">
+          <div class="col-6">
+          <div class="row align-items-start center">
+            <h2>How many dishes<br>would you like to make?</h2>
+            <br>
+              <div class="dishes-card col-3 center" ><%= f.input :appetizers, placeholder: "0", input_html: { data: { draggable_target: "appetizers" },  class: "dish-input center" }  %></div>
+              <div class="dishes-card col-3 center" ><%= f.input :mains, placeholder: "0", input_html: { data: { draggable_target: "mains" }, class: "dish-input center" } %></div>
+              <div class="dishes-card col-3 center" ><%= f.input :desserts, placeholder: "0", input_html: { data: { draggable_target: "desserts" }, class: "dish-input center" } %></div>
+            </div>
+            </div>
+             <div class="col-6">
+              <%= image_tag "create-img3.png", class: "img-dishes" %>
+              </div>
 
         </div>
       </div>
@@ -103,7 +116,7 @@
                 </div>
                 <div class="" id="ourlist"  data-search-recipes-target="content">
                 </div>
-                <button class="btn create-party-btn" style="margin: 24px;" data-action="click->draggable#sendData"> LET'S CREATE A PARTY! &nbsp<i class="fa-solid fa-arrow-right"></i></button>
+                 <button class="btn create-party-btn" style="margin: 24px;" data-action="click->draggable#sendData"> LET'S CREATE A PARTY! &nbsp<i class="fa-solid fa-arrow-right"></i></button>
                 <div class="row" id="ourlist"  data-search-recipes-target="drag">
               </div>
               <br>

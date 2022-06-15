@@ -10,8 +10,33 @@ body#green {
     background: #c9fbc5;
   }
 
+  .guest-input {
+    font-size: 90px;
+    text-align: center;
+    border: none;
+  }
+  .guest-input:focus {
+    font-size: 90px;
+    text-align: center;
+    border: none;
+  }
+
+  .dish-input {
+    font-size: 90px;
+    text-align: center;
+    border: none;
+  }
+
+  .guest-form {
+    margin-top: 200px;
+  }
+
   .invite-container {
     padding-left: 60px;
+  }
+
+  .form-control {
+    background-color: #c9fbc5 !important;
   }
 
   .search-recipe-container {
@@ -22,6 +47,8 @@ body#green {
     padding-top: 10px;
     border: 1px solid black;
     border-radius: 10px;
+    background-image: url(https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655297284/backgroundimg_x9txbh.png);
+    background-size: contain;
   }
 
   .tab-content-recipes {
@@ -32,16 +59,10 @@ body#green {
     margin-top: 40px;
   }
 
-  .guest-form {
-    background-color: red;
-  }
-
   .tab-content-guests {
     margin-top: 40px;
   }
-  .footer-container {
-    background-color: red;
-  }
+
 
   .select-theme-container {
     height: 800px;
@@ -159,10 +180,11 @@ body#green {
 
   .clickable {
     font-size: 30px;
-    padding: 40px;
+    padding-top: 19px;
+
     width: 200px;
-    height: 200px;
-    // border: 1px solid black;
+    height: 100px;
+    justify-content: center;
     color: black;
     margin-right: 10px;
     margin-bottom: 10px;
@@ -200,9 +222,13 @@ body#green {
     width: 40%;
   }
 
+  .dishes-form {
+    margin-top: 14%;
+  }
+
   .img-dishes {
-    width: 40%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
   }
 
   .theme-container-left {
@@ -286,6 +312,7 @@ body#green {
   top: 0px;
   z-index: 0;
   position: relative;
+
 }
 
 #ourlist {

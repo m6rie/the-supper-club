@@ -95,6 +95,8 @@ class PartiesController < ApplicationController
       format.json { render :json => @recipes }
       format.html { puts "I am html" }
     end
+
+
   end
 
   def edit
