@@ -1,28 +1,36 @@
 
+.conversation-container {
+  text-align: center;
+  margin-top: 100px;
+  h1 {
+    font-family: $display-font;
+    font-size: 100px;
+  }
+}
 .conv-container {
+  text-align: left;
   padding: 1rem 0;
   display: flex;
   place-content: center;
   flex-wrap: wrap;
+  justify-content: center;
 
   .conv-cards {
+    text-align: left;
     display: flex;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
     pointer-events: none;
     margin: 20px;
-    background-color: rgb(97, 186, 73); //background of cards
 
   }
 
-
-
   .conv-card {
-    border-radius: 2px;
+    text-align: left;
+    border-radius: 20px;
     max-width: 15rem;
     color: #ffffffda; //color of text
     padding: 1.5rem;
-    background-color: #49A15D; //color of card
 
     pointer-events: auto;
 
@@ -81,73 +89,73 @@
 
 //TRAVEL CARDS
 .travel-cards {
-  background-color: aquamarine!important;//BACKGROUND COLOR
   .travel-card {
-    background-color: rgb(211, 142, 24); //COLOR CARDS
+    color: #000000;
+    background-color:#C9FBC5;
   }
 }
 
 
 //CONNECTION CARDS
 .conn-cards {
-  background-color: aquamarine!important;//BACKGROUND COLOR
   .conn-card {
-    background-color: rgb(98, 187, 74); //COLOR CARDS
+    color: #000000;
+    background-color: #67D480;
   }
 }
 
 //TV/CINEMA CARDS
 .tv-cards {
-  background-color: aquamarine!important;//BACKGROUND COLOR
   .tv-card {
-    background-color: rgb(53, 91, 189); //COLOR CARDS
+    color: #000000;
+    background-color: #FCA04C;
   }
 }
 
 //MUSIC CARDS
 .music-cards {
-  background-color: aquamarine!important;//BACKGROUND COLOR
   .music-card {
+    color: #000000;
     background-color: rgb(195, 106, 146); //COLOR CARDS
   }
 }
 
 //CONNECTION CARDS
 .art-cards {
-  background-color: aquamarine!important;//BACKGROUND COLOR
   .art-card {
-    background-color: rgb(187, 116, 72); //COLOR CARDS
+    color: #000000;
+    background-color: #F45F5F;
   }
 }
 
 //WORLD CARDS
 .world-cards {
-  background-color: aquamarine!important;//BACKGROUND COLOR
   .world-card {
-    background-color: rgb(61, 127, 60); //COLOR CARDS
+    color: #000000;
+    background-color: #C9FBC5;
   }
 }
 
 //TRENDS CARDS
 .trends-cards {
-  background-color: aquamarine!important;//BACKGROUND COLOR
   .trends-card {
-    background-color: rgb(105, 24, 211); //COLOR CARDS
+    color: #000000;
+    background-color: #FCA04C;
   }
 }
 
 //RANDOM CARDS
 .random-cards {
-  background-color: aquamarine!important;//BACKGROUND COLOR
   .random-card {
-    background-color: rgb(29, 87, 66); //COLOR CARDS
+    color: #000000;
+    background-color: #67D480;
   }
 }
 
 //WOULD YOU RATHER CARDS
 .wyr-cards {
-  background-color: aquamarine!important;//BACKGROUND COLOR
   .wyr-card {
-    background-color: rgb(233, 117, 21); //COLOR CARDS
+    color: #000000;
+    background-color: #F45F5F;
   }
 }
