@@ -44,17 +44,19 @@
         </div>
           <ul>
           <div>
-            <%# <% @party.recipes.each do |recipe| %>
-            <%# <% recipe.ingredients.each do |ingredient| %>
+            <% @party.party_recipe.each do |party_recipe| %>
+            <% party_recipe.ingredients.each do |ingredient| %>
 
-            <% @party.ingredients.each do |ingredient| %>
+            <% @ingredients.each do |ingredient| %>
             <li>
             <div class="ingredient">
-              <div><%= check_box_tag ingredient, false %> <%= ingredient %></div>
+              <div><%= check_box_tag ingredient, false %> <%= ingredient.name %></div>
 
-              <%# <div class="amount"><%= "Amount" %>
+              <div class="amount"><%= "Amount" %></div>
             </div>
             </li>
+            <% end %>
+            <% end %>
             <% end %>
           </div>
           </ul>
