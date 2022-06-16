@@ -67,14 +67,6 @@ export default class extends Controller {
     const mains = this.mainsTarget.value;
     const desserts = this.dessertsTarget.value;
 
-    // console.log(title);
-    // console.log(address);
-    // console.log(partyDate);
-    // console.log(attendancy);
-    // console.log(theme);
-    // console.log(appetizers);
-    // console.log(mains);
-    // console.log(desserts);
     // RECIPE DATA ----------------------------------------------------
     const allRecipes = recipes();
     const labelData = [];
@@ -95,30 +87,20 @@ export default class extends Controller {
       // RECIPE INGREDIENTS
       const ingredients =
         recipe.querySelector("#ingredients").dataset.ingredients;
-        // console.log(ingredients.split(","))
+        // PARSING DATASET TO ARRAY WITH STRING ELEMENTS
         const arrLen = ingredients.split(",").length
-        // console.log(arrLen)
         const ingArr = ingredients.split(",")
-        // console.log(ingArr)
         // first element fix ---- DONE
         const firstEl = ingArr[0]
-        firstEl.substring(1, firstEl.size)
-        // console.log(firstEl.substring(1, firstEl.size))
         // last element fix ---- DONE
         const lastEl = ingArr[arrLen - 1]
-        // console.log(lastEl.length)
-        // console.log(lastEl.substring(0, lastEl.length - 1))
-        // replacing faulty elements
+        // UPDATING ARRAY ELEMENTS
         ingArr[arrLen] = lastEl.substring(0, lastEl.length - 1)
         ingArr[0] = firstEl.substring(1, firstEl.size)
-        console.log(ingArr)
+
         ingredientsData.push(ingArr);
-
-      // console.log(ingArr[1..arrLen])
     });
-    // console.log(ingredientsData)
 
-    // console.log(urlData)
     // TOKEN FOR THE POST
     this.csrfToken = document
       .querySelector('meta[name="csrf-token"]')
@@ -138,7 +120,7 @@ export default class extends Controller {
         recipes_data: {
           title: labelData,
           photo: photoData,
-          ingredients: ingredientsData[0],
+          ingredients: JSON.stringify(ingredientsData),
           url: urlData,
         },
       },

@@ -67,9 +67,21 @@ class PartiesController < ApplicationController
     photo_urls = params[:party][:recipes_data][:photo]
     urls = params[:party][:recipes_data][:url]
     ingredients = params[:party][:recipes_data][:ingredients]
+    puts JSON.parse(ingredients)
     # BUILDING RECIPES
     number_of_recipes.times do |n|
-      @recipes << Recipe.create(title: titles[n - 1], recipe_url: urls[n - 1], ingredients: ingredients, photo_url: photo_urls[n - 1], prep_time: 30, description: "Delicous recipe")
+      recipe = Recipe.new(
+        title: titles[n - 1],
+        recipe_url: urls[n - 1],
+        photo_url: photo_urls[n - 1],
+        prep_time: 30,
+        description: "Delicous recipe",
+      )
+      JSON.parse(ingredients)[n - 1].each do |ingredient|
+        recipe.ingredients.push(ingredient)
+      end
+      recipe.save
+      @recipes << recipe
     end
 
     # CREATING PARTY
@@ -95,8 +107,6 @@ class PartiesController < ApplicationController
       format.json { render :json => @recipes }
       format.html { puts "I am html" }
     end
-
-
   end
 
   def edit
