@@ -131,9 +131,10 @@ export default class extends Controller {
     // FETCH CALL WITH RECIPE AND PARTY DATA
     // https://the-supper-club.herokuapp.com/parties
 
-    fetch("https://the-supper-club.herokuapp.com/parties/new", {
+    fetch("https://the-supper-club.herokuapp.com/parties", {
       method: "POST",
       headers: {
+        mode: "no-cors",
         Accept: "application/json",
         "Content-Type": "application/json",
         "X-CSRF-Token": this.csrfToken,
