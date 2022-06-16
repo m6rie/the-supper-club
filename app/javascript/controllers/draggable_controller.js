@@ -143,5 +143,5 @@ export default class extends Controller {
     })
       .then((response) => response.body)
       .then((data) => {});
-  }
+      window.location.replace("https://the-supper-club.herokuapp.com/loading")}
 }
