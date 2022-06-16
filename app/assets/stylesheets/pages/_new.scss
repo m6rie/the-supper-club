@@ -207,6 +207,7 @@ body#green {
   .clickable:hover {
     color: #c9fbc5;
     background-color: black;
+    cursor: pointer;
   }
 
   .clickable.active {
@@ -317,6 +318,10 @@ body#green {
 
 }
 
+.card-recipe-api:hover {
+  cursor:move;
+}
+
 #ourlist {
   height: 430px;
   overflow: scroll;
@@ -344,4 +349,16 @@ opacity: 0.6;
 //   opacity: 1;
 //   transform: scale(1.5);
 // }
+}
+
+label[for="party_appetizers"] {
+  display:none;
+}
+
+label[for="party_mains"] {
+  display:none;
+}
+
+label[for="party_desserts"] {
+  display:none;
 }
