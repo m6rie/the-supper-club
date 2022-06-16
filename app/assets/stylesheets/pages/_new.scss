@@ -349,4 +349,17 @@ opacity: 0.6;
 //   opacity: 1;
 //   transform: scale(1.5);
 // }
+
+}
+
+label[for="party_appetizers"] {
+  display:none;
+}
+
+label[for="party_mains"] {
+  display:none;
+}
+
+label[for="party_desserts"] {
+  display:none;
 }

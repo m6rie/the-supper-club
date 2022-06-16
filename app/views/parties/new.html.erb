@@ -89,9 +89,20 @@
           <div class="row align-items-start center">
             <h2>How many dishes<br>would you like to make?</h2>
             <br>
-              <div class="dishes-card col-3 center" ><%= f.input :appetizers, placeholder: "0", input_html: { data: { draggable_target: "appetizers" },  class: "dish-input center" }  %></div>
-              <div class="dishes-card col-3 center" ><%= f.input :mains, placeholder: "0", input_html: { data: { draggable_target: "mains" }, class: "dish-input center" } %></div>
-              <div class="dishes-card col-3 center" ><%= f.input :desserts, placeholder: "0", input_html: { data: { draggable_target: "desserts" }, class: "dish-input center" } %></div>
+            <div class="d-flex flex-row">
+              <div class="dishes-card col-3 center">
+                <div>Appetizers</div>
+                <div class="ps-3"><%= f.input :appetizers, placeholder: "0", input_html: { data: { draggable_target: "appetizers" },  class: "dish-input center" }  %></div>
+              </div>
+              <div class="dishes-card col-3 center">
+              <div>Mains</div>
+                <div class="ps-3"><%= f.input :mains, placeholder: "0", input_html: { data: { draggable_target: "mains" }, class: "dish-input center" } %></div>
+              </div>
+              <div class="dishes-card col-3 center">
+              <div>Desserts</div>
+                <div class="ps-3"><%= f.input :desserts, placeholder: "0", input_html: { data: { draggable_target: "desserts" }, class: "dish-input center" } %></div>
+              </div>
+            </div>
             </div>
             </div>
              <div class="col-6">
@@ -100,6 +111,7 @@
 
         </div>
       </div>
+
       <%# END OF FORM %>
       <% end %>
       <%# RECIPES TAB %>
