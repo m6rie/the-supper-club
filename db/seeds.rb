@@ -44,11 +44,6 @@ r2 = Recipe.create(title: 'Sushi Rolls',
                    prep_time: 50,
                    #  ingredients: "Sushi Rice, Mayo, Soy Sauce, Smoked Salmon and Wasabi.",
                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362732/the%20supper%20club/Frame_9816_g8rw3p.png')
-r3 = Recipe.create(title: 'Pizza Napolitana',
-                   description: 'Authentic Neapolitan Pizza.',
-                   prep_time: 45,
-                   #  ingredients: "Flour, Tomato, Mozzarela, Parmesan, Olive Oil and Basil.",
-                   photo_url: 'https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtZWRnYXJjYXN0cmVqb24yLW1hcmdoZXJpdGFwaXp6YS0wODQtYWUuanBn.jpg')
 r4 = Recipe.create(title: 'Souvlaki Gyros',
                    description: 'Make your own traditional Greek pork souvlaki with gyros.',
                    prep_time: 25,
@@ -58,7 +53,7 @@ r5 = Recipe.create(title: 'Marry Me Chicken',
                    description: 'She/He will marry you after eating this!',
                    prep_time: 45,
                    #  ingredients: "Chicken Breast, Olive Oil, Garlic, Cheese, Heavy Cream and Fresh Basil.",
-                   photo_url: 'https://www.thespruceeats.com/thmb/Nagg1dO9v0MYzT8B0tB8xuCsafk=/1500x1000/filters:fill(auto,1)/marry-me-chicken-5225352-hero-06-dea1c6367dbe4dc38984552a39504b11.jpg')
+                   photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362660/the%20supper%20club/Frame_9798_uaoyab.png')
 r6 = Recipe.create(title: 'Tarte Tatin',
                    description: 'Sweet and Sticky Caramel with Apples on top of Pastry.',
                    prep_time: 20,
@@ -78,7 +73,7 @@ r9 = Recipe.create(title: 'Tuna Salad',
                    description: 'salad composed primarily of chopped canned tuna fish. tuna fish salad. salad - food mixtures either arranged on a plate or tossed and served with a moist dressing; usually consisting of or including greens.',
                    prep_time: 25,
                    #  ingredients: "Lemons, Onions, Celery, Tuna, Capers, Bread and Lettuce.",
-                   photo_url: 'https://3sg1ub4c9ujs3ydnjk3mgck0-wpengine.netdna-ssl.com/wp-content/uploads/2020/06/John-West-Final_Italian-Tuna-and-Mozzarella-Salad-with-Ciabatta_2160x960px.jpg')
+                   photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362684/the%20supper%20club/Frame_9803_m36hqr.png')
 r10 = Recipe.create(title: 'Spicy Clam Pasta',
                     description: 'Delicious linguine with authentic New Zealand clams in a garlic and butter sauce.',
                     prep_time: 40,
@@ -123,7 +118,7 @@ r18 = Recipe.create(title: 'Chicken arrabbiata stew',
                     description: "Try a modern take on stew and dumplings with Italian classic tomato alla arrabbiata and parmesan dumplings. Simple and oh so comforting, it's perfect for cold weather cooking",
                     prep_time: 60,
                     # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
-                    photo_url: 'https://144f2a3a2f948f23fc61-ca525f0a2beaec3e91ca498facd51f15.ssl.cf3.rackcdn.com/uploads/food_portal_data/recipes/recipe/hero_article_image/2733/letterbox_Homemade_AW_Mealplan_Chick_Stew4125-593.jpg')
+                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362638/the%20supper%20club/Frame_9792_pao914.png')
 r19 = Recipe.create(title: 'Home-style chicken curry',
                     description: "A rustic and authentic quick Indian one-pot packed with tonnes of hot Asian spices and fragrant coriander.",
                     prep_time: 30,
@@ -171,9 +166,9 @@ puts "Creating UserRecipes..."
 
 ur1 = UserRecipe.create(user_id: u2.id, recipe_id: r1.id)
 ur2 = UserRecipe.create(user_id: u1.id, recipe_id: r2.id)
-ur3 = UserRecipe.create(user_id: u1.id, recipe_id: r3.id)
+ur3 = UserRecipe.create(user_id: u1.id, recipe_id: r1.id)
 ur4 = UserRecipe.create(user_id: u3.id, recipe_id: r4.id)
-ur5 = UserRecipe.create(user_id: u2.id, recipe_id: r5.id)
+ur5 = UserRecipe.create(user_id: u2.id, recipe_id: r1.id)
 ur6 = UserRecipe.create(user_id: u2.id, recipe_id: r6.id)
 ur7 = UserRecipe.create(user_id: u4.id, recipe_id: r7.id)
 ur8 = UserRecipe.create(user_id: u4.id, recipe_id: r8.id)
@@ -197,9 +192,9 @@ puts "Creating PartyRecipes..."
 
 PartyRecipe.create!(recipe_id: r1.id, party_id: p1.id)
 PartyRecipe.create(recipe_id: r2.id, party_id: p2.id)
-PartyRecipe.create(recipe_id: r3.id, party_id: p3.id)
+PartyRecipe.create(recipe_id: r4.id, party_id: p3.id)
 PartyRecipe.create(recipe_id: r4.id, party_id: p4.id)
-PartyRecipe.create(recipe_id: r5.id, party_id: p5.id)
+PartyRecipe.create(recipe_id: r1.id, party_id: p5.id)
 PartyRecipe.create(recipe_id: r6.id, party_id: p6.id)
 PartyRecipe.create(recipe_id: r15.id, party_id: p7.id)
 PartyRecipe.create(recipe_id: r8.id, party_id: p8.id)
@@ -212,7 +207,7 @@ PartyRecipe.create(recipe_id: r13.id, party_id: p1.id)
 PartyRecipe.create(recipe_id: r13.id, party_id: p3.id)
 PartyRecipe.create(recipe_id: r9.id, party_id: p4.id)
 PartyRecipe.create(recipe_id: r14.id, party_id: p7.id)
-PartyRecipe.create(recipe_id: r3.id, party_id: p8.id)
+PartyRecipe.create(recipe_id: r4.id, party_id: p8.id)
 PartyRecipe.create(recipe_id: r13.id, party_id: p4.id)
 PartyRecipe.create(recipe_id: r9.id, party_id: p5.id)
 PartyRecipe.create(recipe_id: r7.id, party_id: p5.id)

@@ -58,6 +58,8 @@ svg#right:hover path {
 // }
 .home-container {
   position: relative;
+  margin-top: 100px;
+
 
 
   // .confetti-img:hover {
@@ -114,7 +116,22 @@ svg#right:hover path {
     padding-top: 5px;
     padding-bottom: 5px;
     margin-bottom: 180px;
+    margin-left: 38%;
+  }
+
+  h3.tagline {
+    display: block;
+    position: absolute;
+    z-index: 99999;
+    bottom: 0px;
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    z-index: 99999;
     margin-left: 34%;
+    bottom: 230px;
   }
 
   .start-btn:hover {

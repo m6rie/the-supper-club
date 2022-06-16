@@ -28,12 +28,19 @@
   background-color: red;
   border-radius: 20px;
   padding-top: 11%;
+  margin-bottom: 120px;
 
   }
 
+  .convo-header-cards:hover {
+    cursor:pointer
+  }
+
+
   h3 {
     font-size: 35px;
-    line-height: 33px;
+    line-height: 39px;
+    margin: -17px
   }
   .convo-description{
     display: flex;
@@ -88,7 +95,7 @@
 }
 
 // Connection cards
-.flip {
+.flip-connection {
   text-align: center;
   position: relative;
   display: inline-block;
@@ -96,8 +103,158 @@
   margin-bottom: 15px;
   height: 350px;
   width: 265px;
-  >.front,
-  >.back {
+  >.front-connection,
+  >.back-connection {
+    text-align: center;
+    display: block;
+    color: black;
+    height: 350px;
+    width: 250px;
+    padding-top: 150px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background:RGB(244, 95, 95)!important;
+    border-radius: 10px;
+    p {
+      font-size: 20px;
+      color: black;
+    }
+  }
+
+}
+
+// Travel cards
+
+.flip-travel {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  height: 350px;
+  width: 265px;
+  >.front-travel,
+  >.back-travel {
+    text-align: center;
+    display: block;
+    color: black;
+    height: 350px;
+    width: 250px;
+    padding-top: 150px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background:#67D480;
+    border-radius: 10px;
+    p {
+      font-size: 20px;
+      color: black;
+    }
+  }
+
+}
+
+// Trends cards
+
+.flip-trends {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  height: 350px;
+  width: 265px;
+  >.front-trends,
+  >.back-trends {
+    text-align: center;
+    display: block;
+    color: black;
+    height: 350px;
+    width: 250px;
+    padding-top: 150px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background:RGBa(251, 159, 76, 0.992)!important;
+    border-radius: 10px;
+    p {
+      font-size: 20px;
+      color: black;
+    }
+  }
+
+}
+
+// World cards
+
+.flip-world {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  height: 350px;
+  width: 265px;
+  >.front-world,
+  >.back-world {
+    text-align: center;
+    display: block;
+    color: black;
+    height: 350px;
+    width: 250px;
+    padding-top: 150px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background:#f45f5f!important;
+    border-radius: 10px;
+    p {
+      font-size: 20px;
+      color: black;
+    }
+  }
+
+}
+
+// wyr cards
+
+.flip-wyr {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  height: 350px;
+  width: 265px;
+  >.front-wyr,
+  >.back-wyr {
+    text-align: center;
+    display: block;
+    color: black;
+    height: 350px;
+    width: 250px;
+    padding-top: 150px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background:RGB(200, 252, 198)!important;
+    border-radius: 10px;
+    p {
+      font-size: 20px;
+      color: black;
+    }
+  }
+
+}
+
+// music cards
+
+.flip-music {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  height: 350px;
+  width: 265px;
+  >.front-music,
+  >.back-music {
     text-align: center;
     display: block;
     color: black;
