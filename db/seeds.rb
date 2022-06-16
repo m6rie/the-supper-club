@@ -69,16 +69,16 @@ r7 = Recipe.create(title: 'Fancy Cupcakes',
                    prep_time: 60,
                    #  ingredients: "Flour, Butter, Sugar, Vanilla Extract, Milk and Pink Fondant.",
                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362631/the%20supper%20club/Frame_9794_gjm2jz.png')
-r8 = Recipe.create(title: 'Ghost Bagels',
-                   description: 'Spooky Bagels, because why not?',
-                   prep_time: 55,
-                   #  ingredients: "Flour, Butter, Salmon and Cream Cheese.",
-                   photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362660/the%20supper%20club/Frame_9798_uaoyab.png')
+# r8 = Recipe.create(title: 'Ghost Bagels',
+#                    description: 'Spooky Bagels, because why not?',
+#                    prep_time: 55,
+#                    #  ingredients: "Flour, Butter, Salmon and Cream Cheese.",
+#                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362660/the%20supper%20club/Frame_9798_uaoyab.png')
 r9 = Recipe.create(title: 'Tuna Salad',
                    description: 'salad composed primarily of chopped canned tuna fish. tuna fish salad. salad - food mixtures either arranged on a plate or tossed and served with a moist dressing; usually consisting of or including greens.',
                    prep_time: 25,
                    #  ingredients: "Lemons, Onions, Celery, Tuna, Capers, Bread and Lettuce.",
-                   photo_url: 'https://3sg1ub4c9ujs3ydnjk3mgck0-wpengine.netdna-ssl.com/wp-content/uploads/2020/06/John-West-Final_Italian-Tuna-and-Mozzarella-Salad-with-Ciabatta_2160x960px.jpg')
+                   photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362684/the%20supper%20club/Frame_9803_m36hqr.png')
 r10 = Recipe.create(title: 'Spicy Clam Pasta',
                     description: 'Delicious linguine with authentic New Zealand clams in a garlic and butter sauce.',
                     prep_time: 40,
@@ -123,7 +123,7 @@ r18 = Recipe.create(title: 'Chicken arrabbiata stew',
                     description: "Try a modern take on stew and dumplings with Italian classic tomato alla arrabbiata and parmesan dumplings. Simple and oh so comforting, it's perfect for cold weather cooking",
                     prep_time: 60,
                     # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
-                    photo_url: 'https://144f2a3a2f948f23fc61-ca525f0a2beaec3e91ca498facd51f15.ssl.cf3.rackcdn.com/uploads/food_portal_data/recipes/recipe/hero_article_image/2733/letterbox_Homemade_AW_Mealplan_Chick_Stew4125-593.jpg')
+                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362638/the%20supper%20club/Frame_9792_pao914.png')
 r19 = Recipe.create(title: 'Home-style chicken curry',
                     description: "A rustic and authentic quick Indian one-pot packed with tonnes of hot Asian spices and fragrant coriander.",
                     prep_time: 30,
