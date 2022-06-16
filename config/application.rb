@@ -22,6 +22,11 @@ module TheSupperClub
 
     config.assets.initialize_on_precompile = false
 
+    config.action_dispatch.default_headers.clear
+
+
+
+
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
