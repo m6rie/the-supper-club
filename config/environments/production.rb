@@ -33,7 +33,7 @@ Rails.application.configure do
   config.assets.compile = false
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.asset_host = "https://www.supperclub.pro/"
+  config.asset_host = "https://the-supper-club.herokuapp.com/"
   # config.asset_host = "http://localhost:3000"
 
 
