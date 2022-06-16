@@ -133,7 +133,7 @@ export default class extends Controller {
     // http://127.0.0.1:3000/parties/new
     //http://localhost:3000/parties
 
-    fetch("https://the-supper-club.herokuapp.com/parties", {
+    fetch("https://www.supperclub.pro/parties", {
       method: "POST",
       headers: {
         mode: "no-cors",
