@@ -38,12 +38,12 @@ r1 = Recipe.create(title: 'Burritos Locos',
                    description: 'Easy to make and very spicy!',
                    prep_time: 15,
                    #  ingredients: "Coriander, Tortillas, Chilli, Sweetcorn and Spicy Mayo.",
-                   photo_url: 'https://images.rawpixel.com/image_1300/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3BmLXM2Ni1tb25pa2EtY3VycnktY2hpY2tlbi10YWNvcy13aXRoLXZlZ2dpZXMtYW5kLWZyZXNoLWNvcmlhbmRlci0xYS5qcGc.jpg')
+                   photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362727/the%20supper%20club/Frame_9817_oj7ueu.png')
 r2 = Recipe.create(title: 'Sushi Rolls',
                    description: 'The best homemade Sushi',
                    prep_time: 50,
                    #  ingredients: "Sushi Rice, Mayo, Soy Sauce, Smoked Salmon and Wasabi.",
-                   photo_url: 'https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtbmFtZTYxOTYtbmFtZS1jaGltLmpwZw.jpg')
+                   photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362732/the%20supper%20club/Frame_9816_g8rw3p.png')
 r3 = Recipe.create(title: 'Pizza Napolitana',
                    description: 'Authentic Neapolitan Pizza.',
                    prep_time: 45,
@@ -53,7 +53,7 @@ r4 = Recipe.create(title: 'Souvlaki Gyros',
                    description: 'Make your own traditional Greek pork souvlaki with gyros.',
                    prep_time: 25,
                    #  ingredients: "Pork, Garlic, Onion, Pita Bread, Tomato and Potatoes.",
-                   photo_url: 'https://img.freepik.com/free-photo/gyros-souvlaki-wraps-pita-bread-with-chicken-potatoes-tzatziki-sauce_79830-1779.jpg')
+                   photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362676/the%20supper%20club/Frame_9806_ldlv04.png')
 r5 = Recipe.create(title: 'Marry Me Chicken',
                    description: 'She/He will marry you after eating this!',
                    prep_time: 45,
@@ -63,63 +63,63 @@ r6 = Recipe.create(title: 'Tarte Tatin',
                    description: 'Sweet and Sticky Caramel with Apples on top of Pastry.',
                    prep_time: 20,
                    #  ingredients: "Flour, Apples, Sugar, Butter and Creme Fraice.",
-                   photo_url: 'https://www.vzug.com/medias/sys_master/recipeimages/recipeimages/h53/h1f/9450096787486/recipe-img-slide.jpg')
+                   photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362642/the%20supper%20club/Frame_9796_hndydx.png')
 r7 = Recipe.create(title: 'Fancy Cupcakes',
                    description: 'Queen worthy Cupcakes.',
                    prep_time: 60,
                    #  ingredients: "Flour, Butter, Sugar, Vanilla Extract, Milk and Pink Fondant.",
-                   photo_url: 'https://images.squarespace-cdn.com/content/v1/5402e23ce4b0a7034afad3a2/1564664237026-L0WKZUT3AQT9VYV620UB/pink-gin-raspberry-lemon-cupcake.jpg')
+                   photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362631/the%20supper%20club/Frame_9794_gjm2jz.png')
 r8 = Recipe.create(title: 'Ghost Bagels',
                    description: 'Spooky Bagels, because why not?',
                    prep_time: 55,
                    #  ingredients: "Flour, Butter, Salmon and Cream Cheese.",
-                   photo_url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ghost-bagels-1570113960.jpg')
+                   photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362660/the%20supper%20club/Frame_9798_uaoyab.png')
 r9 = Recipe.create(title: 'Tuna Salad',
                    description: 'salad composed primarily of chopped canned tuna fish. tuna fish salad. salad - food mixtures either arranged on a plate or tossed and served with a moist dressing; usually consisting of or including greens.',
                    prep_time: 25,
                    #  ingredients: "Lemons, Onions, Celery, Tuna, Capers, Bread and Lettuce.",
                    photo_url: 'https://3sg1ub4c9ujs3ydnjk3mgck0-wpengine.netdna-ssl.com/wp-content/uploads/2020/06/John-West-Final_Italian-Tuna-and-Mozzarella-Salad-with-Ciabatta_2160x960px.jpg')
-r10 = Recipe.create(title: 'Clam Pasta with Spicy, Toasted Breadcrumbs',
+r10 = Recipe.create(title: 'Spicy Clam Pasta',
                     description: 'Delicious linguine with authentic New Zealand clams in a garlic and butter sauce.',
                     prep_time: 40,
                     # ingredients: "Linguini, Olive Oil, Clams, Garlic, Lemon, Parsley, Red Pepper Flakes",
-                    photo_url: 'https://cdn.whatsgabycooking.com/wp-content/uploads/2016/03/WGC-Linguine-with-Clams-2-copy-2.jpg')
+                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362652/the%20supper%20club/Frame_9793_ixmcyq.png')
 r11 = Recipe.create(title: 'Beans with Beans',
                     description: "Beans with beans it's pretty straight forward, only for bean lovers.",
                     prep_time: 30,
                     # ingredients: "Beans, Olive Oil, Red Pepper Flakes, Anchovies, Garlic and Parsley",
-                    photo_url: 'https://realfood.tesco.com/media/images/RFO-1400x919-CannelliniBeans-a8c72d1b-c0e6-4fbb-8f2e-3fc1c0e0624c-0-1400x919.jpg')
-r12 = Recipe.create(title: 'Wine-Braised Chicken With Artichoke Hearts',
+                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362663/the%20supper%20club/Frame_9797_tcgufp.png')
+r12 = Recipe.create(title: 'Wine-Braised Chicken',
                     description: 'Heart-warming Chicken with beautiful and delicate artichokes hearts.',
                     prep_time: 45,
                     # ingredients: "Chicken, Red Onions, Dry White Whine, Oregano, Artichocke Hearts and Olive Oil.",
-                    photo_url: 'https://images.squarespace-cdn.com/content/v1/541b1515e4b0a990b33a796e/1611257874220-LCJ8B1128CFDHCHUM2A6/alison-roman-cooking-wine-braised-chicken-with-artichoke-hearts.jpg?')
+                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362737/the%20supper%20club/Frame_9818_ucknzt.png')
 r13 = Recipe.create(title: 'Key Lime Pie',
                     description: "This is constantly a go-to, a crowd-pleaser (except for the one person who doesn't like limes, I guess!).",
                     prep_time: 50,
                     # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
-                    photo_url: 'https://static01.nyt.com/images/2019/05/09/dining/key-lime-pie-2/key-lime-pie-2-articleLarge.jpg')
+                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362686/the%20supper%20club/Frame_9804_zcj9on.png')
 r14 = Recipe.create(title: 'Chicken noodle soup',
                     description: "The aromatic broth will warm you up on a winter's evening - it contains ginger, which is particularly good for colds.",
                     prep_time: 15,
                     # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
-                    photo_url: 'https://img.delicious.com.au/rKurYnEG/w1200/del/2015/10/chicken-noodle-soup-14133-1.jpg')
+                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362711/the%20supper%20club/Frame_9805_bjvheg.png')
 r15 = Recipe.create(title: 'Egg-fried rice',
                     description: "Don't call the Chinese takeaway - make your own egg-fried rice. Use leftover rice, or cook and dry it on a plate before using so it doesn't stick to the wok",
                     prep_time: 35,
                     # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
-                    photo_url: 'https://images.ctfassets.net/qu53tdnhexvd/2vgQsi1MdiwIgmyySyS6gK/47c59187dac4e4321a3da2327271b879/egg-fried-rice.jpg')
+                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362704/the%20supper%20club/Frame_9808_ge7qfs.png')
 r16 = Recipe.create(title: 'Strawberry pavlova',
                     description: "When you find a punnet of perfectly ripe strawberries, showcase them in this irresistible summer pavlova",
                     prep_time: 45,
                     # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
-                    photo_url: 'https://img.taste.com.au/4pBEPiyl/taste/2016/11/strawberry-pavlova-107222-1.jpeg')
+                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362680/the%20supper%20club/Frame_9799_nhhhgz.png')
 r17 = Recipe.create(title: 'Chicken & chorizo jambalaya',
                     description: "A Cajun-inspired rice pot recipe with spicy Spanish sausage, sweet peppers and tomatoes",
                     prep_time: 50,
                     # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
-                    photo_url: 'https://food-images.files.bbci.co.uk/food/recipes/microwave_jambalaya_72083_16x9.jpg')
-r18 = Recipe.create(title: 'Chicken arrabbiata stew & parmesan dumplings',
+                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362652/the%20supper%20club/Frame_9793_ixmcyq.png')
+r18 = Recipe.create(title: 'Chicken arrabbiata stew',
                     description: "Try a modern take on stew and dumplings with Italian classic tomato alla arrabbiata and parmesan dumplings. Simple and oh so comforting, it's perfect for cold weather cooking",
                     prep_time: 60,
                     # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
@@ -128,22 +128,22 @@ r19 = Recipe.create(title: 'Home-style chicken curry',
                     description: "A rustic and authentic quick Indian one-pot packed with tonnes of hot Asian spices and fragrant coriander.",
                     prep_time: 30,
                     # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
-                    photo_url: 'https://assets.vogue.in/photos/5efdf623800c753aed1a4acd/16:9/w_5038,h_2834,c_limit/chicken%20curry%20recipe%20homestyle%20chicken%20curry%20recipe%20easy%20recipes%20to%20make%20at%20home%20chicken%20and%20rice.jpg')
+                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362696/the%20supper%20club/Frame_9807_nxtrwu.png')
 r20 = Recipe.create(title: 'Teriyaki chicken',
                     description: "Try this easy, sticky Asian-style teriyaki chicken for a speedy weeknight supper - it takes just 20 minutes to make! Serve it with sticky rice and steamed greens",
                     prep_time: 45,
                     # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
-                    photo_url: 'https://iamafoodblog.b-cdn.net/wp-content/uploads/2020/12/teriyaki-chicken-8201w.jpg')
+                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362661/the%20supper%20club/Frame_9800_qunofg.png')
 r21 = Recipe.create(title: 'Chicken supreme',
                     description: "Enjoy this creamy chicken supreme with mashed potato and steamed green veggies. It makes an easy midweek meal for two ",
                     prep_time: 40,
                     # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
-                    photo_url: 'https://www.afamilyfeast.com/wp-content/uploads/2019/12/Chicken-Supreme-2.jpg')
+                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362631/the%20supper%20club/Frame_9789_nhqmnr.png')
 r22 = Recipe.create(title: 'Pasta with salmon & peas',
                     description: "Make this salmon pasta in under 20 minutes for a dinner the whole family can enjoy. Kids will love the fun-shaped pasta while packing in fibre and omega-3",
                     prep_time: 15,
                     # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
-                    photo_url: 'https://ellerepublic.de/wp-content/uploads/2017/03/Raucherlachs-Pasta-mit-Erbsen-Main.jpg')
+                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362663/the%20supper%20club/Frame_9795_syvjwb.png')
 r23 = Recipe.create(title: 'Smoked salmon & lemon risotto',
                     description: "Inspired by a risotto from London restaurant Ooze, smoked salmon may sound expensive for a midweek meal, but is no more costly than cooking with red meat",
                     prep_time: 20,
@@ -153,17 +153,17 @@ r24 = Recipe.create(title: 'Salmon & leek parcel',
                     description: "A simple salmon dish, parcelled up to seal in the flavours. With creamy mascarpone and fresh leeks, this keto-friendly fish supper is easy and rich in omega-3 ",
                     prep_time: 35,
                     # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
-                    photo_url: 'https://images-gmi-pmc.edge-generalmills.com/44a2f600-5622-45a1-964b-a21d5fb52fc7.jpg')
+                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362714/the%20supper%20club/Frame_9812_xbpe5b.png')
 r25 = Recipe.create(title: 'Chocolate fudge cake',
                     description: "Need a guaranteed crowd-pleasing cake that's easy to make? This super-squidgy chocolate fudge cake with smooth icing is an instant baking win",
                     prep_time: 45,
                     # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
-                    photo_url: 'https://hips.hearstapps.com/delish/assets/17/16/1492694005-108-sein-9781101967140-art-r1-1.jpg')
+                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362739/the%20supper%20club/Frame_9820_yfng9w.png')
 r26 = Recipe.create(title: 'Ultimate chocolate cake',
                     description: "Indulge yourself with this ultimate chocolate cake recipe that is beautifully moist, rich and fudgy. Perfect for a celebration or an afternoon tea",
                     prep_time: 55,
                     # ingredients: "Graham Crackers, Coconut Oil, Butter, Sugar, Eggs, Lime Juice and Heavy Cream.",
-                    photo_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/ultimate-chocolate-cake-700-350-b721692.jpg')
+                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362630/the%20supper%20club/Frame_9791_uv8rsk.png')
 
 puts "Created #{Recipe.count} Recipes"
 
