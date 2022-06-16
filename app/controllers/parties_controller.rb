@@ -17,7 +17,7 @@ class PartiesController < ApplicationController
     @recipes = Recipe.all
     @party_recipe = Recipe.where(user_id: @party.id)
 
-    qrcode = RQRCode::QRCode.new("https://supperclub.pro/parties/#{@party.id}/invite")
+    qrcode = RQRCode::QRCode.new("https://the-supper-club.herokuapp.com/parties/#{@party.id}/invite")
 
       png = qrcode.as_png(
         bit_depth: 1,
