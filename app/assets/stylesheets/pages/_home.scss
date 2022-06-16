@@ -348,6 +348,10 @@ svg#right:hover path {
     }
 }
 
+.card-party-recent:hover {
+  background-color: #C9FBC5;
+}
+
 .card-party {
   position: relative;
   overflow: hidden;
@@ -363,6 +367,7 @@ svg#right:hover path {
     border: none;
     background: none;
     text-align: left;
+    border: 1px solid transparent;
     .status {
       position: absolute;
       top: 0px;
@@ -399,6 +404,11 @@ svg#right:hover path {
       font-size: 15px;
       line-height: 0
     }
+}
+
+.card-party:hover {
+  background-color: transparent !important;
+  border: 1px solid black;
 }
 
 .create-img {
