@@ -20,12 +20,7 @@ module TheSupperClub
     # Configuration for the application, engines, and railties goes here.
     config.action_controller.permit_all_parameters = true
 
-    config.assets.initialize_on_precompile = false
-
-    config.action_dispatch.default_headers.clear
-
-
-
+    # config.assets.initialize_on_precompile = false
 
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
