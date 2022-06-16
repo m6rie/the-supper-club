@@ -107,6 +107,10 @@ class PartiesController < ApplicationController
       format.json { render :json => @recipes }
       format.html { puts "I am html" }
     end
+
+    if @party.save
+      redirect_to @party
+    end
   end
 
   def edit
