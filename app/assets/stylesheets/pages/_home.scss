@@ -1,18 +1,51 @@
 // Specific CSS for your home-page
 .my-parties-container {
-  h3 {
-    font-size: 40px;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  h2 {
+    font-size: 70px;
+    line-height: 52px;
   }
+  h2:hover {
+    font-size: 70px;
+    line-height: 52px;
+  }
+}
+
+svg {
+  height: 22px;
+  width: 60px;
+  transition: 250ms all ease;
+  cursor: pointer;
+  align-items:center;
+  path {
+    transition: 250ms all ease;
+    height:100%;
+  }
+  &:hover {
+    fill:#F45F5F;
+  }
+}
+svg#right:hover path {
+  fill:#F45F5F;
+
+  d: path(
+
+    "M0 9.35772H50.9956L44.2001 2.29941L46.4134 0L57 11L46.4134 22L44.2001 19.7006L50.9956 12.6423H0V9.35772Z"
+  );
+  d: "M0 9.35772H50.9956L44.2001 2.29941L46.4134 0L57 11L46.4134 22L44.2001 19.7006L50.9956 12.6423H0V9.35772Z";
 }
 
 
 .confetti-img {
-  height: 60%;
+  height: 75%;
   width: auto;
-  display: none;
+  // display: none;
   z-index: -1;
   position: absolute;
-  right: 50px;
+  margin:auto;
+  top: 0px;
+  left: 300px;
 }
 
 // .confetti-img:hover {
@@ -106,14 +139,89 @@
 
 }
 
-
 .sign-in-home-container {
-    margin-top: 50px;
+    position: relative;
+    margin-top: 100px;
     height: 100vh;
+
+
+  .recent-party-postit {
+    -webkit-transform: rotate(-9deg);
+  -o-transform: rotate(-9deg);
+  -moz-transform:rotate(-9deg);
+
+    width: 230px;
+    height: 230px;
+    position: absolute;
+    left: 20px;
+    float: left;
+    background-color: #FCA04C;
+    z-index: 9999;
+    text-align: center;
+    h3 {
+      position: absolute;
+      bottom: 20px;
+      text-align: center;
+      left: 60px;
+    }
+  }
+
+  .recent-party-postit:hover {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform:rotate(0deg);
+  }
+
+  .green-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 999999px;
+    position: absolute;
+    right: 20px;
+    bottom: 220px;
+    float: right;
+    background-color: 67D480;
+    z-index: 9999;
+    text-align: center;
+
+  }
+  .discover-party-postit {
+    -webkit-transform: rotate(14deg);
+  -o-transform: rotate(14deg);
+  -moz-transform:rotate(14deg);
+
+    width: 260px;
+    height: 280px;
+    position: absolute;
+    right: 20px;
+    bottom: 220px;
+    float: right;
+    background-color: #F45F5F;
+    z-index: 99;
+    text-align: center;
+    h3 {
+      position: absolute;
+      bottom: 20px;
+      text-align: center;
+      left: 60px;
+    }
+  }
+
+  .discover-party-postit:hover {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform:rotate(0deg);
+  }
+
     h2 {
-        font-size: 60px;
+        font-size: 70px;
         font-family: $display-font;
-        letter-spacing: -1px;
+        line-height: 52px;
+        letter-spacing: 0.4px;
+    }
+
+    h2:hover {
+      color: #67D480;
     }
     h3 {
         font-size: 43px;
@@ -145,27 +253,112 @@
     }
   }
 
-.recent-container {
-    border-right: 1px solid $black;
-    // background-color: red;
+.my-recent-parties-container {
+  justify-content: space-between;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  h2 {
+    font-size: 70px;
+      font-family: $display-font;
+      line-height: 52px;
+      letter-spacing: 0.4px;
+  }
 }
 
-.card-recent-container {
+.recent-container {
+  .view-btn {
+    background-color: transparent;
+    border: 1px solid black;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-left: 10px;
+  }
+
+  .view-btn:hover {
+    background-color: #C9FBC5;
+  }
+
+  // display: flex;
+  .card-recent-container {
+
     display: flex;
     flex-wrap: wrap;
     flex-grow: 0;
+    h3 {
+      font-size: 40px;
+        font-family: $display-font;
+        line-height: 40px;
+        letter-spacing: 0.4px;
+    }
+}
+}
+
+.card-party-recent {
+  background-color: #F9F9F4;
+  position: relative;
+  overflow: hidden;
+    width: 320px;
+    height: 250px;
+    border: 1px solid;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-left: 10px;
+    border-radius: 20px;
+    text-align: left;
+    .status {
+      position: absolute;
+      top: 0px;
+      justify-content: center;
+      text-align: center;
+      background-color: black;
+      color: white;
+      width: 90px;
+      height: 30px;
+      padding-top: 12px;
+      border-radius: 0 0 10px 10px;
+    }
+    .party-card-img {
+      position: absolute;
+      left: 20px;
+      top: 40px;
+      width: 200px;
+      height: auto;
+      justify-content: center;
+    }
+    a {
+        color: black;
+        text-decoration: none;
+    }
+    .text {
+      position: absolute;
+      bottom: 20px;
+    }
+    h3 {
+      font-size: 40px;
+      line-height: 40px;
+    }
+    p {
+      font-size: 15px;
+      line-height: 0
+    }
 }
 
 .card-party {
   position: relative;
   overflow: hidden;
-    width: 280px;
+    width: 290px;
     height: 400px;
     padding-left: 30px;
+    padding-right: 12px;
     margin-right: 10px;
     margin-bottom: 15px;
     margin-top: 15px;
-    margin-left: 10px;
+    // margin-left: 10px;
     border-radius: 20px;
     border: none;
     background: none;
@@ -199,7 +392,7 @@
       bottom: 20px;
     }
     h3 {
-      font-size: 43px;
+      font-size: 40px;
       line-height: 40px;
     }
     p {
@@ -209,20 +402,43 @@
 }
 
 .create-img {
-    width: 70%;
+  width: 50%;
+
 }
+
+.form-control-find-party {
+  border-top: none;
+  border-bottom: 1px solid black;
+  border-right: none;
+  border-left: none;
+  background-color: transparent;
+  font-size: 20px;
+  padding-right: 60px;
+  margin-right: 20px;
+}
+
+.search-party-button {
+color: white;
+background-color: black;
+font-size: 20px;
+padding-right: 10px;
+padding-left: 10px;
+
+}
+
 
 .new-party-container {
   height: 500px;
   margin: auto;
 }
 
-.new-party-container:hover {
-  margin: auto;
-  // background-color: red;
-  background-image: url("https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655268110/confetti_m4gptr.png");
-  background-size: cover;
-}
+// .new-party-container:hover {
+//   margin: auto;
+//   // background-color: red;
+//   background-image: url("https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655268110/confetti_m4gptr.png");
+//   background-size: contain;
+//   background-repeat: no-repeat;
+// }
 
 .img-ellipse {
   position: relative;

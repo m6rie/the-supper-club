@@ -7,52 +7,76 @@
   <body>
     <% if user_signed_in? %>
      <section class = "sign-in-home-container">
+      <div class = "recent-party-postit" onClick="document.getElementById('scroll-target-my-recent-parties-container').scrollIntoView();">
+        <h3>My<br>recent<br>parties</h3>
+      </div>
+
+      <div class="green-circle">
+      </div>
+      <div class = "discover-party-postit">
+        <h3>Discover<br>recipes</h3>
+      </div>
+
         <div class = "center">
         <h2> Hello <em><%= current_user.name %></em>! </h2>
         </div>
         <br>
-        <div class="row text-left">
-        <div class="col-sm-6 recent-container text-left">
-          <h3>Your recent parties</h3>
-          <br>
-          <div class="card-recent-container pb-5" >
-          <% @my_party.first(2).each do |party| %>
-          <div class="card-party card text-left"
-            style = "background-color:<%= @color.sample %>">
-            <%= link_to party_path(party) do %>
-            <div class="status"><p> <%= party.status %> </p></div>
-            <%= image_tag "platedish.png", class: "party-card-img" %>
-            <div class="text">
-            <p> <%= party.date.strftime("%A, %b %d") %> </p>
-            <h3> <%= party.title %> </h3></div>
+          <div class=" new-party-container center">
+            <%= link_to new_party_path do %>
+            <%= image_tag "confetti.png", class: "confetti-img" %>
+            <%= image_tag "Dinner_party_1.png", class: "create-img" %>
+            <br>
+            <br>
+            <div class="plan-party-container">
+            <h2>Plan a <br> new party!</h2>
+            <br>
+            <div class="arrow-container center">
+<svg id="right">
+  <path d="M0.5 9.35772H20.9956L14.2001 2.29941L16.4134 0L27 11L16.4134 22L14.2001 19.7006L20.9956 12.6423H0.5V9.35772Z" fill="#000"></path>
+</svg>
+</div>
+</div>
             <% end %>
-          </div>
-            <% end %>
-        </div>
-            <button onClick="document.getElementById('scroll-target').scrollIntoView();" class ="view-btn">View all</button>
-          </div>
-
-          <div class="col-sm-6 new-party-container center">
-          <%= link_to new_party_path do %>
-          <%= image_tag "confetti.png", class: "confetti-img" %>
-          <%= image_tag "Dinner_party_1.png", class: "create-img" %>
-          <br>
-          <br>
-          <h3>Create a <br> new party!</h3>
-          <br>
-          <i class="fa-solid fa-arrow-right-long"></i>
-          <% end %>
-          <br>
+            <br>
           </div>
       </div>
-
     </section>
-     <section class = "my-parties-container text-left">
+    <hr>
+    <section class="my-recent-parties-container d-flex" id="scroll-target-my-recent-parties-container">
+    <h2>My<br>recent<br>parties</h2>
+        <div class="recent-container text-left">
+          <div class="card-recent-container" >
+            <% @my_party.first(3).each do |party| %>
+            <div class="card-party-recent card text-left">
+              <%= link_to party_path(party) do %>
+              <div class="status"><p> <%= party.status %> </p></div>
+              <div class="text">
+              <p> <%= party.date.strftime("%A, %b %d") %> </p>
+              <h3> <%= party.title %> </h3></div>
+              <% end %>
+            </div>
+              <% end %>
+          </div>
+          <button onClick="document.getElementById('scroll-target').scrollIntoView();" class ="view-btn">View all</button>
+    </section>
+
       <hr>
+     <section class = "my-parties-container text-left">
       <br>
-      <h3 class = "center" id="scroll-target"> My parties </h3>
- <br>
-        <div class="card-recent-container pb-5 center" >
+      <h2 class = "text-left" id="scroll-target"> All my parties </h2>
+      <br>
+      <div class="search-form-parties">
+        <div class="mb-5 search-field" style="width: 50vw">
+          <%= form_tag recipes_path, method: :get, class: "d-flex" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control-find-party",
+              placeholder: "Find a party"%>
+            <%= submit_tag "Search", class: "search-party-button"%>
+          <% end %>
+        </div>
+      </div>
+        <div class="card-recent-container d-flex" >
           <% @my_party.each do |party| %>
           <div class="card-party card text-left"
             style = "background-color:<%= @color.sample %>">
@@ -65,10 +89,10 @@
             <% end %>
           </div>
             <% end %>
-        </div>
-
-
+      </div>
      </section>
+
+    <%# IF USER NOT SIGNED IN %>
     <% else %>
       <div class="home-container">
         <section class = "home-top center" id="scroll-target">
