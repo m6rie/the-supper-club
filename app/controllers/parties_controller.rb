@@ -32,7 +32,7 @@ class PartiesController < ApplicationController
         size: 250
       )
 
-      IO.binwrite("assets/qr_code#{@party.title}.png", png.to_s)
+      IO.binwrite("public/assets/qr_code#{@party.title}.png", png.to_s)
   end
 
   def new
