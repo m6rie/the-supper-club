@@ -19,7 +19,7 @@ module TheSupperClub
 
     # Configuration for the application, engines, and railties goes here.
     config.action_controller.permit_all_parameters = true
-
+    config.secret_key_base = 'blipblapblup'
     # config.assets.initialize_on_precompile = false
 
     # These settings can be overridden in specific environments using the files
