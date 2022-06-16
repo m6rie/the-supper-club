@@ -16,7 +16,6 @@ export default class extends Controller {
   connect() {
     // ARRAY OF RECIPES FROM DRAGGABLE CALLBACK
     const dinnerRecipes = [];
-
     // GLOBAL RECIPES VARIABLE
     window.recipes = function () {
       return dinnerRecipes;
@@ -63,20 +62,11 @@ export default class extends Controller {
     const attendancy = this.attendancyTarget.value;
     // THEME DATA
     const theme = this.themeTarget.value;
-    console.log(theme)
     // DISHES
     const appetizers = this.appetizersTarget.value;
     const mains = this.mainsTarget.value;
     const desserts = this.dessertsTarget.value;
 
-    console.log(title);
-    console.log(address);
-    console.log(partyDate);
-    console.log(attendancy);
-    console.log(theme);
-    console.log(appetizers);
-    console.log(mains);
-    console.log(desserts);
     // RECIPE DATA ----------------------------------------------------
     const allRecipes = recipes();
     const labelData = [];
@@ -87,7 +77,6 @@ export default class extends Controller {
     allRecipes.forEach((recipe) => {
       // RECIPE URL
       const recipeURL = recipe.querySelector("#recipeurl").href;
-      console.log(recipeURL)
       urlData.push(recipeURL);
       // RECIPE LABEL
       const label = recipe.querySelector("#label").dataset.label;
@@ -98,10 +87,20 @@ export default class extends Controller {
       // RECIPE INGREDIENTS
       const ingredients =
         recipe.querySelector("#ingredients").dataset.ingredients;
-      ingredientsData.push(ingredients);
+        // PARSING DATASET TO ARRAY WITH STRING ELEMENTS
+        const arrLen = ingredients.split(",").length
+        const ingArr = ingredients.split(",")
+        // first element fix ---- DONE
+        const firstEl = ingArr[0]
+        // last element fix ---- DONE
+        const lastEl = ingArr[arrLen - 1]
+        // UPDATING ARRAY ELEMENTS
+        ingArr[arrLen] = lastEl.substring(0, lastEl.length - 1)
+        ingArr[0] = firstEl.substring(1, firstEl.size)
+
+        ingredientsData.push(ingArr);
     });
 
-    console.log(urlData)
     // TOKEN FOR THE POST
     this.csrfToken = document
       .querySelector('meta[name="csrf-token"]')
@@ -121,18 +120,18 @@ export default class extends Controller {
         recipes_data: {
           title: labelData,
           photo: photoData,
-          ingredients: ingredientsData,
+          ingredients: JSON.stringify(ingredientsData),
           url: urlData,
         },
       },
     };
     console.log(params);
-    console.log(JSON.stringify(params));
+    // console.log(JSON.stringify(params));
 
     // FETCH CALL WITH RECIPE AND PARTY DATA
     // https://the-supper-club.herokuapp.com/parties
-    // http://localhost:3000/parties
-    fetch("https://the-supper-club.herokuapp.com/parties", {
+
+    fetch("http://localhost:3000/parties", {
       method: "POST",
       headers: {
         Accept: "application/json",
