@@ -28,8 +28,14 @@
   background-color: red;
   border-radius: 20px;
   padding-top: 11%;
+  margin-bottom: 120px;
 
   }
+
+  .convo-header-cards:hover {
+    cursor:pointer
+  }
+
 
   h3 {
     font-size: 35px;
@@ -88,6 +94,36 @@
 }
 
 // Connection cards
+.flip-connection {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  height: 350px;
+  width: 265px;
+  >.front-connection,
+  >.back-connection {
+    text-align: center;
+    display: block;
+    color: black;
+    height: 350px;
+    width: 250px;
+    padding-top: 150px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background:RGB(244, 95, 95);
+    border-radius: 10px;
+    p {
+      font-size: 20px;
+      color: black;
+    }
+  }
+
+}
+
+// Travel cards
+
 .flip {
   text-align: center;
   position: relative;
