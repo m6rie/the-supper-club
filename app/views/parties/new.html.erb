@@ -12,11 +12,10 @@
     <div class="tab-content-container">
       <%# INVITE TAB %>
       <div class="tab-content-invite display-a" data-navtab-active-target="content" data-attribute="Invite">
-        <div class="row detail-container">
+        <div class="row detail-container d-flex flex-row">
           <div class = "col-5">
             <%= image_tag "Dinner_party_1.png", class: "img-create"%>
           </div>
-
           <div class = "col-7 text-start invite-container">
             <p> First things first, give your party some details </p>
             <h2>Hey! It's <em><%= current_user.name %></em>,</h2>
@@ -33,7 +32,10 @@
       <div class="tab-content-theme d-none" data-navtab-active-target="content" data-attribute="Theme">
         <div class="row">
           <div class="col-6 theme-container-left center">
-
+            <br>
+            <br>
+            <br>
+            <br>
             <h2>Any themes <br>or occasions?</h2>
             <%= image_tag "create_img2.png" %>
           </div>
@@ -66,6 +68,8 @@
           <br>
           </div>
           <div class="col-6">
+          <br>
+          <br>
           <h2>How many people<br>are you inviting?</h2>
           <div class="guest-card center">
             <%= f.input :attendancy, placeholder: "0", label:false, input_html: { data: { draggable_target: "attendancy" }, class: "guest-input" }, class: "guest-form" %>
@@ -77,6 +81,11 @@
         <div class="tab-content-dishes d-none" data-navtab-active-target="content" data-attribute="Dishes">
         <div class = "row dishes-form">
           <div class="col-6">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
           <div class="row align-items-start center">
             <h2>How many dishes<br>would you like to make?</h2>
             <br>
@@ -135,4 +144,6 @@
     <button class="btn-group back-tab" data-action="click->navtab-active#next" data-navtab-active-target="link"><i class="fa-solid fa-arrow-left"></i>&nbsp BACK</button>
   </div>
   </div>
+  <br>
+  <br>
 </body>

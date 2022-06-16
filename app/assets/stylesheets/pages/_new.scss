@@ -3,7 +3,7 @@ body#green {
   position: relative;
   overflow: hidden;
   .tabs {
-    position: fixed;
+    // position: fixed;
     bottom: 30px;
     left: 35%;
     margin: auto;
@@ -33,6 +33,7 @@ body#green {
 
   .invite-container {
     padding-left: 60px;
+    padding-top: 90px;
   }
 
   .form-control {
@@ -168,10 +169,11 @@ body#green {
     padding-right: 30px;
     padding-top: 18px;
     padding-bottom: 18px;
-    background-color: #c9fbc5;
+    background: #c9fbc5;
     color: black;
     border: 1px solid black;
     text-decoration: none;
+    margin: 1px black;
   }
 
   .create-party-btn a {
