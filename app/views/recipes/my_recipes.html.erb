@@ -1,9 +1,9 @@
 <div class="container">
-  <h1 class="border-bottom">My Recipes</h1>
+  <h1>My Recipes</h1>
 
   <% @my_recipes.each do |recipe| %>
     <div class="card-recipe">
-      <img src="<%= recipe.recipe.photo_url %>" alt="Recipe Picture">
+      <img src="<%= recipe.recipe.photo_url %>" alt="Recipe Picture" style="object-fit: cover" class="my-recipe-image">
         <div class="card-recipe-infos p-2">
           <h4><%=link_to recipe.recipe.title, recipe_path(recipe.recipe[:id])%></h4>
           <p><strong>Description: </strong><%= recipe.recipe.description %></p>
