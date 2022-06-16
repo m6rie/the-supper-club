@@ -71,7 +71,7 @@ class PartiesController < ApplicationController
     puts JSON.parse(ingredients)
     # BUILDING RECIPES
     number_of_recipes.times do |n|
-      @recipe = Recipe.new(
+      recipe = Recipe.new(
         title: titles[n - 1],
         recipe_url: urls[n - 1],
         photo_url: photo_urls[n - 1],
@@ -79,10 +79,10 @@ class PartiesController < ApplicationController
         description: "Delicous recipe",
       )
       JSON.parse(ingredients)[n - 1].each do |ingredient|
-        @recipe.ingredients.push(ingredient)
+        recipe.ingredients.push(ingredient)
       end
-      @recipe.save
-      @recipes << @recipe
+      recipe.save
+      @recipes << recipe
     end
 
     # CREATING PARTY
@@ -100,12 +100,12 @@ class PartiesController < ApplicationController
 
     # CONNECTING PARTIES AND RECIPES
     @recipes.each do |recipe|
-      PartyRecipe.create(party: @party, recipe: @recipe)
+      PartyRecipe.create(party: @party, recipe: recipe)
     end
 
     # AJAX RESPONSE
     respond_to do |format|
-      format.json { redirect_to party_path(@party) }
+      format.json { render :json => @recipes }
       format.html { puts "I am html" }
     end
 
