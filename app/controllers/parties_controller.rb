@@ -17,7 +17,8 @@ class PartiesController < ApplicationController
     @recipes = Recipe.all
     @party_recipe = Recipe.where(user_id: @party.id)
 
-    qrcode = RQRCode::QRCode.new("https://www.supperclub.pro/parties/#{@party.id}/invite")
+
+    qrcode = RQRCode::QRCode.new("https://the-supper-club.herokuapp.com/parties/#{@party.id}/invite")
 
       png = qrcode.as_png(
         bit_depth: 1,
@@ -32,7 +33,7 @@ class PartiesController < ApplicationController
         size: 250
       )
 
-      IO.binwrite("./app/assets/images/qr_code#{@party.title}.png", png.to_s)
+      IO.binwrite("public/assets/qr_code#{@party.title}.png", png.to_s)
   end
 
   def new
