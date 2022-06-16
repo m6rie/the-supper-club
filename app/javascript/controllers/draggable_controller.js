@@ -142,5 +142,5 @@ export default class extends Controller {
     })
       .then((response) => response.body)
       .then((data) => {});
-  }
+      window.location.replace("http://localhost:3000/loading")}
 }
