@@ -131,7 +131,7 @@ export default class extends Controller {
     // FETCH CALL WITH RECIPE AND PARTY DATA
     // https://the-supper-club.herokuapp.com/parties
 
-    fetch("http://localhost:3000/parties", {
+    fetch("https://the-supper-club.herokuapp.com/parties/new", {
       method: "POST",
       headers: {
         Accept: "application/json",
