@@ -44,21 +44,16 @@ r2 = Recipe.create(title: 'Sushi Rolls',
                    prep_time: 50,
                    #  ingredients: "Sushi Rice, Mayo, Soy Sauce, Smoked Salmon and Wasabi.",
                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362732/the%20supper%20club/Frame_9816_g8rw3p.png')
-# r3 = Recipe.create(title: 'Pizza Napolitana',
-#                    description: 'Authentic Neapolitan Pizza.',
-#                    prep_time: 45,
-#                    #  ingredients: "Flour, Tomato, Mozzarela, Parmesan, Olive Oil and Basil.",
-#                    photo_url: 'https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtZWRnYXJjYXN0cmVqb24yLW1hcmdoZXJpdGFwaXp6YS0wODQtYWUuanBn.jpg')
 r4 = Recipe.create(title: 'Souvlaki Gyros',
                    description: 'Make your own traditional Greek pork souvlaki with gyros.',
                    prep_time: 25,
                    #  ingredients: "Pork, Garlic, Onion, Pita Bread, Tomato and Potatoes.",
                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362676/the%20supper%20club/Frame_9806_ldlv04.png')
-# r5 = Recipe.create(title: 'Marry Me Chicken',
-#                    description: 'She/He will marry you after eating this!',
-#                    prep_time: 45,
-#                    #  ingredients: "Chicken Breast, Olive Oil, Garlic, Cheese, Heavy Cream and Fresh Basil.",
-#                    photo_url: 'https://www.thespruceeats.com/thmb/Nagg1dO9v0MYzT8B0tB8xuCsafk=/1500x1000/filters:fill(auto,1)/marry-me-chicken-5225352-hero-06-dea1c6367dbe4dc38984552a39504b11.jpg')
+r5 = Recipe.create(title: 'Marry Me Chicken',
+                   description: 'She/He will marry you after eating this!',
+                   prep_time: 45,
+                   #  ingredients: "Chicken Breast, Olive Oil, Garlic, Cheese, Heavy Cream and Fresh Basil.",
+                   photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362660/the%20supper%20club/Frame_9798_uaoyab.png')
 r6 = Recipe.create(title: 'Tarte Tatin',
                    description: 'Sweet and Sticky Caramel with Apples on top of Pastry.',
                    prep_time: 20,
@@ -69,11 +64,11 @@ r7 = Recipe.create(title: 'Fancy Cupcakes',
                    prep_time: 60,
                    #  ingredients: "Flour, Butter, Sugar, Vanilla Extract, Milk and Pink Fondant.",
                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362631/the%20supper%20club/Frame_9794_gjm2jz.png')
-# r8 = Recipe.create(title: 'Ghost Bagels',
-#                    description: 'Spooky Bagels, because why not?',
-#                    prep_time: 55,
-#                    #  ingredients: "Flour, Butter, Salmon and Cream Cheese.",
-#                    photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362660/the%20supper%20club/Frame_9798_uaoyab.png')
+r8 = Recipe.create(title: 'Ghost Bagels',
+                   description: 'Spooky Bagels, because why not?',
+                   prep_time: 55,
+                   #  ingredients: "Flour, Butter, Salmon and Cream Cheese.",
+                   photo_url: 'https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655362660/the%20supper%20club/Frame_9798_uaoyab.png')
 r9 = Recipe.create(title: 'Tuna Salad',
                    description: 'salad composed primarily of chopped canned tuna fish. tuna fish salad. salad - food mixtures either arranged on a plate or tossed and served with a moist dressing; usually consisting of or including greens.',
                    prep_time: 25,
