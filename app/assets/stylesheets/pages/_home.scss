@@ -81,6 +81,7 @@ svg#right:hover path {
     right: 0px;
     width: 300px;
     height: auto;
+    margin-top: 15px;
   }
 }
 
@@ -89,7 +90,7 @@ svg#right:hover path {
 
   .img-plate {
     position: relative;
-    width: 90%;
+    width: 77%;
   }
   .img-logo {
     position: absolute;
@@ -97,7 +98,8 @@ svg#right:hover path {
     justify-content: center;
     width: 50%;
     left: 25%;
-    top: 8%
+    top: 8%;
+    margin-top: 10px;
   }
   .start-btn {
     display: block;
@@ -111,8 +113,8 @@ svg#right:hover path {
     padding-right: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-bottom: 200px;
-    margin-left: 34%
+    margin-bottom: 180px;
+    margin-left: 34%;
   }
 
   .start-btn:hover {

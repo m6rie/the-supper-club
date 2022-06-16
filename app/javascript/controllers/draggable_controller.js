@@ -130,7 +130,9 @@ export default class extends Controller {
     console.log(JSON.stringify(params));
 
     // FETCH CALL WITH RECIPE AND PARTY DATA
-    fetch("http://localhost:3000/parties", {
+    // https://the-supper-club.herokuapp.com/parties
+    // http://localhost:3000/parties
+    fetch("https://the-supper-club.herokuapp.com/parties", {
       method: "POST",
       headers: {
         Accept: "application/json",
