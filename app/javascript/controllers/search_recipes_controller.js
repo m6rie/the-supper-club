@@ -45,7 +45,7 @@ export default class extends Controller {
                   <div class="" id="label" data-label=${JSON.stringify(recipe["recipe"]["label"])}><h4>${JSON.stringify(recipe["recipe"]["label"])}</h4>
                 </div>
                 <div class="d-flex">
-                    <p><div/>${JSON.stringify(Math.round(recipe["recipe"]["calories"]))}kcal |</div></p>
+                    <p><div/>${JSON.stringify(Math.round(recipe["recipe"]["calories"]))}kcal |&nbsp</div></p>
                   <div class="" id="ingredients" data-ingredients="[${ingredients}]"></div>
                     ${JSON.stringify(recipe["recipe"]["ingredients"].length)} Ingredients
                     </div>
