@@ -21,7 +21,7 @@ module TheSupperClub
     config.action_controller.permit_all_parameters = true
     config.secret_key_base = 'blipblapblup'
     # config.assets.initialize_on_precompile = false
-
+    config.assets.version = '1.0'
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
