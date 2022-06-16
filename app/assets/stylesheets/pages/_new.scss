@@ -1,3 +1,6 @@
+.form-control {
+  border:none;
+}
 body#green {
   background-color: #c9fbc5;
   position: relative;
@@ -32,12 +35,26 @@ body#green {
   }
 
   .invite-container {
-    padding-left: 60px;
-    padding-top: 90px;
+    // padding-left: 20px;
+    padding-top: 40px;
   }
 
   .form-control {
     background-color: #c9fbc5 !important;
+  }
+
+  .form-input-custom {
+    color: black;
+  }
+
+  .form-input-date {
+    border-right: none;
+    border-top: none;
+    border-left: none;
+  }
+
+  .form-input-date:focus {
+    border:none;
   }
 
   .search-recipe-container {
@@ -67,7 +84,6 @@ body#green {
 
   .select-theme-container {
     height: 800px;
-    overflow: scroll;
   }
 
   .tab-content-theme {
@@ -226,7 +242,7 @@ body#green {
   }
 
   .dishes-form {
-    margin-top: 14%;
+    margin-top: 15%;
   }
 
   .img-dishes {
