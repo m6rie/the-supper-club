@@ -1,0 +1,27 @@
+<div class="party-info-container col-2 text-left">
+     <h4>
+     <%= @party.status %>
+     </h4>
+     <h2><%= @party.title %></h2>
+     <hr>
+     <p>ADDRESS</p>
+     <h5><%= @party.address %><h5>
+     <hr>
+     <p>DATE</p>
+     <h5><%= @party.date.strftime("%A, %b %d") %><h5>
+     <hr>
+    <h5><p>THEME</p><h5>
+     <%= @party.theme %> Party
+    <hr>
+     <h5><p>GUESTS</p><h5>
+     <%= @party.attendancy %> pax
+     <hr>
+     <h5><p>INVITATION</p><h5>
+    <%= link_to party_invite_path(@party) do %><%= image_tag "qr_code#{@party.title}.png", class: "qr-code" %> <% end %>
+    <br>
+    <hr>
+     <button class="edit-btn"><i class="fa-solid fa-pencil"></i>&nbsp edit</button>
+       <%= link_to party_path(@party), class: "btn book-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this party?" } do %>
+      <button class="edit-btn"><i class="fa-solid fa-trash"></i> delete</button>
+     <% end %>
+</div>

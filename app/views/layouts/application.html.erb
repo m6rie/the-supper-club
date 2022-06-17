@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TheSupperClub</title>
+    <title>The Supper Club</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= favicon_link_tag "favicon-32x32.png", "data-turbo-track": "reload" %>
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e9244bc473.js" crossorigin="anonymous"></script>
+    <%# <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></script> %>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-
+  <body>
+    <% unless action_name == "internal_server_error" || action_name == "not_found" %>
+      <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
+    <% end %>
     <%= yield %>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+
   </body>
 </html>

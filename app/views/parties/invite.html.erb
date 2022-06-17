@@ -1,0 +1,29 @@
+<body id = "green">
+  <div class="container-invite">
+  <h1 class="invite-top center pt-4 pb-0">You have been invited to a party!</h1>
+  <div class="container d-flex mt-5">
+    <%= image_tag "Dinner_party_1.png", class: "img-create" %>
+    <%# ENVELOPE ANIMATION %>
+
+    <div id="wrapper">
+      <div class="envelope open">
+        <div class="flap front"></div>
+        <div class="flap top"></div>
+        <div class="letter">
+        <div class="letter-message p-3">
+          <h2 class="hey">Hey! It's <em><%= @party.user.name %>!</em></h2>
+          <h3 class="hey">Come to my <em><%=@party.title%></em> party! It's in <em><%= @party.address %></em> and it's happening <em><%= @party.date.strftime("%A, %b %d") %></em>! See you there!</h3>
+          <%= link_to root_path do %>
+          <%= image_tag "logo.png", class: "logo-stamp" %>
+          <% end %>
+        </div>
+        </div>
+      </div>
+
+    <%# END OF ENVELOPE ANIMATION %>
+    </div>
+
+  </div>
+
+</div>
+</body>

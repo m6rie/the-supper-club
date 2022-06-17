@@ -1,8 +1,70 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+    position: relative;
+    border-bottom: 1px solid $black;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    img.navbar-logo {
+      height: 50px;
+      float: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.nav-link {
+  font-family: $headers-font;
+  margin-right: 20px;
+}
+
+.navbar-home {
+  background-color: transparent;
+  text-align: right;
+  justify-items: right;
+  z-index: 99999;
+  padding-top: 20px;
+  position: fixed;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav-login-link {
+    padding: 10px;
+    background-color: black;
+    color: white;
+    margin-left: 5px;
+    margin-top: 40px;
+    border: 1px solid black;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .nav-login-link:hover {
+    padding: 10px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    margin-left: 5px;
+    margin-top: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .nav-signup-link {
+    padding: 10px;
+    color: black;
+    margin-left: 20px;
+    margin-top: 40px;
+  }
+
+  li {
+    list-style-type: none;
+  }
 }

@@ -1,0 +1,381 @@
+.form-control {
+  border:none;
+}
+body#green {
+  background-color: #c9fbc5;
+  position: relative;
+  overflow: hidden;
+  .tabs {
+    // position: fixed;
+    bottom: 30px;
+    left: 35%;
+    margin: auto;
+    background: #c9fbc5;
+  }
+
+  .guest-input {
+    font-size: 90px;
+    text-align: center;
+    border: none;
+  }
+  .guest-input:focus {
+    font-size: 90px;
+    text-align: center;
+    border: none;
+  }
+
+  .dish-input {
+    font-size: 90px;
+    text-align: center;
+    border: none;
+  }
+
+  .guest-form {
+    margin-top: 200px;
+  }
+
+  .invite-container {
+    // padding-left: 20px;
+    padding-top: 40px;
+  }
+
+  .form-control {
+    background-color: #c9fbc5 !important;
+  }
+
+  .form-input-custom {
+    color: black;
+  }
+
+  .form-input-date {
+    border-right: none;
+    border-top: none;
+    border-left: none;
+  }
+
+  .form-input-date:focus {
+    border:none;
+  }
+
+  .search-recipe-container {
+    padding-right: 30px;
+    text-align: left;
+  }
+  .choosen-container {
+    padding-top: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-image: url(https://res.cloudinary.com/dpjxlsdtk/image/upload/v1655297284/backgroundimg_x9txbh.png);
+    background-size: contain;
+  }
+
+  .tab-content-recipes {
+    margin-top: 40px;
+  }
+
+  .tab-content-dishes {
+    margin-top: 40px;
+  }
+
+  .tab-content-guests {
+    margin-top: 40px;
+  }
+
+
+  .select-theme-container {
+    height: 800px;
+  }
+
+  .tab-content-theme {
+    margin-top: 50px;
+  }
+  i {
+    font-size: 20px;
+  }
+  .next-tab {
+    width: 100px;
+    position: fixed;
+    padding: 10px;
+    bottom: 20px;
+    background-color: transparent;
+    border: none;
+    color: black;
+    right: 100px;
+    z-index: 99999
+  }
+
+  .create-party-btn {
+    width: 250px;
+    text-align: right;
+    position: absolute;
+    padding: 10px;
+    bottom: 0px;
+    background-color: transparent;
+    border: none;
+    color: black;
+    right: 0px;
+    z-index: 99999;
+  }
+  .back-tab {
+    justify-content: right;
+    width: 100px;
+    position: fixed;
+    padding: 10px;
+    bottom: 20px;
+    background-color: transparent;
+    border: none;
+    color: black;
+    left: 100px;
+    z-index: 99999;
+  }
+}
+
+.create-party-container {
+  .recipe-container {
+    display: flex;
+  }
+
+  .new-details {
+    text-align: left;
+  }
+
+  .form-control {
+    color: black;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    text-align: left;
+  }
+
+  .dishes-card {
+    background-color: #c9fbc5;
+    padding-top: 40px;
+    // margin: 10px;
+  }
+
+  .guest-card {
+    margin: auto;
+    width: 50%;
+    background-color: #c9fbc5;
+    padding: 40px;
+  }
+
+  .recipe-search-container {
+    text-align: left;
+  }
+
+  .search-recipe-card {
+    width: 300px;
+    height: auto;
+    margin-right: 10px;
+  }
+
+  .search-button {
+    color: black;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: none;
+    text-decoration: underline;
+  }
+
+  .create-party-btn {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    background: #c9fbc5;
+    color: black;
+    border: 1px solid black;
+    text-decoration: none;
+    margin: 1px black;
+  }
+
+  .create-party-btn a {
+    text-decoration: none;
+  }
+
+  .clickable {
+    font-size: 30px;
+    padding-top: 19px;
+
+    width: 200px;
+    height: 100px;
+    justify-content: center;
+    color: black;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: white;
+  }
+
+  .clickable.active {
+    color: inherit;
+    border-color: inherit;
+  }
+
+  .clickable:hover {
+    color: #c9fbc5;
+    background-color: black;
+    cursor: pointer;
+  }
+
+  .clickable.active {
+    color: #c9fbc5;
+    background-color: black;
+    border-radius: 9999px;
+  }
+
+  .inline-form {
+    display: inline-flex;
+    width: 100%;
+    align-items: flex-end;
+  }
+  .guest-card {
+    width: 40%;
+  }
+
+  .dishes-form {
+    margin-top: 15%;
+  }
+
+  .img-dishes {
+    width: 100%;
+    height: 100%;
+  }
+
+  .theme-container-left {
+    justify-content: center;
+  }
+  .next-btn {
+    font-family: $text-font;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 16px;
+    background-color: black;
+    color: #c9fbc5;
+    border: 1px solid black;
+  }
+
+  .detail-container {
+    padding-top: 10%;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 0;
+  }
+
+  .form-select {
+    background-color: #c9fbc5;
+    border: 1px solid black;
+  }
+
+  h1 {
+    font-family: $display-font;
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 65px;
+    font-family: $display-font;
+    line-height: 55px;
+  }
+
+  .nav-link.active {
+    background-color: black;
+    color: #c9fbc5;
+  }
+
+  a {
+    color: #c9fbc5;
+  }
+
+  .nav-link {
+    color: black;
+  }
+
+
+.selected-card {
+  color:#C9FBC5;
+  background-color: black;
+  border: #ff0022;
+}
+
+.clickable.active {
+  color: #c9fbc5;
+  background-color: black;
+  border-radius: 9999px;
+}
+
+.card-recipe-api {
+  height: 100px;
+  width: 40vw;
+  display: flex;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
+  overflow: hidden;
+  background: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  top: 0px;
+  z-index: 0;
+  position: relative;
+
+}
+
+.card-recipe-api:hover {
+  cursor:move;
+}
+
+#ourlist {
+  height: 430px;
+  overflow: scroll;
+}
+
+.recipe-api-img {
+  width: 180px;
+  object-fit: cover
+}
+
+.info-api {
+  text-align: left;
+  padding: 16px;
+}
+
+.move-icon {
+position: absolute;
+left: 95%;
+height: 70%;
+top: 10%;
+opacity: 0.6;
+}
+
+// .move-icon:hover {
+//   opacity: 1;
+//   transform: scale(1.5);
+// }
+
+}
+
+label[for="party_appetizers"] {
+  display:none;
+}
+
+label[for="party_mains"] {
+  display:none;
+}
+
+label[for="party_desserts"] {
+  display:none;
+}

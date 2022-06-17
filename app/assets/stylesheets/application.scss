@@ -2,11 +2,55 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
-
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
-
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+// Colors
+$white: #F9F9F4;
+$red: #D62020;
+$dark-green: #49A15D;
+$light-green: #C9FBC5;
+$orange: #FCA04C;
+$black: #414141;
+//icons
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot);
+    /* For IE6-8 */
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'), url(https://example.com/MaterialIcons-Regular.woff) format('woff'), url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+// @font-face {
+//   font-family: Supper;
+//   font-weight: italic;
+//   src: url("../fonts/SupperDisplay/SupperDisplay-italic.otf");
+// }
+
+// @font-face {
+//   font-family: Supper;
+//   font-weight: medium;
+//   src: url("../fonts/SupperDisplay/SupperDisplay-Regular.otf");
+// }
+
+// $displayfont-regular:  "Supper Display";
+// $displayfont-italic:  "Supper Display";
+
+// All page configurations
+body {
+    // overflow: auto;
+    margin-left: 100px;
+    margin-right: 100px;
+    background: $white;
+    height: 100vh;
+    max-width:100%;
+}
+
+.center {
+    text-align: center;
+    justify-content: center;
+}

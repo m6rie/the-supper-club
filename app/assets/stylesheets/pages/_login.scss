@@ -1,0 +1,50 @@
+.login-container {
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-top: 200px;
+  background-color: #C9FBC5;
+  padding: 50px;
+  h2 {
+  font-family: $display-font;
+  font-size: 80px;
+  letter-spacing: -2px;
+  }
+  .form-control {
+    background-color: #C9FBC5;
+    border-left: #C9FBC5;
+    border-right: #C9FBC5;
+    border-top: #C9FBC5;
+    border-bottom: 1px solid #000000;
+  }
+  .submit-btn {
+    color: #C9FBC5;
+    background-color: black;
+    width: 100%;
+    border: 1px solid black;
+  }
+
+  .submit-btn:hover {
+    color: black;
+    background-color: #C9FBC5;
+    width: 100%;
+    border: 1px solid black;
+  }
+
+  a {
+    color: black;
+
+  }
+}
+
+.form-input-custom {
+  background-color: #C9FBC5;
+}
+
+.form-input-custom:focus {
+  background-color: #C9FBC5;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid rgb(0, 183, 0);
+  box-shadow: none;
+}

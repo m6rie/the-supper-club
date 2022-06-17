@@ -1,0 +1,343 @@
+.show-container {
+  margin-top: 20px;
+  height: 100vh;
+  max-width:100%;
+}
+.party-desc-container {
+
+  .top-party-desc-container {
+    padding-left: 40px;
+    padding-top: 45px;
+    padding-bottom: 50px;
+    .recipe-head {
+      display: flex;
+      justify-content: space-between;
+
+      h2 {
+        font-family: $display-font;
+        font-size: 35px;
+      }
+
+      .ingredient-btn {
+        background-color: transparent;
+        font-size: 15px;
+        border: 1px solid black;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 18px;
+        padding-left: 18px;
+        font-family: $text-font;
+      }
+
+      .ingredient-btn:hover {
+        background-color: #C9FBC5;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+        font-family: $text-font;
+      }
+
+      .edit-btn {
+        color:#C9FBC5;
+        background-color: black;
+        font-size: 15px;
+        border: 1px solid black;
+        font-family: $text-font;
+        text-decoration: none;
+        background-color: #333;
+        padding: 2px;
+        border-radius: 999px;
+      }
+
+      .edit-btn:hover {
+        background-color: #C9FBC5;
+      }
+    }
+
+    .recipe-content {
+      display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   width: 100%;
+      .show-recipe-card {
+        flex: 0 1 32%;
+        height: 220px;
+        margin-right: 3px;
+        .recipe-img-container {
+          flex: 0 1 24%;
+          height: 200px;
+          object-fit: cover;
+          margin-bottom: 20px;
+        }
+
+        h3 {
+          font-family: $display-font;
+          font-size: 20px;
+          // line-height: 0;
+        }
+      }
+      }
+    }
+  }
+
+  .bottom-party-desc-container {
+    display: flex;
+    padding-left: 40px;
+
+    h2 {
+      font-family: $display-font;
+      font-size: 40px;
+    }
+    .music-container {
+      border-right: 1px solid black;
+      margin-right: 80px;
+
+      flex-grow: 1;
+
+      .music-content {
+        padding: 60px;
+        .spotify-btn {
+          background-color: transparent;
+          font-family: $display-font;
+          border: 1px solid black;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          padding-right: 20px;
+          padding-left: 20px;
+
+        }
+      }
+    }
+
+    .convo-container {
+      // flex-grow: 1;
+    }
+  }
+
+.see-all-btn {
+  background-color: transparent;
+  font-size: 15px;
+  border: 1px solid black;
+  font-family: $text-font;
+  padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 18px;
+        padding-left: 18px;
+}
+
+
+// .music-container {
+//   background: red;
+// }
+
+// .bottom-party-desc-container {
+//   display: flex;
+// }
+
+
+// CONVO CARDS
+$bg-color: #E6E5E1;
+$shdow-gray: #d3d3d5;
+$orange: #b6d5a8;
+// $blue: #2b26c3;
+$img-url2: "https://i0.wp.com/cdn.vox-cdn.com/thumbor/6Ufhk68YHfyheXJZVGFGZw3mC2M=/342x0:4014x2754/1310x983/cdn.vox-cdn.com/uploads/chorus_image/image/69137931/shutterstock_592709111.0.jpg";
+$img-url: "drinking-games.png";
+
+
+
+
+.ii {
+  opacity: 0;
+  font-size: 18px;
+  color: #fff;
+  will-change: transform;
+  -webkit-transform: scale(0.1);
+  transform: scale(0.1);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+h2 {
+  pointer-events:none;
+}
+
+
+.convo-container {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .card {
+    position: relative;
+    width: 350px;
+    height: 200px;
+    background-color: #fff;
+    overflow: hidden;
+    margin-bottom: 4px;
+
+    &:before {
+      content: "";
+      z-index: 99;
+      position: absolute;
+      top: -10px;
+      left: 32px;
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-radius: 16px;
+      background-color: $bg-color;
+    }
+    &:after {
+      content: "";
+      z-index: 99;
+      position: absolute;
+      bottom: -10px;
+      left: 32px;
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-radius: 16px;
+      background-color: $bg-color;
+    }
+    ul {
+      z-index: 99;
+      position: absolute;
+      left: 39px;
+      top: 5px;
+      list-style-type: none;
+      li {
+        width: 2px;
+        height: 2px;
+        border-radius: 2px;
+        margin: 6px 0;
+        background-color: $bg-color;
+      }
+    }
+    h2 {
+      z-index: 99;
+      font-family: $display-font;
+      position: absolute;
+      bottom: 0;
+      right: 130px;
+      font-size: 60px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .fa-arrow-right {
+      z-index: 100;
+      position: absolute;
+      right: 75px;
+      bottom: 25px;
+      font-size: 40px;
+      cursor: pointer;
+    }
+    p {
+      z-index: 99;
+      position: absolute;
+      top: 13px;
+      right: 69px;
+      color: #333;
+      opacity: 0.7;
+      font-size: 12px;
+      letter-spacing: 1px;
+      writing-mode: vertical-lr;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
+    .pict {
+      // z-index: 100;
+      width: 400px;
+      height: 200px;
+      background-image: url($img-url);
+      background-size: cover;
+      filter: grayscale(100%);
+    }
+
+    .social {
+      position: absolute;
+      left: 60px;
+      top: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 180px;
+      height: 64px;
+      border-radius: 80px;
+    }
+
+    .social i:nth-of-type(1) {
+      -webkit-transition-delay: 0.4s;
+      transition-delay: 0.4s;
+    }
+
+    .social i:nth-of-type(2) {
+      -webkit-transition-delay: 0.3s;
+      transition-delay: 0.3s;
+    }
+
+    .social i:nth-of-type(3) {
+      -webkit-transition-delay: 0.2s;
+      transition-delay: 0.2s;
+    }
+
+    .social i:nth-of-type(4) {
+      -webkit-transition-delay: 0.1s;
+      transition-delay: 0.1s;
+    }
+
+    &:hover i {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+
+    button {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      width: 30px;
+      height: 30px;
+      background-color: $orange;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      outline:none;
+      transition: all 0.3s ease;
+      mix-blend-mode: hard-light;
+
+      i {
+        font-size: 3rem;
+      }
+    }
+
+    &:hover button {
+      transform: scale(8.5);
+    }
+
+    &:hover p {
+      color: #fff;
+    }
+
+    &:hover .pict {
+      filter: grayscale(0);
+
+    }
+  }
+
+  .card2 {
+    .pict {
+      background-image: url($img-url2);
+    }
+    button {
+      background-color: $blue;
+    }
+  }
+}

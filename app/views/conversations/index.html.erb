@@ -1,0 +1,180 @@
+<div class="conversation-container">
+  <div class="convo-header">
+    <h1>Get <em>lost</em> in conversation</h1>
+  </div>
+  <div class="convo-card-container d-flex center">
+    <div class="convo-header-cards conn-card center" onClick="document.getElementById('scroll-target-conn').scrollIntoView();">
+        <h3>Connection</h3>
+    </div>
+    <div class="convo-header-cards travel-card center" onClick="document.getElementById('scroll-target-travel').scrollIntoView();">
+        <h3>Travel</h3>
+    </div>
+    <div class="convo-header-cards pop-card center" onClick="document.getElementById('scroll-target-pop').scrollIntoView();">
+        <h3>Trends<br></h3>
+    </div>
+    <div class="convo-header-cards world-card center" onClick="document.getElementById('scroll-target-world').scrollIntoView();">
+        <h3>World</h3>
+    </div>
+    <%# <div class="convo-header-cards trends-card center">
+        <h3>Trends</h3>
+    </div> %>
+    <div class="convo-header-cards wyr-card center" onClick="document.getElementById('scroll-target-wyr').scrollIntoView();">
+      <div class="convo-card">
+        <h3>Would you<br>rather?</h3>
+      </div>
+    </div>
+  </div>
+  <%# <div class="convo-description">
+    <p>Choose from orem ipsum dolor sit amet the topics lorem ipsum dolor sit amet<p>
+    <p>Shuffle</p>
+  </div> %>
+</div>
+
+    <hr>
+    <section class = "conn-convo-container" id ="scroll-target-conn">
+      <div class = "row ">
+      <div class="col-2 convo-left-desc">
+        <h3>Connection</h3>
+        <p>Work on the connection between you and your friends!</p>
+      </div>
+
+      <div class="col-10 travel-card-container">
+      <% connection_convo = @convo.select { |convo| convo.topic == "Connection"} %>
+      <% connection_convo.sample(4).each do |convo| %>
+        <div class="flip flip-connection convo-header-cards">
+          <div class="front front-connection">
+            <h2 class="conv-card-title"><%= convo.topic %></h2>
+          </div>
+            <div class="back back-connection">
+            <p class="conv-description"><%= convo.subject %></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+    <hr>
+
+    <section class = "conn-convo-container" id ="scroll-target-travel">
+      <div class = "row ">
+      <div class="col-2 convo-left-desc">
+        <h3>Travel</h3>
+        <p>Traveling is one of the most exciting things a human can do, share your experiences with your guests.</p>
+      </div>
+
+      <div class="col-10 travel-card-container" id ="scroll-target-conn">
+      <% travel_convo = @convo.select { |convo| convo.topic == "Travel"} %>
+      <% travel_convo.sample(4).each do |convo| %>
+        <div class="flip flip-travel convo-header-cards">
+          <div class="front front-travel">
+            <h2 class="conv-card-title"><%= convo.topic %></h2>
+          </div>
+            <div class="back back-travel">
+            <p class="conv-description"><%= convo.subject %></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+    <hr>
+
+    <section class = "conn-convo-container" id ="scroll-target-pop">
+      <div class = "row ">
+      <div class="col-2 convo-left-desc">
+        <h3>Trends</h3>
+        <p>Current trends are always emerging, share your thoughts on them with your guests!</p>
+      </div>
+
+      <div class="col-10 travel-card-container" id ="scroll-target-conn">
+      <% trends_convo = @convo.select { |convo| convo.topic == "Trends"} %>
+      <% trends_convo.sample(4).each do |convo| %>
+        <div class="flip flip-trends convo-header-cards">
+          <div class="front front-trends">
+            <h2 class="conv-card-title"><%= convo.topic %></h2>
+          </div>
+            <div class="back back-trends">
+            <p class="conv-description"><%= convo.subject %></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+    <hr>
+
+    <section class = "conn-convo-container" id ="scroll-target-world">
+      <div class = "row ">
+      <div class="col-2 convo-left-desc">
+        <h3>World</h3>
+        <p>Talk about the state of the world, brainstorm ideas to make it better!</p>
+      </div>
+
+      <div class="col-10 travel-card-container">
+      <% travel_convo = @convo.select { |convo| convo.topic == "World"} %>
+      <% travel_convo.sample(4).each do |convo| %>
+        <div class="flip flip-world convo-header-cards">
+          <div class="front front-world">
+            <h2 class="conv-card-title"><%= convo.topic %></h2>
+          </div>
+            <div class="back back-world">
+            <p class="conv-description"><%= convo.subject %></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+    <hr>
+
+    <section class = "conn-convo-container" id ="scroll-target-wyr">
+      <div class = "row ">
+      <div class="col-2 convo-left-desc">
+        <h3>Would you rather</h3>
+        <p>Classic game of 'Would you rather' to put yourself in some weird shoes</p>
+      </div>
+
+      <div class="col-10 travel-card-container" >
+      <% would_you_convo = @convo.select { |convo| convo.topic == "Would you rather"} %>
+      <% would_you_convo.sample(4).each do |convo| %>
+        <div class="flip flip-wyr convo-header-cards">
+          <div class="front front-wyr">
+            <h2 class="conv-card-title"><%= convo.topic %></h2>
+          </div>
+            <div class="back back-wyr">
+            <p class="conv-description"><%= convo.subject %></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+    <hr>
+
+    <section class = "conn-convo-container" id ="scroll-target-music">
+      <div class = "row ">
+      <div class="col-2 convo-left-desc">
+        <h3>Music</h3>
+        <p>Music is such a big topic, we could talk for days about it, here are some pointers</p>
+      </div>
+
+      <div class="col-10 travel-card-container">
+      <% travel_convo = @convo.select { |convo| convo.topic == "Music"} %>
+      <% travel_convo.sample(4).each do |convo| %>
+        <div class="flip flip-music convo-header-cards">
+          <div class="front front-music">
+            <h2 class="conv-card-title"><%= convo.topic %></h2>
+          </div>
+            <div class="back back-music">
+            <p class="conv-description"><%= convo.subject %></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+    <hr>
+
+
+
+  </div>

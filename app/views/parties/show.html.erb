@@ -1,2 +1,87 @@
-<h1>Parties#show</h1>
-<p>Find me in app/views/parties/show.html.erb</p>
+<div class="container mt-2 p-0 mx-0">
+  <%# <div class="d-flex center"> %>
+  <div class="row">
+    <%= render 'shared/party_info' %>
+    <div class="col-10">
+      <div class="party-desc-container">
+        <div class="top-party-desc-container">
+          <div class="recipe-head">
+            <h2> Your <%= @party.recipes.length %> dish menu</h2>
+            <div class = "recipe-head-links">
+              <%= link_to "See ingredients", party_ingredients_path(@party), class: "ingredient-btn" %>
+            </div>
+        </div>
+        <div class="recipe-content center d-flex">
+          <% @party.recipes.each do |recipe| %>
+          <div class="show-recipe-card">
+            <a href=<%= recipe.recipe_url %> target="_blank" class="recipe-card">
+              <div class="recipe-img-container" style="background-image: url(<%= recipe.photo_url %>); background-size: cover"></div>
+            </a>
+              <h3> <%= recipe.title %> </h3>
+              </div >
+          <% end %>
+        </div>
+      </div>
+      <hr style="margin-left: 40px;">
+      <div class="bottom-party-desc-container">
+        <div class="music-container">
+          <h2>Suggested Music</h2>
+          <% if @party.theme == "Japanese" %>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0zubeiljQV39EDfjbq3VF9?utm_source=generator&theme=0" width="90%" height="300" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          <% elsif @party.theme == "Italian" %>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5Y9MelZDlAy1FCGuOJGbGY?utm_source=generator&theme=0" width="90%" height="300" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          <% else %>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7fk4COnzvJAIRaGEa8eGLn?utm_source=generator&theme=0" width="90%" height="300" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          <% end %>
+        </div>
+        <div class="convo-container text-left">
+          <h2>Activities</h2>
+          <%# ACTIVITIES CARDS %>
+            <div class="card text-left">
+              <h2>Convo</h2>
+              <i class=" ii fas fa-arrow-right"></i>
+              <%# <p style="">No awkward silence.</p> %>
+              <div class="pict"></div>
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <div class="social">
+                <i class=" ii fa-solid fa-comment-dots"></i>
+                <i class=" ii fa-solid fa-couch"></i>
+                <i class=" ii fa-regular fa-face-laugh-beam"></i>
+                <i class=></i>
+              </div>
+              <%= link_to conversations_path do %>
+                <button>
+                </button>
+                <% end %>
+            </div>
+        </div>
+      </div>
+      <hr style="margin-left: 40px;">
+      <button class= "see-all-btn" style="margin-left: 40px;"> View all your parties </button>
+    </div>
+  </div>
+</div>

@@ -1,2 +1,115 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!doctype html>
+  <html>
+  <head>
+    <title>The Supper Club</title>
+    <meta name="description" content="Our first page">
+  </head>
+  <body>
+    <% if user_signed_in? %>
+     <section class = "sign-in-home-container">
+      <div class = "recent-party-postit" onClick="document.getElementById('scroll-target-my-recent-parties-container').scrollIntoView();">
+        <h3>My<br>recent<br>parties</h3>
+      </div>
+
+      <div class="green-circle">
+      </div>
+      <div class = "discover-party-postit">
+        <h3>Discover<br>recipes</h3>
+      </div>
+
+        <div class = "center">
+        <h2> Hello <em><%= current_user.name %></em>! </h2>
+        </div>
+        <br>
+          <div class=" new-party-container center">
+            <%= link_to new_party_path do %>
+            <%= image_tag "confetti.png", class: "confetti-img" %>
+            <%= image_tag "Dinner_party_1.png", class: "create-img" %>
+            <br>
+            <br>
+            <div class="plan-party-container">
+            <h2>Plan a <br> new party!</h2>
+            <br>
+            <div class="arrow-container center">
+<svg id="right">
+  <path d="M0.5 9.35772H20.9956L14.2001 2.29941L16.4134 0L27 11L16.4134 22L14.2001 19.7006L20.9956 12.6423H0.5V9.35772Z" fill="#000"></path>
+</svg>
+</div>
+</div>
+            <% end %>
+            <br>
+          </div>
+      </div>
+    </section>
+    <hr>
+    <section class="my-recent-parties-container d-flex" id="scroll-target-my-recent-parties-container">
+    <h2>My<br>recent<br>parties</h2>
+        <div class="recent-container text-left">
+          <div class="card-recent-container" >
+            <% @my_party.first(3).each do |party| %>
+            <div class="card-party-recent card text-left">
+              <%= link_to party_path(party) do %>
+              <div class="status"><p> <%= party.status %> </p></div>
+              <div class="text">
+              <p> <%= party.date.strftime("%A, %b %d") %> </p>
+              <h3> <%= party.title %> </h3></div>
+              <% end %>
+            </div>
+              <% end %>
+          </div>
+          <button onClick="document.getElementById('scroll-target').scrollIntoView();" class ="view-btn">View all</button>
+    </section>
+
+      <hr>
+     <section class = "my-parties-container text-left">
+      <br>
+      <h2 class = "text-left" id="scroll-target"> All my parties </h2>
+      <br>
+      <div class="search-form-parties">
+        <div class="mb-5 search-field" style="width: 50vw">
+          <%= form_tag recipes_path, method: :get, class: "d-flex" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control-find-party",
+              placeholder: "Find a party"%>
+            <%= submit_tag "Search", class: "search-party-button"%>
+          <% end %>
+        </div>
+      </div>
+        <div class="card-recent-container d-flex" >
+          <% @my_party.each do |party| %>
+          <div class="card-party card text-left"
+            style = "background-color:<%= @color.sample %>">
+            <%= link_to party_path(party) do %>
+            <div class="status"><p> <%= party.status %> </p></div>
+            <%= image_tag "platedish.png", class: "party-card-img" %>
+            <div class="text">
+            <p> <%= party.date.strftime("%A, %b %d") %> </p>
+            <h3> <%= party.title %> </h3></div>
+            <% end %>
+          </div>
+            <% end %>
+      </div>
+     </section>
+
+    <%# IF USER NOT SIGNED IN %>
+    <% else %>
+      <div class="home-container">
+        <section class = "home-top center" id="scroll-target">
+        <%= image_tag "dots-left.png", class: "img-dots-left"%>
+          <%= image_tag "dots-right.png", class: "img-dots-right"%>
+          <%= image_tag "logo.png", class: "img-logo" %>
+          <%= image_tag "plate.png", class: "img-plate"%>
+          <h3 class="tagline">Friends, family, food, without the fuss</h3>
+          <button class = "start-btn"> <%=  link_to "Start planning your supper club!", user_session_path %>
+          </button>
+        </section>
+        <%# <section class = "home-info center">
+          <p>ABOUT</p>
+          <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </h2>
+        <%= image_tag "ellipse-green.png", class: "img-ellipse"%>
+        <%# </section>  %>
+      </div>
+    <% end %>
+  </body>
+</html>

@@ -15,9 +15,13 @@ module TheSupperClub
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.exceptions_app = self.routes
 
     # Configuration for the application, engines, and railties goes here.
-    #
+    config.action_controller.permit_all_parameters = true
+    config.secret_key_base = 'blipblapblup'
+    # config.assets.initialize_on_precompile = false
+    config.assets.version = '1.0'
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
