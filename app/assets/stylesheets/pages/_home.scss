@@ -190,14 +190,14 @@ svg#right:hover path {
   }
 
   .green-circle {
-    width: 30px;
-    height: 30px;
+    width: 70px;
+    height: 70px;
     border-radius: 999999px;
     position: absolute;
-    right: 20px;
-    bottom: 220px;
+    right: 30px;
+    bottom: 480px;
     float: right;
-    background-color: 67D480;
+    background-color: #67D480;
     z-index: 9999;
     text-align: center;
 
@@ -211,7 +211,7 @@ svg#right:hover path {
     height: 280px;
     position: absolute;
     right: 20px;
-    bottom: 220px;
+    bottom: 260px;
     float: right;
     background-color: #F45F5F;
     z-index: 99;
@@ -429,7 +429,7 @@ svg#right:hover path {
 }
 
 .create-img {
-  width: 50%;
+  width: 40%;
 
 }
 

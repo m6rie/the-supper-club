@@ -15,17 +15,18 @@
       <%# INVITE TAB %>
       <div class="tab-content-invite display-a" data-navtab-active-target="content" data-attribute="Invite">
         <div class="row detail-container d-flex flex-row">
-          <div class = "col-5">
+
+          <div class = "col-6">
             <%= image_tag "Dinner_party_1.png", class: "img-create"%>
           </div>
-          <div class = "col-7 text-start invite-container">
+          <div class = "col-6 text-start invite-container">
             <p> First things first, give your party some details </p>
             <h2>Hey! It's <em><%= current_user.name %></em>,</h2>
             <%= simple_form_for @party, html: { class: 'form-horizontal' }, data: { action: "submit->draggable#sendData" } , wrapper: :horizontal_form do |f| %>
             <div class="inline-form col-12"><h2>Come to my &nbsp</h2><%= f.input :title, label: false, input_html: { data: { draggable_target: "title" }, class: "form-input-custom" }, placeholder: "party name?" %><h2>&nbsp!</h2>
             </div>
             <div class="inline-form col-12"><h2>It's at &nbsp</h2><%= f.input :address, label: false, placeholder: "where?", input_html: { data: { draggable_target: "address" }, class: "form-input-custom" } %></div>
-            <div class="inline-form col-12"><h2>On &nbsp</h2><%= f.input :date, label: false, html5: true, input_html: { data: { draggable_target: "partydate" }, class: "form-input-custom" } %></div>
+            <div class="inline-form col-12"><h2>On &nbsp</h2><%= f.input :date, label: false, html5: true, input_html: { data: { draggable_target: "partydate" }, class: "form-input-date" } %></div>
             <h2>See you there!<h2>
           </div>
         </div>
@@ -65,43 +66,41 @@
 
       <div class="tab-content-guests d-none" data-navtab-active-target="content" data-attribute="Guests">
       <div class = "row guest-form">
-          <div class = "col-6">
+          <div class="col-2"></div>
+          <div class = "col-3">
           <%= image_tag "create_img1.png" %>
           <br>
           </div>
           <div class="col-6">
-          <br>
-          <br>
-          <h2>How many people<br>are you inviting?</h2>
-          <div class="guest-card center">
-            <%= f.input :attendancy, placeholder: "0", label:false, input_html: { data: { draggable_target: "attendancy" }, class: "guest-input" }, class: "guest-form" %>
+            <br>
+            <br>
+            <h2>How many people<br>are you inviting?</h2>
+            <div class="guest-card center">
+              <%= f.input :attendancy, placeholder: "0", label:false, input_html: { data: { draggable_target: "attendancy" }, class: "guest-input" }, class: "guest-form" %>
+            </div>
+
           </div>
-          </div>
+          <div class="col-1"></div>
           </div>
         </div>
         <%# DISHES TAB %>
         <div class="tab-content-dishes d-none" data-navtab-active-target="content" data-attribute="Dishes">
         <div class = "row dishes-form">
           <div class="col-6">
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
           <div class="row align-items-start center">
             <h2>How many dishes<br>would you like to make?</h2>
             <br>
-            <div class="d-flex flex-row center">
+          <div class="d-flex flex-row center">
               <div class="dishes-card col-3 center">
                 <div>Appetizers</div>
                 <div class="ps-3"><%= f.input :appetizers, placeholder: "0", input_html: { data: { draggable_target: "appetizers" },  class: "dish-input center" }  %></div>
               </div>
               <div class="dishes-card col-3 center">
-              <div>Mains</div>
+                <div>Mains</div>
                 <div class="ps-3"><%= f.input :mains, placeholder: "0", input_html: { data: { draggable_target: "mains" }, class: "dish-input center" } %></div>
               </div>
               <div class="dishes-card col-3 center">
-              <div>Desserts</div>
+                <div>Desserts</div>
                 <div class="ps-3"><%= f.input :desserts, placeholder: "0", input_html: { data: { draggable_target: "desserts" }, class: "dish-input center" } %></div>
               </div>
             </div>
@@ -109,7 +108,7 @@
             </div>
              <div class="col-6">
               <%= image_tag "create-img3.png", class: "img-dishes" %>
-              </div>
+             </div>
 
         </div>
       </div>
