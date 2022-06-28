@@ -14,10 +14,10 @@
      <%= @party.theme %> Party
     <hr>
      <h5><p>GUESTS</p><h5>
-     <%= @party.attendancy %> pax
+     <%= party.attendancy %> pax
      <hr>
      <h5><p>INVITATION</p><h5>
-    <%= link_to party_invite_path(@party) do %><%= image_tag "qr_code#{@party.title}.png", class: "qr-code" %> <% end %>
+               <%= link_to party_invite_path(@party) do %><img class="qr-code" src=<%= "#{@party.qrcode}" %>><% end %>
     <br>
     <hr>
      <button class="edit-btn"><i class="fa-solid fa-pencil"></i>&nbsp edit</button>
