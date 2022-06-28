@@ -18,22 +18,22 @@ class PartiesController < ApplicationController
     @party_recipe = Recipe.where(user_id: @party.id)
 
 
-    qrcode = RQRCode::QRCode.new("https://the-supper-club.herokuapp.com/parties/#{@party.id}/invite")
+    # qrcode = RQRCode::QRCode.new("https://the-supper-club.herokuapp.com/parties/#{@party.id}/invite")
 
-      png = qrcode.as_png(
-        bit_depth: 1,
-        border_modules: 1,
-        color_mode: ChunkyPNG::COLOR_GRAYSCALE,
-        color: "black",
-        file: nil,
-        fill: "white",
-        module_px_size: 10,
-        resize_exactly_to: false,
-        resize_gte_to: false,
-        size: 250
-      )
+    #   png = qrcode.as_png(
+    #     bit_depth: 1,
+    #     border_modules: 1,
+    #     color_mode: ChunkyPNG::COLOR_GRAYSCALE,
+    #     color: "black",
+    #     file: nil,
+    #     fill: "white",
+    #     module_px_size: 10,
+    #     resize_exactly_to: false,
+    #     resize_gte_to: false,
+    #     size: 250
+    #   )
 
-      IO.binwrite("./app/assets/images/qr_code#{@party.title}.png", png.to_s)
+    #   IO.binwrite("./app/assets/images/qr_code#{@party.title}.png", png.to_s)
   end
 
   def new
@@ -97,12 +97,28 @@ class PartiesController < ApplicationController
       mains: params[:party][:mains],
       desserts: params[:party][:desserts]
     )
-
     # CONNECTING PARTIES AND RECIPES
     @recipes.each do |recipe|
       PartyRecipe.create(party: @party, recipe: recipe)
     end
+    qrcode = RQRCode::QRCode.new("http://the-supper-club.herokuapp.com/parties/#{@party.id}/invite")
 
+    png = qrcode.as_png(
+      bit_depth: 1,
+      border_modules: 1,
+      color_mode: ChunkyPNG::COLOR_GRAYSCALE,
+      color: "black",
+      file: nil,
+      fill: "white",
+      module_px_size: 10,
+      resize_exactly_to: false,
+      resize_gte_to: false,
+      size: 250
+    )
+   
+    qrcode_url = Cloudinary::Uploader.upload("#{png.to_data_url}", :public_id => "qr_code#{@party.title}" )
+    @party.qrcode = qrcode_url["url"]
+    @party.save
     # AJAX RESPONSE
     respond_to do |format|
       format.json { render :json => @recipes }
@@ -137,7 +153,7 @@ class PartiesController < ApplicationController
   private
 
   def party_params
-    params.require(:party).permit(:title, :address, :date, :theme, :attendancy, :appetizers, :mains, :desserts, :recipes_data )
+    params.require(:party).permit(:title, :address, :date, :theme, :attendancy, :appetizers, :mains, :desserts, :recipes_data, :photo)
   end
 
   def set_party

@@ -131,7 +131,7 @@ export default class extends Controller {
     // FETCH CALL WITH RECIPE AND PARTY DATA
     // https://the-supper-club.herokuapp.com/parties
 
-    fetch("https://localhost:3000/parties", {
+    fetch("http://localhost:3000/parties", {
       method: "POST",
       headers: {
         mode: "no-cors",
@@ -143,5 +143,5 @@ export default class extends Controller {
     })
       .then((response) => response.body)
       .then((data) => {});
-      window.location.replace("https://localhost:3000/loading")}
+      window.location.replace("http://localhost:3000")}
 }
